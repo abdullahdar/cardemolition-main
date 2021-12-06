@@ -976,7 +976,6 @@ public class RCC_CarControllerV3 : RCC_Core {
 			launched -= Time.deltaTime;
 		
 		launched = Mathf.Clamp01 (launched);
-
 	}
 
 	private void Inputs() {
@@ -1382,6 +1381,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 		// Setting centre of mass.
 		rigid.centerOfMass = transform.InverseTransformPoint(COM.transform.position);
 		// Applying downforce.
+
 		rigid.AddRelativeForce (Vector3.down * (speed * downForce), ForceMode.Force);
 
 	}

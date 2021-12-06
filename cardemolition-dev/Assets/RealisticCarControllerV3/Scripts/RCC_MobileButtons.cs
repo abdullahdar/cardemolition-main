@@ -265,7 +265,7 @@ public class RCC_MobileButtons : RCC_Core {
 
 		}
 
-		throttleInput = GetInput(gasButton) + GetInput(gradualGasButton);
+		throttleInput = 1;//GetInput(gasButton) + GetInput(gradualGasButton);
 		brakeInput = GetInput (brakeButton);
 		leftInput = GetInput(leftButton);
 		rightInput = GetInput(rightButton);

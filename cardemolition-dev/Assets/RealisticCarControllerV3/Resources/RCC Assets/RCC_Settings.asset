@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7756f06ac1b082e4bb1697f768a5a41f, type: 3}
   m_Name: RCC_Settings
   m_EditorClassIdentifier: 
-  controllerSelectedIndex: 0
+  controllerSelectedIndex: 1
   behaviorSelectedIndex: 0
-  overrideBehavior: 0
+  overrideBehavior: 1
   overrideFPS: 1
   overrideFixedTimeStep: 1
   fixedTimeStep: 0.02
@@ -22,7 +22,7 @@ MonoBehaviour:
   maxFPS: 60
   useFixedWheelColliders: 1
   lockAndUnlockCursor: 0
-  controllerType: 0
+  controllerType: 1
   behaviorTypes:
   - behaviorName: Simulator
     steeringHelper: 1
@@ -290,7 +290,7 @@ MonoBehaviour:
   setTagsAndLayers: 1
   RCCLayer: RCC
   RCCTag: Player
-  tagAllChildrenGameobjects: 0
+  tagAllChildrenGameobjects: 1
   chassisJoint: {fileID: 116354, guid: a7e7b1406cded0e4cb52224eb5dc2d80, type: 3}
   exhaustGas: {fileID: 104134, guid: 46992adcb9d56714eb84164c8a965492, type: 3}
   skidmarksManager: {fileID: 114786316056322602, guid: a107dc7aa77e84f4d8cf9888def4fe64,
@@ -345,10 +345,10 @@ MonoBehaviour:
   maxWindSoundVolume: 1
   maxBrakeSoundVolume: 0.494
   foldGeneralSettings: 1
-  foldBehaviorSettings: 1
-  foldControllerSettings: 1
-  foldUISettings: 1
-  foldWheelPhysics: 1
-  foldSFX: 1
-  foldOptimization: 1
-  foldTagsAndLayers: 1
+  foldBehaviorSettings: 0
+  foldControllerSettings: 0
+  foldUISettings: 0
+  foldWheelPhysics: 0
+  foldSFX: 0
+  foldOptimization: 0
+  foldTagsAndLayers: 0
