@@ -592,9 +592,10 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     1: BCG_RCC
-    4: BCG_RCC
-    7: BCG_RCC
+    4: BCG_RCC;CF_FORCE_MOBILE_MODE
+    7: BCG_RCC;CF_FORCE_MOBILE_MODE
     13: BCG_RCC
+    14: CF_FORCE_MOBILE_MODE
     19: BCG_RCC
     21: BCG_RCC
     25: BCG_RCC

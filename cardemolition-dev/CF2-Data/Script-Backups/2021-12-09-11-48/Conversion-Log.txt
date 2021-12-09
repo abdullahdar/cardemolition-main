@@ -1,0 +1,69 @@
+Converting script [1 / 5]	[\RealisticCarControllerV3\Scripts\RCC_Camera.cs]
+	Fragments : 11
+		[ 0] : Line:  319	InputMethod   GetKeyDown          	(RCCSettings.changeCameraKB)
+		[ 1] : Line:  322	InputMethod   GetAxis             	(RCCSettings.mouseXInput)
+		[ 2] : Line:  323	InputMethod   GetAxis             	(RCCSettings.mouseYInput)
+		[ 3] : Line:  329	InputMethod   GetButtonDown       	(RCCSettings.Xbox_changeCameraKB)
+		[ 4] : Line:  332	InputMethod   GetAxis             	(RCCSettings.Xbox_mouseXInput)
+		[ 5] : Line:  333	InputMethod   GetAxis             	(RCCSettings.Xbox_mouseYInput)
+		[ 6] : Line:  339	InputMethod   GetButtonDown       	(RCCSettings.PS4_changeCameraKB)
+		[ 7] : Line:  342	InputMethod   GetAxis             	(RCCSettings.PS4_mouseXInput)
+		[ 8] : Line:  343	InputMethod   GetAxis             	(RCCSettings.PS4_mouseYInput)
+		[ 9] : Line:  463	InputMethod   GetKey              	(RCCSettings.lookBackKB)
+		[10] : Line:  470	InputMethod   GetButton           	(RCCSettings.Xbox_lookBackKB)
+
+Converting script [2 / 5]	[\RealisticCarControllerV3\Scripts\RCC_CarControllerV3.cs]
+	Fragments : 4
+		[ 0] : Line: 1142	InputMethod   GetAxis             	(RCCSettings.Xbox_indicatorKB)
+		[ 1] : Line: 1147	InputMethod   GetAxis             	(RCCSettings.Xbox_hazardIndicatorKB)
+		[ 2] : Line: 1209	InputMethod   GetAxis             	(RCCSettings.PS4_indicatorKB)
+		[ 3] : Line: 1214	InputMethod   GetAxis             	(RCCSettings.PS4_hazardIndicatorKB)
+
+Converting script [3 / 5]	[\RealisticCarControllerV3\Scripts\RCC_InputManager.cs]
+	Fragments : 21
+		[ 0] : Line:   27	InputMethod   GetAxis             	(RCC_Settings.Instance.verticalInput)
+		[ 1] : Line:   28	InputMethod   GetAxis             	(RCC_Settings.Instance.verticalInput)
+		[ 2] : Line:   29	InputMethod   GetAxis             	(RCC_Settings.Instance.horizontalInput)
+		[ 3] : Line:   30	InputMethod   GetKey              	(RCC_Settings.Instance.handbrakeKB)
+		[ 4] : Line:   31	InputMethod   GetKey              	(RCC_Settings.Instance.boostKB)
+		[ 5] : Line:   38	InputMethod   GetAxis             	(RCC_Settings.Instance.Xbox_triggerRightInput)
+		[ 6] : Line:   41	InputMethod   GetAxis             	(RCC_Settings.Instance.Xbox_triggerLeftInput)
+		[ 7] : Line:   44	InputMethod   GetAxis             	(RCC_Settings.Instance.Xbox_horizontalInput)
+		[ 8] : Line:   47	InputMethod   GetButton           	(RCC_Settings.Instance.Xbox_handbrakeKB)
+		[ 9] : Line:   50	InputMethod   GetButton           	(RCC_Settings.Instance.Xbox_boostKB)
+		[10] : Line:   57	InputMethod   GetAxis             	(RCC_Settings.Instance.PS4_triggerRightInput)
+		[11] : Line:   60	InputMethod   GetAxis             	(RCC_Settings.Instance.PS4_triggerLeftInput)
+		[12] : Line:   63	InputMethod   GetAxis             	(RCC_Settings.Instance.PS4_horizontalInput)
+		[13] : Line:   66	InputMethod   GetButton           	(RCC_Settings.Instance.PS4_handbrakeKB)
+		[14] : Line:   69	InputMethod   GetButton           	(RCC_Settings.Instance.PS4_boostKB)
+		[15] : Line:  128	InputMethod   GetKeyDown          	(keyCode)
+		[16] : Line:  137	InputMethod   GetKeyUp            	(keyCode)
+		[17] : Line:  146	InputMethod   GetKey              	(keyCode)
+		[18] : Line:  155	InputMethod   GetButtonDown       	(buttonCode)
+		[19] : Line:  164	InputMethod   GetButtonUp         	(buttonCode)
+		[20] : Line:  173	InputMethod   GetButton           	(buttonCode)
+
+Converting script [4 / 5]	[\RealisticCarControllerV3\Scripts\RCC_SceneManager.cs]
+	Fragments : 7
+		[ 0] : Line:  108	Other mod.	[Cursor.lockState]
+		[ 1] : Line:  262	InputMethod   GetKeyDown          	(RCC_Settings.Instance.recordKB)
+		[ 2] : Line:  265	InputMethod   GetKeyDown          	(RCC_Settings.Instance.playbackKB)
+		[ 3] : Line:  268	InputMethod   GetKey              	(RCC_Settings.Instance.slowMotionKB)
+		[ 4] : Line:  271	InputMethod   GetKeyUp            	(RCC_Settings.Instance.slowMotionKB)
+		[ 5] : Line:  274	InputMethod   GetButtonDown       	("Cancel")
+		[ 6] : Line:  275	Other mod.	[Cursor.lockState]
+
+Converting script [5 / 5]	[\RealisticCarControllerV3\Scripts\RCC_XRToggle.cs]
+	Fragments : 1
+		[ 0] : Line:   24	InputMethod   GetKeyDown          	(KeyCode.V)
+
+
+5 scripts modified!
+Overwriting actual scripts...
+	[0 / 5] from  [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/CF2-Data/Script-Backups/2021-12-09-11-48\Assets-After/\RealisticCarControllerV3\Scripts\RCC_Camera.cs] to [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/Assets/\RealisticCarControllerV3\Scripts\RCC_Camera.cs]
+	[1 / 5] from  [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/CF2-Data/Script-Backups/2021-12-09-11-48\Assets-After/\RealisticCarControllerV3\Scripts\RCC_CarControllerV3.cs] to [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/Assets/\RealisticCarControllerV3\Scripts\RCC_CarControllerV3.cs]
+	[2 / 5] from  [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/CF2-Data/Script-Backups/2021-12-09-11-48\Assets-After/\RealisticCarControllerV3\Scripts\RCC_InputManager.cs] to [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/Assets/\RealisticCarControllerV3\Scripts\RCC_InputManager.cs]
+	[3 / 5] from  [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/CF2-Data/Script-Backups/2021-12-09-11-48\Assets-After/\RealisticCarControllerV3\Scripts\RCC_SceneManager.cs] to [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/Assets/\RealisticCarControllerV3\Scripts\RCC_SceneManager.cs]
+	[4 / 5] from  [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/CF2-Data/Script-Backups/2021-12-09-11-48\Assets-After/\RealisticCarControllerV3\Scripts\RCC_XRToggle.cs] to [F:/Projects/DarsonTech/github/cardemolition-main/cardemolition-dev/Assets/\RealisticCarControllerV3\Scripts\RCC_XRToggle.cs]
+
+Overwriting COMPLETED!
