@@ -25,6 +25,8 @@ public class Shooting_Control : MonoBehaviour
     public AudioClip fireSound;
     public AudioClip reloadSound;
 
+    public GameObject aim;
+
     public int counter = 0;
     public float tempTime = 0f;
     private void Start()
@@ -34,39 +36,40 @@ public class Shooting_Control : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {                
-        if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-        {            
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
+        {
+            aim.transform.position = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
+
+            if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot(hit);
+            }
         }
     }
     
-    void Shoot()
-    {        
-        currentAmmo--;
-
+    void Shoot(RaycastHit hit)
+    {                
         playSound.PlayOneShot(fireSound);
-        muzzleFlash./*Play()*/SetActive(false);
-        muzzleFlash./*Play()*/SetActive(true);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(start_RayPoint.position, start_RayPoint.forward, out hit, range))
+        muzzleFlash.SetActive(false);
+        muzzleFlash.SetActive(true);
+        
+        Debug.Log(hit.transform.name);
+        DamageManager damage = hit.transform.GetComponent<DamageManager>();
+        
+        if (damage != null)
         {
-            Debug.Log(hit.transform.name);
-            DamageManager damage = hit.transform.GetComponent<DamageManager>();
-            if (damage != null)
-            {
-                damage.Take_Damage(2f);
-            }
-            if (hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
-
+            damage.Take_Damage(2f);
         }
+        
+        if (hit.rigidbody != null)
+        {
+            hit.rigidbody.AddForce(-hit.normal * impactForce);
+        }
+        
+        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impactGO, 2f);        
     }
 }
