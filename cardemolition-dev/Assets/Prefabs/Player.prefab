@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 5437172209028587413}
   m_Layer: 8
   m_Name: StartRayPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,9 +860,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437172209695957670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muzzle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,7 +1284,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5437172210383674953}
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -336, y: 9.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1557,6 +1557,7 @@ MonoBehaviour:
   playSound: {fileID: 5437172210383674956}
   fireSound: {fileID: 8300000, guid: f2d68be28f2647643b72d2ef7bf4dccd, type: 3}
   reloadSound: {fileID: 0}
+  aim: {fileID: 0}
   counter: 0
   tempTime: 0
 --- !u!82 &5437172210383674956
@@ -1757,6 +1758,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon_v2_3_M
       objectReference: {fileID: 0}
+    - target: {fileID: 1068411839509182, guid: 5288c44b007d50044bec3a531b3cf210, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068411839509182, guid: 5288c44b007d50044bec3a531b3cf210, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4777095196256484, guid: 5288c44b007d50044bec3a531b3cf210, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1816,9 +1825,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5437172209695957670}
     m_Modifications:
+    - target: {fileID: 124010, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124010, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 124012, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124012, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 124014, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124014, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 124016, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124016, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 124018, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
       propertyPath: m_Name
       value: MuzzleFlash1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124018, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124018, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 124020, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124020, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 124022, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124022, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 424018, guid: 91cae02dda1c67243ae1078e3126fbb4, type: 3}
       propertyPath: m_RootOrder

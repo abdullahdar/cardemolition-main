@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -46863,26 +46863,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5437172209028587410, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172209695957671, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172209695957671, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210383674952, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: angularDragHelper
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5437172210383674953, guid: 3dfbc5b295ad0cb458717286f9c3c549,
         type: 3}
       propertyPath: m_Name
@@ -46943,86 +46923,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136801, guid: 3dfbc5b295ad0cb458717286f9c3c549,
+    - target: {fileID: 5437172210383674957, guid: 3dfbc5b295ad0cb458717286f9c3c549,
         type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136801, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136805, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136805, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136807, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136807, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136825, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136825, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136827, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136827, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136829, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136829, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136831, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437172210680136831, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437952403672716946, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437952403672716946, guid: 3dfbc5b295ad0cb458717286f9c3c549,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
+      propertyPath: aim
+      value: 
+      objectReference: {fileID: 2040364275}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dfbc5b295ad0cb458717286f9c3c549, type: 3}
 --- !u!64 &6002911001660182714
