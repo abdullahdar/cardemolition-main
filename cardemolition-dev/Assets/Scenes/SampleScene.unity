@@ -17656,10 +17656,10 @@ MonoBehaviour:
   shape: 2
   disablingConditions:
     mobileModeRelation: 0
-    disableWhenTouchScreenInactive: 1
+    disableWhenTouchScreenInactive: 0
     disableWhenCursorIsUnlocked: 0
     switchList: []
-  fadeOutWhenReleased: 1
+  fadeOutWhenReleased: 0
   startFadedOut: 1
   fadeOutTargetAlpha: 0
   fadeInDuration: 0.2
@@ -17668,7 +17668,7 @@ MonoBehaviour:
   centerOnDirectTouch: 1
   centerOnIndirectTouch: 1
   centerWhenFollowing: 0
-  stickyMode: 1
+  stickyMode: 0
   clampInsideRegion: 1
   clampInsideCanvas: 1
   returnToStartingPosition: 0
@@ -33015,7 +33015,7 @@ MonoBehaviour:
   shape: 0
   disablingConditions:
     mobileModeRelation: 0
-    disableWhenTouchScreenInactive: 1
+    disableWhenTouchScreenInactive: 0
     disableWhenCursorIsUnlocked: 0
     switchList: []
 --- !u!1 &1535251738

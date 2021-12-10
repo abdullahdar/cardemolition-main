@@ -35,7 +35,7 @@ public class Shooting_Control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {                
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {            
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
