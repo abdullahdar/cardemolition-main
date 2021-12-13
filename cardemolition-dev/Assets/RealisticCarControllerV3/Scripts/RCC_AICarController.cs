@@ -12,6 +12,7 @@ using UnityEngine.AI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 /// AI Controller of RCC. It's not professional, but it does the job. Follows all waypoints, or follows/chases the target gameobject.
@@ -80,6 +81,8 @@ public class RCC_AICarController : MonoBehaviour {
 	public delegate void onRCCAIDestroyed(RCC_AICarController RCCAI);
 	public static event onRCCAIDestroyed OnRCCAIDestroyed;
 
+	List<Transform> customWayPointsTransform = new List<Transform>();
+
 	void Awake() {
 
 		// Getting main controller and enabling external controller.
@@ -109,6 +112,12 @@ public class RCC_AICarController : MonoBehaviour {
 		detector.isTrigger = true;
 		detector.radius = 10f;
 
+		var customWayPoints = GameObject.Find("CustomWaypoints");
+
+		foreach (Transform transform in customWayPoints.transform)
+		{
+			customWayPointsTransform.Add(transform);
+		}
 	}
 
 	void OnEnable(){
@@ -154,7 +163,14 @@ public class RCC_AICarController : MonoBehaviour {
 		// Navigator Input is multiplied by 1.5f for fast reactions.
 		float navigatorInput = Mathf.Clamp(transform.InverseTransformDirection(navigator.desiredVelocity).x * 1.5f, -1f, 1f);
 
-		switch (navigationMode) {
+		var player = GameObject.FindGameObjectWithTag("Player").transform;
+		var distanceBetweenPlayernEnemy = Vector3.Distance(transform.position, player.position);
+
+		Debug.Log(distanceBetweenPlayernEnemy.ToString());
+
+		navigationMode = distanceBetweenPlayernEnemy >= 50 ? NavigationMode.FollowWaypoints : NavigationMode.ChaseTarget;
+
+			switch (navigationMode) {
 
 			case NavigationMode.FollowWaypoints:
 
@@ -176,8 +192,13 @@ public class RCC_AICarController : MonoBehaviour {
 
 				}
 
+				//RCC_Waypoint rCC_Waypoint = new RCC_Waypoint() { enabled = true, gameObject = "Waypoint 0 (UnityEngine.GameObject)", hideFlags = HideFlags.None, name = "Waypoint 0", runInEditMode = false,
+				//tag = "Untagged", targetSpeed = 100, transform = transform, useGUILayout = true };
+
 				// Next waypoint and its position.
 				RCC_Waypoint currentWaypoint = waypointsContainer.waypoints [currentWaypointIndex];
+
+				currentWaypoint.transform.position = customWayPointsTransform.PickRandom().position;
 
 				// Checks for the distance to next waypoint. If it is less than written value, then pass to next waypoint.
 				float distanceToNextWaypoint = GetPathLength(navigator.path);
@@ -563,4 +584,22 @@ public class RCC_AICarController : MonoBehaviour {
 
 	}
 	
+}
+
+public static class EnumerableExtension
+{
+	public static T PickRandom<T>(this IEnumerable<T> source)
+	{
+		return source.PickRandom(1).Single();
+	}
+
+	public static IEnumerable<T> PickRandom<T>(this IEnumerable<T> source, int count)
+	{
+		return source.Shuffle().Take(count);
+	}
+
+	public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
+	{
+		return source.OrderBy(x => Guid.NewGuid());
+	}
 }
