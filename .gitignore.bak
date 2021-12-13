@@ -54,8 +54,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-*.unitypackage.meta
 
 # Crashlytics generated file
 crashlytics-build.properties
 
+**/CF2-Data/Settings/CF2.config

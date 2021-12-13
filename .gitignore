@@ -58,3 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Control freak 2 config file
+**/CF2-Data/Settings/CF2.config
