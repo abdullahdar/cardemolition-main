@@ -27,6 +27,8 @@ public class Shooting_Control : MonoBehaviour
 
     public GameObject aim;
 
+    public GameObject weapon;
+
     public int counter = 0;
     public float tempTime = 0f;
     private void Start()
@@ -34,22 +36,28 @@ public class Shooting_Control : MonoBehaviour
         currentAmmo = maxAmmo;
     }    
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
+        if (RCC_SceneManager.Instance.activeMainCamera)
         {
-            aim.transform.position = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
-
-            if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            weapon.transform.eulerAngles = new Vector3(0f, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);
+            RaycastHit hit;
+            if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
             {
-                nextTimeToFire = Time.time + 1f / fireRate;
-                Shoot(hit);
+                aim.transform.position = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
+
+                Debug.Log(hit.transform.name);
+
+                if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+                {
+                    nextTimeToFire = Time.time + 1f / fireRate;
+                    Shoot(hit);
+                }
             }
         }
     }
-    
+
+
     void Shoot(RaycastHit hit)
     {                
         playSound.PlayOneShot(fireSound);
@@ -71,5 +79,10 @@ public class Shooting_Control : MonoBehaviour
         
         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactGO, 2f);        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("sdf");
     }
 }
