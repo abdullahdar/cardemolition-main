@@ -45147,6 +45147,95 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300036, guid: c685db5bd3a0f9b4d8ddb667b78d772f, type: 3}
+--- !u!1001 &1929237368622403426
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5447313522218015077, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447313522218015077, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479682, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: aim
+      value: 
+      objectReference: {fileID: 2040364275}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -336
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -74.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479685, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479686, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863328152777479687, guid: 3a12e87e3c0387540967a9b9e09f8396,
+        type: 3}
+      propertyPath: maximumContactSparkle
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a12e87e3c0387540967a9b9e09f8396, type: 3}
 --- !u!64 &2378411917277129065
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45389,6 +45478,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300038, guid: c685db5bd3a0f9b4d8ddb667b78d772f, type: 3}
+--- !u!1 &5447313522218015076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5863328152777479686, guid: 3a12e87e3c0387540967a9b9e09f8396,
+    type: 3}
+  m_PrefabInstance: {fileID: 1929237368622403426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5447313522218015077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447313522218015076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243c2ce9b5fec084d82d35856e2b9c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  playerParticelSystem: {fileID: 0}
 --- !u!64 &6002911001660182714
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47882,6 +47991,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343722264442504938, guid: af6c63c1c07007d4bb7ac8df00da6692,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af6c63c1c07007d4bb7ac8df00da6692, type: 3}
