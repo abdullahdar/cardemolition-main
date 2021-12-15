@@ -11,6 +11,14 @@ public class DamageManager : MonoBehaviour
 
     public AudioSource impact;
     public AudioClip impactClip;
+
+    ParticleSystem playerParticelSystem;
+    public int smokeEmition;
+
+    private void Awake()
+    {
+        playerParticelSystem = GetComponent<ParticleSystem>();
+    }
     public void Take_Damage(float damage)
     {
         if (health <= 0.0f)
@@ -34,6 +42,16 @@ public class DamageManager : MonoBehaviour
         if (health <= 0.0f)
         {
             Die();
+        }
+
+        //Particle System
+        if (health <= 60 && !playerParticelSystem.isPlaying)
+            playerParticelSystem.Play();
+        
+        if(playerParticelSystem.isPlaying)
+        {
+            var particleEmission = playerParticelSystem.emission;
+            particleEmission.rateOverTime = particleEmission.rateOverTime.constant + smokeEmition;
         }
     }
 

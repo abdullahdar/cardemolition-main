@@ -2246,8 +2246,8 @@ public class RCC_CarControllerV3 : RCC_Core {
 
 		}
 
-		var playerScript = GetComponent<PlayerScript>();
-		playerScript.DamageManager(30);
+		var playerScript = GetComponent<DamageManager>();
+		playerScript.Take_Damage(5);
 	}
 
 	/// <summary>
