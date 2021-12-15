@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1621034756733782558}
   - component: {fileID: 1587434426436632100}
   - component: {fileID: 1595494393164163410}
-  - component: {fileID: 1617798133964075303}
+  - component: {fileID: 348569776}
   m_Layer: 8
   m_Name: HCoupe_v1
   m_TagString: Untagged
@@ -89,8 +89,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1617798133964075303
-BoxCollider:
+--- !u!64 &348569776
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,9 +99,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4504328, y: 1.9358364, z: 4.520546}
-  m_Center: {x: -0.00000011920929, y: 0, z: -0.00000011920929}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: fc2f8480aba11a74bb710b5cf259fd88, type: 3}
 --- !u!1 &1617810261439663868
 GameObject:
   m_ObjectHideFlags: 0
@@ -10906,6 +10907,7 @@ GameObject:
   - component: {fileID: 5437172210383674952}
   - component: {fileID: 5437172210383674957}
   - component: {fileID: 5437172210383674956}
+  - component: {fileID: 2028464051}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -11180,7 +11182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd2ba2fb4e252947acec3bed1d72ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 2
   range: 1000
   fireRate: 15
   impactForce: 60
@@ -11292,6 +11294,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2028464051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437172210383674953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29b00b98fe469e4f91a61256c0bcf0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthBar: {fileID: 0}
+  impact: {fileID: 5437172210383674956}
+  impactClip: {fileID: 8300000, guid: 4766aaab83a6c3748986b07652ed7c81, type: 3}
+  die: 0
+  character: 0
 --- !u!1 &5437172210680136801
 GameObject:
   m_ObjectHideFlags: 0

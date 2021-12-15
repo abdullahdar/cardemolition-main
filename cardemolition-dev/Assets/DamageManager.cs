@@ -6,11 +6,19 @@ using UnityEngine.UI;
 public class DamageManager : MonoBehaviour
 {
     public float health = 100;
-    public Canvas healthCanvas;
     public Image healthBar;
 
     public AudioSource impact;
     public AudioClip impactClip;
+
+    public bool die;
+
+    public enum Character
+    {
+        player,
+        enemy
+    }
+    public Character character;
     public void Take_Damage(float damage)
     {
         if (health <= 0.0f)
@@ -33,12 +41,18 @@ public class DamageManager : MonoBehaviour
         //Kill NPC
         if (health <= 0.0f)
         {
-            Die();
+            Die();   
         }
     }
 
     void Die()
-    {        
-        Destroy(this.gameObject,1);
+    {
+        die = true;
+
+        if (character == Character.enemy)
+            Destroy(this.gameObject, 1);
+        else if (character == Character.player)
+            Debug.Log("GameOver");
+        
     }
 }

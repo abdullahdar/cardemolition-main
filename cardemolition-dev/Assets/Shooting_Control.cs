@@ -44,9 +44,7 @@ public class Shooting_Control : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
             {
-                aim.transform.position = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
-
-                Debug.Log(hit.transform.name);
+                aim.transform.position = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);                
 
                 if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
                 {
@@ -65,11 +63,11 @@ public class Shooting_Control : MonoBehaviour
         muzzleFlash.SetActive(true);
         
         Debug.Log(hit.transform.name);
-        DamageManager damage = hit.transform.GetComponent<DamageManager>();
+        DamageManager damageManager = hit.transform.GetComponent<DamageManager>();
         
-        if (damage != null)
+        if (damageManager != null)
         {
-            damage.Take_Damage(2f);
+            damageManager.Take_Damage(damage);
         }
         
         if (hit.rigidbody != null)
@@ -83,6 +81,6 @@ public class Shooting_Control : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("sdf");
+        
     }
 }

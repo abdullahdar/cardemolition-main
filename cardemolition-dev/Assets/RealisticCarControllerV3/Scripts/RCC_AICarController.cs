@@ -65,6 +65,8 @@ public class RCC_AICarController : MonoBehaviour {
 	public int startFollowDistance = 300;
 	public int stopFollowDistance = 30;
 	public bool ignoreWaypointNow = false;
+
+	public GameObject player;
 	
 	// Unity's Navigator.
 	private NavMeshAgent navigator;
@@ -83,9 +85,12 @@ public class RCC_AICarController : MonoBehaviour {
 
 	List<Transform> customWayPointsTransform = new List<Transform>();
 
+	private DamageManager playerDamage;
+
 	void Awake() {
 
 		// Getting main controller and enabling external controller.
+		playerDamage = player.GetComponent<DamageManager>();
 		carController = GetComponent<RCC_CarControllerV3>();
 		carController.externalController = true;
 
@@ -163,12 +168,10 @@ public class RCC_AICarController : MonoBehaviour {
 		// Navigator Input is multiplied by 1.5f for fast reactions.
 		float navigatorInput = Mathf.Clamp(transform.InverseTransformDirection(navigator.desiredVelocity).x * 1.5f, -1f, 1f);
 
-		var player = GameObject.FindGameObjectWithTag("Player").transform;
-		var distanceBetweenPlayernEnemy = Vector3.Distance(transform.position, player.position);
+		//var player = /*GameObject.FindGameObjectWithTag("Player").transform*/;
+		var distanceBetweenPlayernEnemy = Vector3.Distance(transform.position, player.transform.position);		
 
-		Debug.Log(distanceBetweenPlayernEnemy.ToString());
-
-		navigationMode = distanceBetweenPlayernEnemy >= 50 ? NavigationMode.FollowWaypoints : NavigationMode.ChaseTarget;
+		navigationMode = distanceBetweenPlayernEnemy <= 50 && !playerDamage.die ? NavigationMode.ChaseTarget : NavigationMode.FollowWaypoints;
 
 			switch (navigationMode) {
 
