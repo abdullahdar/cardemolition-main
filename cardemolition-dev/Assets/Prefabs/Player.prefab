@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1617798133964075303}
   m_Layer: 8
   m_Name: HCoupe_v1
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10589,7 +10589,7 @@ GameObject:
   - component: {fileID: 5437172208909757763}
   m_Layer: 8
   m_Name: COM
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10649,7 +10649,7 @@ GameObject:
   - component: {fileID: 5437172209392395732}
   m_Layer: 8
   m_Name: Lights
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10840,7 +10840,7 @@ GameObject:
   - component: {fileID: 5437172210206288712}
   m_Layer: 8
   m_Name: Wheel Colliders
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10874,7 +10874,7 @@ GameObject:
   - component: {fileID: 5437172210330801423}
   m_Layer: 8
   m_Name: Wheel Models
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10920,7 +10920,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5437172210383674953}
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -336, y: 9.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11193,6 +11193,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: f2d68be28f2647643b72d2ef7bf4dccd, type: 3}
   reloadSound: {fileID: 0}
   aim: {fileID: 0}
+  weapon: {fileID: 3458220153745708994}
   counter: 0
   tempTime: 0
 --- !u!82 &5437172210383674956
