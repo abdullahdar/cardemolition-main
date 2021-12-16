@@ -90,6 +90,7 @@ public class RCC_AICarController : MonoBehaviour {
 	void Awake() {
 
 		// Getting main controller and enabling external controller.
+		player = GameObject.FindGameObjectWithTag("Player");
 		playerDamage = player.GetComponent<DamageManager>();
 		carController = GetComponent<RCC_CarControllerV3>();
 		carController.externalController = true;

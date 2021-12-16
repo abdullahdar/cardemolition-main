@@ -11,7 +11,6 @@ public class DamageManager : MonoBehaviour
     public AudioSource impact;
     public AudioClip impactClip;
 
-<<<<<<< HEAD
     public bool die;
 
     public enum Character
@@ -20,7 +19,6 @@ public class DamageManager : MonoBehaviour
         enemy
     }
     public Character character;
-=======
     ParticleSystem playerParticelSystem;
     public int smokeEmition;
 
@@ -28,7 +26,6 @@ public class DamageManager : MonoBehaviour
     {
         playerParticelSystem = GetComponent<ParticleSystem>();
     }
->>>>>>> car-damage
     public void Take_Damage(float damage)
     {
         if (health <= 0.0f)
