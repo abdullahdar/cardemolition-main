@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int health = 100;
+    public ParticleSystem playerParticelSystem;
+
+    private void Awake()
     {
+        playerParticelSystem = GetComponent<ParticleSystem>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DamageManager(int damage)
     {
-        
+        health = health - damage;
+
+        if(health<80 && !playerParticelSystem.isPlaying)
+            playerParticelSystem.Play();
+
+
     }
 }
