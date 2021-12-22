@@ -5,6 +5,12 @@ using UnityEngine;
 public class Shooting_Control : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float sphereRadius;
+    public float maxDistance;
+    public LayerMask layerMask;
+
+    private float currentHitDistance;
+
     public float damage = 10f;
     public float range = 100f;
     public float fireRate = 15f;
@@ -42,16 +48,16 @@ public class Shooting_Control : MonoBehaviour
         {
             weapon.transform.eulerAngles = new Vector3(0f, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);
             RaycastHit hit;
-            if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
-            {
-                aim.transform.position = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);                
+             if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
+             {
+                 aim.transform.position = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);                
 
-                if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-                {
-                    nextTimeToFire = Time.time + 1f / fireRate;
-                    Shoot(hit);
-                }
-            }
+                 if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+                 {
+                     nextTimeToFire = Time.time + 1f / fireRate;
+                     Shoot(hit);
+                 }
+             }            
         }
     }
 
@@ -79,8 +85,10 @@ public class Shooting_Control : MonoBehaviour
         Destroy(impactGO, 2f);        
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnDrawGizmosSelected()
     {
-        
-    }
+        Gizmos.color = Color.red;
+        Debug.DrawLine(start_RayPoint.transform.position, start_RayPoint.transform.position + start_RayPoint.transform.forward * currentHitDistance);
+        Gizmos.DrawWireSphere(start_RayPoint.transform.position + start_RayPoint.transform.forward * currentHitDistance, sphereRadius);
+    }*/
 }
