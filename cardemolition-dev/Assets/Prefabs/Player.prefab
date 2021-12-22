@@ -11312,6 +11312,7 @@ MonoBehaviour:
   impactClip: {fileID: 8300000, guid: 4766aaab83a6c3748986b07652ed7c81, type: 3}
   die: 0
   character: 0
+  smokeEmition: 0
 --- !u!1 &5437172210680136801
 GameObject:
   m_ObjectHideFlags: 0
