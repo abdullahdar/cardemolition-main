@@ -20,6 +20,7 @@ public class DamageManager : MonoBehaviour
     }
     public Character character;
     ParticleSystem playerParticelSystem;
+
     public int smokeEmition;
 
     private void Awake()
@@ -32,7 +33,7 @@ public class DamageManager : MonoBehaviour
         {            
             return;
         }
-
+        Debug.Log("damage: "+health);
         if (health - damage > 0.0f)
         {
             health -= damage;
