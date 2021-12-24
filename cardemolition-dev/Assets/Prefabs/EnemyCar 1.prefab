@@ -49639,11 +49639,11 @@ GameObject:
   - component: {fileID: 9206895209455322019}
   m_Layer: 8
   m_Name: EnemyCar 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8343722264442504937
 Transform:
   m_ObjectHideFlags: 0
@@ -49939,8 +49939,9 @@ MonoBehaviour:
   startFollowDistance: 300
   stopFollowDistance: 30
   ignoreWaypointNow: 0
-  player: {fileID: 0}
   targetsInZone: []
+  player: {fileID: 0}
+  targetTags: []
 --- !u!82 &700392100
 AudioSource:
   m_ObjectHideFlags: 0

@@ -49803,7 +49803,7 @@ GameObject:
   - component: {fileID: 399419737}
   m_Layer: 8
   m_Name: EnemyCar (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50195,7 +50195,7 @@ MonoBehaviour:
   currentWaypointIndex: 0
   targetChase: {fileID: 0}
   targetTag: Player
-  navigationMode: 0
+  navigationMode: 1
   raycastLength: 3
   raycastAngle: 30
   obstacleLayers:
@@ -50217,8 +50217,9 @@ MonoBehaviour:
   startFollowDistance: 300
   stopFollowDistance: 30
   ignoreWaypointNow: 0
-  player: {fileID: 0}
   targetsInZone: []
+  player: {fileID: 0}
+  targetTags: []
 --- !u!114 &399419737
 MonoBehaviour:
   m_ObjectHideFlags: 0
