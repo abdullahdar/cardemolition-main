@@ -137,7 +137,7 @@ public class RCC_Camera : MonoBehaviour{
 
 	// Calculate the current rotation angles for TPS mode.
 	private Quaternion currentRotation = Quaternion.identity;
-	private Quaternion wantedRotation = Quaternion.identity;
+	public Quaternion wantedRotation = Quaternion.identity;
 	private float currentHeight = 0f;
 	private float wantedHeight = 0f;
 
@@ -455,7 +455,7 @@ public class RCC_Camera : MonoBehaviour{
 			wantedRotation = playerCar.transform.rotation * Quaternion.AngleAxis ((direction == 1 ? 0 : 180), Vector3.up);
 		else
 			wantedRotation = playerCar.transform.rotation;
-
+		
 		switch (RCCSettings.selectedControllerType){
 
 		case RCC_Settings.ControllerType.Keyboard:

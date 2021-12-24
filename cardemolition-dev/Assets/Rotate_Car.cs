@@ -7,9 +7,11 @@ public class Rotate_Car : MonoBehaviour
     [SerializeField] private Transform t1, t2;
     public static float WheelTurnValue;
 
+    public GameObject test;
+
     private void Update()
     {
-        GetCameraRotationDifference();
+        GetCameraRotationDifference();       
     }
     void GetCameraRotationDifference()
     {

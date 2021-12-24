@@ -34,7 +34,7 @@ public class RCC_InputManager : MonoBehaviour{
 				{
 					if (Rotate_Car.WheelTurnValue < -1.0f || Rotate_Car.WheelTurnValue > 1.0f)
 					{
-						inputs.steerInput = Mathf.Lerp(inputs.steerInput, -(Rotate_Car.WheelTurnValue / 3.0f), 100.0f * Time.deltaTime);
+						inputs.steerInput = Mathf.Lerp(inputs.steerInput, -(Rotate_Car.WheelTurnValue / 3.0f), 100.0f * Time.deltaTime);						
 					}
 				}
 				#endregion

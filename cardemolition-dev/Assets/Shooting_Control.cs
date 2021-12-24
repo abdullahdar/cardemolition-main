@@ -84,11 +84,4 @@ public class Shooting_Control : MonoBehaviour
         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactGO, 2f);        
     }
-
-   /* private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Debug.DrawLine(start_RayPoint.transform.position, start_RayPoint.transform.position + start_RayPoint.transform.forward * currentHitDistance);
-        Gizmos.DrawWireSphere(start_RayPoint.transform.position + start_RayPoint.transform.forward * currentHitDistance, sphereRadius);
-    }*/
 }
