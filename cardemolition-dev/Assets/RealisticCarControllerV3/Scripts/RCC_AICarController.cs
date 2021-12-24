@@ -66,8 +66,6 @@ public class RCC_AICarController : MonoBehaviour {
 	public int stopFollowDistance = 30;
 	public bool ignoreWaypointNow = false;
 
-	public GameObject player;
-	
 	// Unity's Navigator.
 	private NavMeshAgent navigator;
 
@@ -87,10 +85,22 @@ public class RCC_AICarController : MonoBehaviour {
 
 	private DamageManager playerDamage;
 
+	public GameObject player;
+	List<GameObject> enemies = new List<GameObject>();
+
+	public List<string> targetTags = new List<string>();
+
 	void Awake() {
 
 		// Getting main controller and enabling external controller.
+
+		targetTags.Add("Player");
+		targetTags.Add("Enemy");
+
 		player = GameObject.FindGameObjectWithTag("Player");
+		enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+		enemies.Add(player);
+
 		playerDamage = player.GetComponent<DamageManager>();
 		carController = GetComponent<RCC_CarControllerV3>();
 		carController.externalController = true;
@@ -166,15 +176,36 @@ public class RCC_AICarController : MonoBehaviour {
 	
 	void Navigation (){
 
+		if(transform.name=="EnemyCar (2)")
+        {
+			int x = 0;
+        }
+
 		// Navigator Input is multiplied by 1.5f for fast reactions.
 		float navigatorInput = Mathf.Clamp(transform.InverseTransformDirection(navigator.desiredVelocity).x * 1.5f, -1f, 1f);
 
-		//var player = /*GameObject.FindGameObjectWithTag("Player").transform*/;
-		var distanceBetweenPlayernEnemy = Vector3.Distance(transform.position, player.transform.position);		
+		float distanceBetweenPlayernEnemy = 10000f;
+
+		foreach (var enemy in enemies)
+		{
+			if (enemy != null)
+			{
+				var distance = Vector3.Distance(transform.position, enemy.transform.position);
+				if (distance < distanceBetweenPlayernEnemy && distance != 0)
+				{
+					distanceBetweenPlayernEnemy = distance;
+				}
+			}
+		}
+
+		//Debug.Log("debug data: " + playerDamage.die.ToString());
 
 		navigationMode = distanceBetweenPlayernEnemy <= 50 && !playerDamage.die ? NavigationMode.ChaseTarget : NavigationMode.FollowWaypoints;
 
-			switch (navigationMode) {
+		Debug.Log("debug data: " + navigationMode.ToString());
+
+
+		switch (navigationMode) {
 
 			case NavigationMode.FollowWaypoints:
 
@@ -520,8 +551,8 @@ public class RCC_AICarController : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider col){
 
-		if(col.transform.root.CompareTag(targetTag)){
-			
+        //if(col.transform.root.CompareTag(targetTag)){
+        if (col.transform.root.tag.CompareTags(targetTags)){ 			
 			if (!targetsInZone.Contains (col.transform.root))
 				targetsInZone.Add (col.transform.root);
 
@@ -605,5 +636,17 @@ public static class EnumerableExtension
 	public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
 	{
 		return source.OrderBy(x => Guid.NewGuid());
+	}
+}
+
+//Extension methods must be defined in a static class
+public static class ExtensionMethods
+{
+	// This is the extension method.
+	// The first parameter takes the "this" modifier
+	// and specifies the type for which the method is defined.
+	public static bool CompareTags(this string tag, List<string> targetTags)
+	{
+		return targetTags.Contains(tag);
 	}
 }

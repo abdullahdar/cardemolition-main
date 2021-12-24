@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 73414971}
   m_Layer: 8
   m_Name: MuzzleFlash
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4873,7 +4873,7 @@ GameObject:
   - component: {fileID: 134348951}
   - component: {fileID: 134348953}
   - component: {fileID: 134348952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4951,7 +4951,7 @@ GameObject:
   - component: {fileID: 195894816}
   m_Layer: 8
   m_Name: MuzzleFlash
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9779,7 +9779,7 @@ GameObject:
   - component: {fileID: 246879941}
   m_Layer: 8
   m_Name: MuzzleFlash1
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: -1077886335, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9814,7 +9814,7 @@ GameObject:
   - component: {fileID: 287189419}
   m_Layer: 8
   m_Name: Muzzle (2)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9847,7 +9847,7 @@ GameObject:
   - component: {fileID: 345846827}
   m_Layer: 8
   m_Name: Flame
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14667,7 +14667,7 @@ GameObject:
   - component: {fileID: 560521782}
   m_Layer: 8
   m_Name: Smoke
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19554,7 +19554,7 @@ GameObject:
   - component: {fileID: 565620893}
   m_Layer: 8
   m_Name: Point light
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19695,7 +19695,7 @@ GameObject:
   - component: {fileID: 790092763}
   m_Layer: 8
   m_Name: MuzzleFlash
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24523,7 +24523,7 @@ GameObject:
   - component: {fileID: 910853289}
   - component: {fileID: 910853291}
   - component: {fileID: 910853290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Filled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24600,7 +24600,7 @@ GameObject:
   - component: {fileID: 917905992}
   - component: {fileID: 917905991}
   - component: {fileID: 917905990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24713,7 +24713,7 @@ GameObject:
   - component: {fileID: 924786140}
   m_Layer: 8
   m_Name: Flame
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29534,7 +29534,7 @@ GameObject:
   - component: {fileID: 1041722849}
   m_Layer: 8
   m_Name: MuzzleFlash
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34378,7 +34378,7 @@ GameObject:
   - component: {fileID: 1140105321}
   m_Layer: 8
   m_Name: Point light
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34517,7 +34517,7 @@ GameObject:
   - component: {fileID: 1354156533}
   m_Layer: 8
   m_Name: MuzzleFlash1
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: -1077886335, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34552,7 +34552,7 @@ GameObject:
   - component: {fileID: 1488935198}
   m_Layer: 8
   m_Name: Muzzle (1)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34615,7 +34615,7 @@ GameObject:
   - component: {fileID: 1710540169}
   m_Layer: 8
   m_Name: MuzzleFlash
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39446,7 +39446,7 @@ GameObject:
   - component: {fileID: 2096471682}
   m_Layer: 8
   m_Name: MuzzleFlash
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44290,7 +44290,7 @@ GameObject:
   - component: {fileID: 2107048809}
   m_Layer: 8
   m_Name: Smoke
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49175,7 +49175,7 @@ GameObject:
   - component: {fileID: 986841258574247346}
   - component: {fileID: 844912570620927461}
   - component: {fileID: 2601832767452531145}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Filled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49250,7 +49250,7 @@ GameObject:
   - component: {fileID: 4542132708133581454}
   - component: {fileID: 3179796188864982187}
   - component: {fileID: 3399635016967962912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49639,7 +49639,7 @@ GameObject:
   - component: {fileID: 9206895209455322019}
   m_Layer: 8
   m_Name: EnemyCar 1
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49899,6 +49899,8 @@ MonoBehaviour:
   useNOS: 0
   useTurbo: 0
   attachedTrailer: {fileID: 0}
+  jumpHeight: 100000000
+  turnPressed: 0
 --- !u!114 &8343722264442504934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51159,7 +51161,7 @@ GameObject:
   - component: {fileID: 6077879399538893433}
   - component: {fileID: 3258154317597024205}
   - component: {fileID: 8085497066024647979}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
