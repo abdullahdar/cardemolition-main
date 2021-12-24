@@ -1940,7 +1940,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301674509}
+      - m_Target: {fileID: 7244787365389528226}
         m_TargetAssemblyTypeName: RCC_CarControllerV3, Assembly-CSharp
         m_MethodName: Turn
         m_Mode: 1
@@ -5007,18 +5007,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300105174}
   m_CullTransparentMesh: 0
---- !u!114 &301674509 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5863328152777479687, guid: 3a12e87e3c0387540967a9b9e09f8396,
-    type: 3}
-  m_PrefabInstance: {fileID: 1929237368622403426}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c25271813931d814680ab7c84ef90710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &304244373
 GameObject:
   m_ObjectHideFlags: 0

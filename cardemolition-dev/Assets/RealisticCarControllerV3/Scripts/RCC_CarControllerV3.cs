@@ -1394,7 +1394,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 		if (isGrounded)
 		{
 			//turnPressed = true;
-			transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
 
 			//rigid.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
 			transform.RotateAround(transform.position, transform.up, 180f);
