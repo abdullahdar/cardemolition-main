@@ -38,7 +38,7 @@ public class RCC_InputManager : MonoBehaviour{
 					}
 				}
 				#endregion
-
+				
 
 				inputs.handbrakeInput = Mathf.Clamp01(ControlFreak2.CF2Input.GetKey (RCC_Settings.Instance.handbrakeKB) ? 1f : 0f);
 			inputs.boostInput = Mathf.Clamp01(ControlFreak2.CF2Input.GetKey (RCC_Settings.Instance.boostKB) ? 1f : 0f);
