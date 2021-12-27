@@ -17,5 +17,6 @@ public class Rotate_Car : MonoBehaviour
     {
         float dot = Vector3.Dot(t1.right, t2.position - t1.position);
         WheelTurnValue = dot;
+        Debug.Log("wheel turn value: "+WheelTurnValue);
     }
 }

@@ -29,11 +29,12 @@ public class RCC_InputManager : MonoBehaviour{
 			inputs.steerInput = Mathf.Clamp(ControlFreak2.CF2Input.GetAxis (RCC_Settings.Instance.horizontalInput), -1f, 1f);
 
 
-				#region Adnan.
+				#region CameraControl.
 				if (ControlFreak2.CF2Input.GetAxis(RCC_Settings.Instance.horizontalInput) > -0.2f && ControlFreak2.CF2Input.GetAxis(RCC_Settings.Instance.horizontalInput) < 0.2f)
 				{
 					if (Rotate_Car.WheelTurnValue < -1.0f || Rotate_Car.WheelTurnValue > 1.0f)
 					{
+						Debug.Log("Wheel Rotation Value: "+Rotate_Car.WheelTurnValue);
 						inputs.steerInput = Mathf.Lerp(inputs.steerInput, -(Rotate_Car.WheelTurnValue / 3.0f), 100.0f * Time.deltaTime);						
 					}
 				}
