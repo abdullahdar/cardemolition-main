@@ -54,6 +54,7 @@ public class Shooting_Control : MonoBehaviour
 
                  if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
                  {
+                    Debug.Log("Fire");
                      nextTimeToFire = Time.time + 1f / fireRate;
                      Shoot(hit);
                  }
