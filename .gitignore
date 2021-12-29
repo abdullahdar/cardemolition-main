@@ -59,10 +59,8 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Control freak 2 config file
-**/CF2-Data/Settings/CF2.config
 
 # ignoring all directories except Assets and ProjectSettings
-CF2-Data/
 Library/
 Logs/
 obj/
