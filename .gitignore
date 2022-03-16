@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Mm]emoryCaptures/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -55,21 +55,36 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+
+
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+
 # Control freak 2 config file
+**/CF2-Data/Settings/CF2.config
+
+
 
 # ignoring all directories except Assets and ProjectSettings
+CF2-Data/
 Library/
 Logs/
 obj/
 Packages/
 Temp/
 UserSettings/
+
+Assets/ThirdPartyPlugins/Plugins/Control-Freak-2/Add-Ons/
+Assets/ThirdPartyPlugins/Plugins/Control-Freak-2/Samples/Demo-CFR/
+Assets/ThirdPartyPlugins/TerrainToMesh/Terrain To Mesh/Installer/
+Assets/Plugins/Control-Freak-2/Add-Ons/
+Assets/Plugins/Control-Freak-2/Samples/Demo-CFR/
+
 **/.vsconfig
 **/Assembly-CSharp.csproj
 **/Assembly-CSharp-Editor.csproj
 **/Assembly-CSharp-Editor-firstpass.csproj
 **/Assembly-CSharp-firstpass.csproj
-**/cardemolition-dev.sln
+
