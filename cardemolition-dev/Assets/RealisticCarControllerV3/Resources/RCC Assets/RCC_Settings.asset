@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RCC_Settings
   m_EditorClassIdentifier: 
   controllerSelectedIndex: 0
-  behaviorSelectedIndex: 0
+  behaviorSelectedIndex: 3
   overrideBehavior: 1
   overrideFPS: 1
   overrideFixedTimeStep: 1
@@ -345,10 +345,10 @@ MonoBehaviour:
   maxWindSoundVolume: 1
   maxBrakeSoundVolume: 0.494
   foldGeneralSettings: 1
-  foldBehaviorSettings: 0
+  foldBehaviorSettings: 1
   foldControllerSettings: 1
   foldUISettings: 0
-  foldWheelPhysics: 0
+  foldWheelPhysics: 1
   foldSFX: 0
   foldOptimization: 0
   foldTagsAndLayers: 0

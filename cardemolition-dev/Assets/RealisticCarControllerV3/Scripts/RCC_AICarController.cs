@@ -202,7 +202,7 @@ public class RCC_AICarController : MonoBehaviour {
 
 		navigationMode = distanceBetweenPlayernEnemy <= 50 && !playerDamage.die ? NavigationMode.ChaseTarget : NavigationMode.FollowWaypoints;
 
-		Debug.Log("debug data: " + navigationMode.ToString());
+		//Debug.Log("debug data: " + navigationMode.ToString());
 
 
 		switch (navigationMode) {

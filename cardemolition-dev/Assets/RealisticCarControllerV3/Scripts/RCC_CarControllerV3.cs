@@ -1391,6 +1391,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 
 	public void Turn()
     {
+		Debug.Log("Turn");
 		if (isGrounded)
 		{
 			//turnPressed = true;

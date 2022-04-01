@@ -23,25 +23,23 @@ public class RCC_InputManager : MonoBehaviour{
 		switch (RCC_Settings.Instance.selectedControllerType) {
 
 		case RCC_Settings.ControllerType.Keyboard:
-
-			inputs.throttleInput = Mathf.Clamp01(ControlFreak2.CF2Input.GetAxis (RCC_Settings.Instance.verticalInput));
-			inputs.brakeInput = Mathf.Abs(Mathf.Clamp(ControlFreak2.CF2Input.GetAxis (RCC_Settings.Instance.verticalInput), -1f, 0f));
-			inputs.steerInput = Mathf.Clamp(ControlFreak2.CF2Input.GetAxis (RCC_Settings.Instance.horizontalInput), -1f, 1f);
-
-
-				#region CameraControl.
-				if (ControlFreak2.CF2Input.GetAxis(RCC_Settings.Instance.horizontalInput) > -0.2f && ControlFreak2.CF2Input.GetAxis(RCC_Settings.Instance.horizontalInput) < 0.2f)
-				{
-					if (Rotate_Car.WheelTurnValue < -1.0f || Rotate_Car.WheelTurnValue > 1.0f)
-					{
-						Debug.Log("Wheel Rotation Value: "+Rotate_Car.WheelTurnValue);
-						inputs.steerInput = Mathf.Lerp(inputs.steerInput, -(Rotate_Car.WheelTurnValue / 3.0f), 100.0f * Time.deltaTime);						
-					}
-				}
-				#endregion
 				
-
-				inputs.handbrakeInput = Mathf.Clamp01(ControlFreak2.CF2Input.GetKey (RCC_Settings.Instance.handbrakeKB) ? 1f : 0f);
+				inputs.throttleInput = Mathf.Clamp01(Rotate_Car.verticalValue);				
+				inputs.brakeInput = Mathf.Abs(Mathf.Clamp(Rotate_Car.verticalValue, -1f, 0f));
+				//Debug.Log("Throttle: "+inputs.throttleInput+" Brake: "+ inputs.brakeInput+" Vertical: "+ Rotate_Car.verticalValue);
+				//inputs.steerInput = Mathf.Clamp(ControlFreak2.CF2Input.GetAxis (RCC_Settings.Instance.horizontalInput), -1f, 1f);
+				inputs.steerInput = Mathf.Clamp(Rotate_Car.WheelTurnValue, -1f, 1f);
+			#region CameraControl.
+			/*if (ControlFreak2.CF2Input.GetAxis(RCC_Settings.Instance.horizontalInput) > -0.2f && ControlFreak2.CF2Input.GetAxis(RCC_Settings.Instance.horizontalInput) < 0.2f)
+			{
+				if (Rotate_Car.WheelTurnValue < -1.0f || Rotate_Car.WheelTurnValue > 1.0f)
+				{
+					Debug.Log("Wheel Rotation Value: "+Rotate_Car.WheelTurnValue);
+					inputs.steerInput = Mathf.Lerp(inputs.steerInput, -(Rotate_Car.WheelTurnValue / 3.0f), 100.0f * Time.deltaTime);						
+				}
+			}*/
+				#endregion
+			inputs.handbrakeInput = Mathf.Clamp01(ControlFreak2.CF2Input.GetKey (RCC_Settings.Instance.handbrakeKB) ? 1f : 0f);
 			inputs.boostInput = Mathf.Clamp01(ControlFreak2.CF2Input.GetKey (RCC_Settings.Instance.boostKB) ? 1f : 0f);
 
 			break;
