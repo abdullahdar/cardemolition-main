@@ -34,6 +34,7 @@ public class Shooting_Control : MonoBehaviour
 
     public Transform aim;
     private Image aimImage;
+    private bool focusOnEnemy = false;
 
     public GameObject weapon;
 
@@ -47,8 +48,18 @@ public class Shooting_Control : MonoBehaviour
     bool m_HitDetect;
 
     float rotationX = 0;
+    float rotationY = 0;
     Vector3 localScale = new Vector3(0f, 80f, 0f);
     RaycastHit m_Hit;
+    private Transform enemyTransform;
+    public Transform cube;
+
+    [Header("MISSILE")]
+    public GameObject missilePrefab;
+    public Transform missileSpawnPoint;
+    private float nextTimeToMissile;
+    public float missileFireRate = 1f;
+    public Image missileImage;
 
     private void Start()
     {
@@ -63,39 +74,53 @@ public class Shooting_Control : MonoBehaviour
             ////BoxCast Attributes
             m_HitDetect = Physics.BoxCast(start_RayPoint.position, localScale / 2, start_RayPoint.forward, out m_Hit, start_RayPoint.rotation, m_MaxDistance);
            
-            if (m_HitDetect)
+            if (m_HitDetect)           
             {
-                //Output the name of the Collider your Box hit
-                Debug.Log("Hit : " + m_Hit.collider.name);
+                //Output the name of the Collider your Box hit                
                 if (m_Hit.transform.tag == "Enemy")
-                {
-                    Debug.Log("Hit : " + m_Hit.collider.name);
-                    Vector3 difference = m_Hit.transform.position - weapon.transform.position;
-                    Quaternion rotation = Quaternion.LookRotation(difference, Vector3.up);
-
-                    rotationX = rotation.eulerAngles.x;
+                {                    
                     aimImage.color = Color.red;
+                    focusOnEnemy = true;
+
+                    enemyTransform = m_Hit.transform;
                 }
                 else
-                {
-                    rotationX = 0;
-                    aimImage.color = Color.black;
-                    Debug.Log("Hit : " + m_Hit.collider.name);
+                {                    
+                    aimImage.color = Color.black;                    
                 }
             }
             else
-            {
-                rotationX = 0;
+            {       
                 aimImage.color = Color.black;
             }
 
-            weapon.transform.rotation = Quaternion.Euler(rotationX, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);           
+            if(focusOnEnemy && enemyTransform)
+            {             
+                Vector3 right = RCC_SceneManager.Instance.activeMainCamera.transform.TransformDirection(Vector3.right);
+                Vector3 toOther = enemyTransform.position - RCC_SceneManager.Instance.activeMainCamera.transform.position;
+                float dot = Vector3.Dot(right, toOther);                
+
+                if(dot < 20f && dot > -20f)
+                {
+                    Vector3 difference = enemyTransform.position - weapon.transform.position;
+                    Quaternion rotation = Quaternion.LookRotation(difference, Vector3.up);
+                    weapon.transform.rotation = rotation;                    
+                }
+                else
+                {
+                    focusOnEnemy = false;
+                }
+            }
+            else
+            {                
+                weapon.transform.rotation = Quaternion.Euler(0, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);
+            }
+            
             
             RaycastHit hit;
             
             if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
-            {
-                Debug.Log(hit.transform.gameObject.name);
+            {                
                 Vector2 pos = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
                 aim.position = pos;                
 
@@ -103,13 +128,38 @@ public class Shooting_Control : MonoBehaviour
                  {
                      nextTimeToFire = Time.time + 1f / fireRate;
                      Shoot(hit);
-                 }
+                 }         
+                if (ControlFreak2.CF2Input.GetButton("Fire2") && Time.time >= nextTimeToMissile)
+                {                   
+                    nextTimeToMissile = Time.time + 1f / missileFireRate;                    
+                    Missile(hit);
+                }
+                else
+                {                    
+                    missileImage.fillAmount = 1-((nextTimeToMissile - Time.time) / 4 );
+                }
             }          
         }
     }
 
-    public void Missile()
+    void Missile(RaycastHit hit)
     {
+        DamageManager damageManager = hit.transform.GetComponent<DamageManager>();
+
+        if (damageManager != null)
+        {
+            missilePrefab.GetComponent<Tarodev.Missile>().enemyNotFound = false;
+            missilePrefab.GetComponent<Tarodev.Missile>()._target = hit.transform.position;           
+            missilePrefab.GetComponent<Tarodev.Missile>().targetRigidBody = hit.transform.GetComponent<Rigidbody>();
+        }
+        else
+        {
+            missilePrefab.GetComponent<Tarodev.Missile>().enemyNotFound = true;
+            missilePrefab.GetComponent<Tarodev.Missile>()._target = hit.point;            
+        }
+
+
+        GameObject missile = Instantiate(missilePrefab, missileSpawnPoint.position, missileSpawnPoint.rotation);       
 
     }
     void Shoot(RaycastHit hit)
