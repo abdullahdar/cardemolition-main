@@ -33,7 +33,7 @@ public class DamageManager : MonoBehaviour
         {            
             return;
         }
-        Debug.Log("damage: "+health);
+     
         if (health - damage > 0.0f)
         {
             health -= damage;

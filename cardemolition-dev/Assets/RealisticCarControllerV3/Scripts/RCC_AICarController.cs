@@ -531,12 +531,10 @@ public class RCC_AICarController : MonoBehaviour {
 
 			if (!targetsInZone[i].gameObject.activeInHierarchy)
 				targetsInZone.RemoveAt(i);
-
-			else {
-
+			else 
+			{
 				if (Vector3.Distance(transform.position, targetsInZone[i].transform.position) > (detector.radius * 1.25f))
 					targetsInZone.RemoveAt(i);
-
 			}
 
 		}
