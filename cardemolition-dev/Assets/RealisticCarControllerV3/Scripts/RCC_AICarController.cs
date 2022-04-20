@@ -97,7 +97,7 @@ public class RCC_AICarController : MonoBehaviour {
 		targetTags.Add("Player");
 		targetTags.Add("Enemy");
 
-		player = GameObject.FindGameObjectWithTag("Player");
+		//player = GameObject.FindGameObjectWithTag("Player");
 		enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
 		enemies.Add(player);
 
@@ -196,9 +196,7 @@ public class RCC_AICarController : MonoBehaviour {
 					distanceBetweenPlayernEnemy = distance;
 				}
 			}
-		}
-
-		//Debug.Log("debug data: " + playerDamage.die.ToString());
+		}		
 
 		navigationMode = distanceBetweenPlayernEnemy <= 50 && !playerDamage.die ? NavigationMode.ChaseTarget : NavigationMode.FollowWaypoints;
 

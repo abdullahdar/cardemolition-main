@@ -98,7 +98,8 @@ public class Shooting_Control : MonoBehaviour
             {             
                 Vector3 right = RCC_SceneManager.Instance.activeMainCamera.transform.TransformDirection(Vector3.right);
                 Vector3 toOther = enemyTransform.position - RCC_SceneManager.Instance.activeMainCamera.transform.position;
-                float dot = Vector3.Dot(right, toOther);                
+                float dot = Vector3.Dot(right, toOther);
+                
 
                 if(dot < 20f && dot > -20f)
                 {
@@ -109,13 +110,13 @@ public class Shooting_Control : MonoBehaviour
                 else
                 {
                     focusOnEnemy = false;
+                    weapon.transform.rotation = Quaternion.Euler(0, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);                    
                 }
             }
             else
             {                
-                weapon.transform.rotation = Quaternion.Euler(0, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);
-            }
-            
+                weapon.transform.rotation = Quaternion.Euler(0, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);                
+            }            
             
             RaycastHit hit;
             
