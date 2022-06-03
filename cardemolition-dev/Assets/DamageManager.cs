@@ -28,7 +28,8 @@ public class DamageManager : MonoBehaviour
         playerParticelSystem = GetComponent<ParticleSystem>();
     }
     public void Take_Damage(float damage)
-    {
+    {               
+
         if (health <= 0.0f)
         {            
             return;

@@ -345,10 +345,10 @@ MonoBehaviour:
   maxWindSoundVolume: 1
   maxBrakeSoundVolume: 0.494
   foldGeneralSettings: 1
-  foldBehaviorSettings: 1
-  foldControllerSettings: 1
+  foldBehaviorSettings: 0
+  foldControllerSettings: 0
   foldUISettings: 0
-  foldWheelPhysics: 1
+  foldWheelPhysics: 0
   foldSFX: 0
   foldOptimization: 0
   foldTagsAndLayers: 0

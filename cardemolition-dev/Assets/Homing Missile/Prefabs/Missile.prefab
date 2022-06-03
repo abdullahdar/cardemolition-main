@@ -159,12 +159,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 184470500350564771}
-  _target: {x: 0, y: 0, z: 0}
+  _target: {x: -424.99988, y: 8.374647, z: -582.0003}
   targetRigidBody: {fileID: 0}
   enemyNotFound: 0
   _explosionPrefab: {fileID: 0}
   _speed: 200
-  _rotateSpeed: 150
+  _rotateSpeed: 500
   _maxDistancePredict: 10000
   _minDistancePredict: 5
   _maxTimePrediction: 10

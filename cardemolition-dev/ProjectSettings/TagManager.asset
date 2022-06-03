@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Tornado
+  - Buffer
   layers:
   - Default
   - TransparentFX

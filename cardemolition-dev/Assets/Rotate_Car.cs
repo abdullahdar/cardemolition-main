@@ -23,7 +23,6 @@ public class Rotate_Car : MonoBehaviour
         float dot = Vector3.Dot(car.right, camera.position - car.position);
         WheelTurnValue = dot;        
     }
-
     void GetCarRotationAngle()
     {                
         joyStick.rotation = Quaternion.Euler(0,0,camera.eulerAngles.y);

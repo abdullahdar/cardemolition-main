@@ -142,7 +142,6 @@ public class Shooting_Control : MonoBehaviour
             }          
         }
     }
-
     void Missile(RaycastHit hit)
     {
         DamageManager damageManager = hit.transform.GetComponent<DamageManager>();
@@ -184,7 +183,6 @@ public class Shooting_Control : MonoBehaviour
         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactGO, 2f);        
     }
-
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

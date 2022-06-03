@@ -2257,13 +2257,25 @@ public class RCC_CarControllerV3 : RCC_Core {
 					}
 
 				}
-			
-			}
 
-		}
+				Damage_Health(collision, colRelVel.magnitude * cos);
+			}			
+		}	
+		
+	}
 
+	void Damage_Health(Collision collision, float impact)
+    {
 		var playerScript = GetComponent<DamageManager>();
-		playerScript.Take_Damage(5);
+
+		if (collision.collider.gameObject.tag == "Buffer")
+		{
+			playerScript.Take_Damage(10);
+		}
+		else if (collision.collider.gameObject.tag == "Player" || collision.collider.gameObject.tag == "Enemy")
+		{
+			playerScript.Take_Damage(5);
+		}
 	}
 
 	/// <summary>

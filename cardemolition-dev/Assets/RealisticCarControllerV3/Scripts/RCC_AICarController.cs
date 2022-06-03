@@ -12,7 +12,7 @@ using UnityEngine.AI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// AI Controller of RCC. It's not professional, but it does the job. Follows all waypoints, or follows/chases the target gameobject.
@@ -25,8 +25,8 @@ public class RCC_AICarController : MonoBehaviour {
 
 	public RCC_AIWaypointsContainer waypointsContainer;					// Waypoints Container.
 	public int currentWaypointIndex = 0;											// Current index in Waypoint Container.
-	public Transform targetChase;											// Target Gameobject for chasing.
-	public string targetTag = "Player";									// Search and chase Gameobjects with tags.
+	public Transform targetChase;                                           // Target Gameobject for chasing.
+	public string[] targetTag /*= new string[] { "Player", "Enemy" }*/;									// Search and chase Gameobjects with tags.
 
 	// AI Type
 	public NavigationMode navigationMode;
@@ -65,7 +65,7 @@ public class RCC_AICarController : MonoBehaviour {
 	public int startFollowDistance = 300;
 	public int stopFollowDistance = 30;
 	public bool ignoreWaypointNow = false;
-
+	
 	// Unity's Navigator.
 	private NavMeshAgent navigator;
 
@@ -81,33 +81,18 @@ public class RCC_AICarController : MonoBehaviour {
 	public delegate void onRCCAIDestroyed(RCC_AICarController RCCAI);
 	public static event onRCCAIDestroyed OnRCCAIDestroyed;
 
-	List<Transform> customWayPointsTransform = new List<Transform>();
 
-	private DamageManager playerDamage;
-
-	public GameObject player;
-	List<GameObject> enemies = new List<GameObject>();
-
-	public List<string> targetTags = new List<string>();
+	private GameObject temp;
 
 	void Awake() {
 
 		// Getting main controller and enabling external controller.
-
-		targetTags.Add("Player");
-		targetTags.Add("Enemy");
-
-		//player = GameObject.FindGameObjectWithTag("Player");
-		enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
-		enemies.Add(player);
-
-		playerDamage = player.GetComponent<DamageManager>();
 		carController = GetComponent<RCC_CarControllerV3>();
 		carController.externalController = true;
 
 		// If Waypoints Container is not selected in Inspector Panel, find it on scene.
-		if(!waypointsContainer)
-			waypointsContainer = FindObjectOfType(typeof(RCC_AIWaypointsContainer)) as RCC_AIWaypointsContainer;
+		/*if(!waypointsContainer)
+			waypointsContainer = FindObjectOfType(typeof(RCC_AIWaypointsContainer)) as RCC_AIWaypointsContainer;*/
 
 		// Creating our Navigator and setting properties.
 		GameObject navigatorObject = new GameObject("Navigator");
@@ -123,28 +108,27 @@ public class RCC_AICarController : MonoBehaviour {
 		// Creating our Detector and setting properties. Used for getting nearest target gameobjects.
 		GameObject detectorGO = new GameObject ("Detector");
 		detectorGO.transform.SetParent (transform, false);
-		detectorGO.layer = LayerMask.NameToLayer("Ignore Raycast");
+		detectorGO.layer = LayerMask.NameToLayer("Ignore Raycast");		
 		detector = detectorGO.gameObject.AddComponent<SphereCollider> ();
 		detector.isTrigger = true;
-		detector.radius = 10f;
+		detector.radius = /*10f*/chaseDistance;
 
-		var customWayPoints = GameObject.Find("CustomWaypoints");
+		//currentWaypointIndex= Random.Range(0, waypointsContainer.waypoints.Count);
 
-		foreach (Transform transform in customWayPoints.transform)
-		{
-			customWayPointsTransform.Add(transform);
-		}
 	}
 
 	void OnEnable(){
 
 		// Calling this event when AI vehicle spawned.
 		if (OnRCCAISpawned != null)
-			OnRCCAISpawned (this);
-
+			OnRCCAISpawned (this);		
 	}
-	
-	void Update(){
+    private void Start()
+    {
+		currentWaypointIndex = Random.Range(0, waypointsContainer.waypoints.Count);
+	}
+
+    void Update(){
 
 		// If not controllable, no need to go further.
 		if(!carController.canControl)
@@ -176,32 +160,8 @@ public class RCC_AICarController : MonoBehaviour {
 	
 	void Navigation (){
 
-		if(transform.name=="EnemyCar (2)")
-        {
-			int x = 0;
-        }
-
 		// Navigator Input is multiplied by 1.5f for fast reactions.
 		float navigatorInput = Mathf.Clamp(transform.InverseTransformDirection(navigator.desiredVelocity).x * 1.5f, -1f, 1f);
-
-		float distanceBetweenPlayernEnemy = 10000f;
-
-		foreach (var enemy in enemies)
-		{
-			if (enemy != null)
-			{
-				var distance = Vector3.Distance(transform.position, enemy.transform.position);
-				if (distance < distanceBetweenPlayernEnemy && distance != 0)
-				{
-					distanceBetweenPlayernEnemy = distance;
-				}
-			}
-		}		
-
-		navigationMode = distanceBetweenPlayernEnemy <= 50 && !playerDamage.die ? NavigationMode.ChaseTarget : NavigationMode.FollowWaypoints;
-
-		//Debug.Log("debug data: " + navigationMode.ToString());
-
 
 		switch (navigationMode) {
 
@@ -225,13 +185,8 @@ public class RCC_AICarController : MonoBehaviour {
 
 				}
 
-				//RCC_Waypoint rCC_Waypoint = new RCC_Waypoint() { enabled = true, gameObject = "Waypoint 0 (UnityEngine.GameObject)", hideFlags = HideFlags.None, name = "Waypoint 0", runInEditMode = false,
-				//tag = "Untagged", targetSpeed = 100, transform = transform, useGUILayout = true };
-
 				// Next waypoint and its position.
 				RCC_Waypoint currentWaypoint = waypointsContainer.waypoints [currentWaypointIndex];
-
-				currentWaypoint.transform.position = customWayPointsTransform.PickRandom().position;
 
 				// Checks for the distance to next waypoint. If it is less than written value, then pass to next waypoint.
 				float distanceToNextWaypoint = GetPathLength(navigator.path);
@@ -241,17 +196,18 @@ public class RCC_AICarController : MonoBehaviour {
 					navigator.SetDestination(waypointsContainer.waypoints[currentWaypointIndex].transform.position);
 
 				if (distanceToNextWaypoint != 0 && distanceToNextWaypoint < nextWaypointPassDistance) {
-					
-					currentWaypointIndex++;
+
+					//currentWaypointIndex++;
+					currentWaypointIndex = Random.Range(0, waypointsContainer.waypoints.Count);
 					totalWaypointPassed++;
 
                     // If all waypoints were passed, sets the current waypoint to first waypoint and increase lap.
-                    if (currentWaypointIndex >= waypointsContainer.waypoints.Count) {
+                    /*if (currentWaypointIndex >= waypointsContainer.waypoints.Count) {
 
                         currentWaypointIndex = 0;
                         lap++;
 
-                    }
+                    }*/
 
 					// Setting destination of the Navigator. 
 					if (navigator.isOnNavMesh)
@@ -283,8 +239,8 @@ public class RCC_AICarController : MonoBehaviour {
 
 				// If our scene doesn't have a Waypoints Container, return with error.
 				if (!targetChase){
-				
-				Stop();
+					navigationMode = NavigationMode.FollowWaypoints;
+				//Stop();
 				return;
 	
 			}
@@ -529,33 +485,54 @@ public class RCC_AICarController : MonoBehaviour {
 
 			if (!targetsInZone[i].gameObject.activeInHierarchy)
 				targetsInZone.RemoveAt(i);
-			else 
-			{
+
+			if(targetsInZone[i].GetComponent<DamageManager>().die)
+				targetsInZone.RemoveAt(i);
+			/*else 
+			{				
 				if (Vector3.Distance(transform.position, targetsInZone[i].transform.position) > (detector.radius * 1.25f))
 					targetsInZone.RemoveAt(i);
-			}
+			}*/
 
 		}
 
 		// If there is a target, get closest enemy.
 		if (targetsInZone.Count > 0)
+		{
+			navigationMode = NavigationMode.ChaseTarget;
 			targetChase = GetClosestEnemy(targetsInZone.ToArray());
+
+			/*if (temp != targetChase.gameObject)				
+				Debug.Log("new enemy");
+			temp = targetChase.gameObject;			*/
+		}
 		else
+		{
+			navigationMode = NavigationMode.FollowWaypoints;
 			targetChase = null;
+			//temp = null;
+		}
 
 	}
 	
 	void OnTriggerEnter (Collider col){
 
-        //if(col.transform.root.CompareTag(targetTag)){
-        if (col.transform.root.tag.CompareTags(targetTags)){ 			
-			if (!targetsInZone.Contains (col.transform.root))
-				targetsInZone.Add (col.transform.root);
+		if(col.transform.root.CompareTag(targetTag[0]) || col.transform.root.CompareTag(targetTag[1]))
+		{
 
-		}
-
+			if (!targetsInZone.Contains(col.transform.root))
+			{
+				targetsInZone.Add(col.transform.root);				
+			}			
+		}				
 	}
-
+	void OnTriggerExit(Collider col)
+	{
+		if (col.transform.root.CompareTag(targetTag[0]) || col.transform.root.CompareTag(targetTag[1]))
+		{							
+			targetsInZone.Remove(col.transform.root);
+		}
+	}
 	Transform GetClosestEnemy (Transform[] enemies){
 
 		Transform bestTarget = null;
@@ -571,10 +548,8 @@ public class RCC_AICarController : MonoBehaviour {
 			if(dSqrToTarget < closestDistanceSqr){
 
 				closestDistanceSqr = dSqrToTarget;
-				bestTarget = potentialTarget;
-
-			}
-
+				bestTarget = potentialTarget;				
+			}	
 		}
 
 		return bestTarget;
@@ -615,34 +590,4 @@ public class RCC_AICarController : MonoBehaviour {
 
 	}
 	
-}
-
-public static class EnumerableExtension
-{
-	public static T PickRandom<T>(this IEnumerable<T> source)
-	{
-		return source.PickRandom(1).Single();
-	}
-
-	public static IEnumerable<T> PickRandom<T>(this IEnumerable<T> source, int count)
-	{
-		return source.Shuffle().Take(count);
-	}
-
-	public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
-	{
-		return source.OrderBy(x => Guid.NewGuid());
-	}
-}
-
-//Extension methods must be defined in a static class
-public static class ExtensionMethods
-{
-	// This is the extension method.
-	// The first parameter takes the "this" modifier
-	// and specifies the type for which the method is defined.
-	public static bool CompareTags(this string tag, List<string> targetTags)
-	{
-		return targetTags.Contains(tag);
-	}
 }
