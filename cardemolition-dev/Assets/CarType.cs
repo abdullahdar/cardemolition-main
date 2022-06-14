@@ -28,6 +28,8 @@ public class CarType : MonoBehaviour
     }
     public void ActivateEnemyBarrier(int barrierNumber,bool hasBarrier)
     {
+        if (!hasBarrier)
+            return;
         barriers[barrierNumber].enabled = hasBarrier;
         barriers[barrierNumber].gameObject.GetComponent<BoxCollider>().enabled = hasBarrier;
     }

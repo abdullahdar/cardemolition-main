@@ -75,7 +75,7 @@ namespace Tarodev {
             //if (collision.transform.TryGetComponent<IExplode>(out var ex)) ex.Explode();
             if(collision.transform.tag == "Enemy")
             {
-                collision.transform.GetComponent<DamageManager>().Take_Damage(10);
+                collision.transform.GetComponent<DamageManager>().Take_Damage(10,this.gameObject);
             }
    
             Destroy(gameObject);

@@ -2270,11 +2270,11 @@ public class RCC_CarControllerV3 : RCC_Core {
 
 		if (collision.collider.gameObject.tag == "Buffer")
 		{
-			playerScript.Take_Damage(10);
+			playerScript.Take_Damage(10,this.gameObject);
 		}
 		else if (collision.collider.gameObject.tag == "Player" || collision.collider.gameObject.tag == "Enemy")
 		{
-			playerScript.Take_Damage(5);
+			playerScript.Take_Damage(5,this.gameObject);
 		}
 	}
 

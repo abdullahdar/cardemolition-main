@@ -12,23 +12,31 @@ public class DamageManager : MonoBehaviour
     public AudioClip impactClip;
 
     public bool die;
-
     public enum Character
     {
         player,
         enemy
     }
     public Character character;
-    ParticleSystem playerParticelSystem;
+    public ParticleSystem smokeParticle;
+    public ParticleSystem blastEffect;
+
+    [Header("Shield")]
+    public GameObject shield;
+    private bool shieldActivated = false;
 
     public int smokeEmition;
 
+    Coroutine co;
+
     private void Awake()
     {
-        playerParticelSystem = GetComponent<ParticleSystem>();
+        //smokeParticle = GetComponent<ParticleSystem>();
     }
-    public void Take_Damage(float damage)
-    {               
+    public void Take_Damage(float damage, GameObject attacker)
+    {
+        if (shieldActivated)
+            return;
 
         if (health <= 0.0f)
         {            
@@ -38,6 +46,16 @@ public class DamageManager : MonoBehaviour
         if (health - damage > 0.0f)
         {
             health -= damage;
+
+            if (character == Character.player)
+            {
+                bl_DamageInfo info = new bl_DamageInfo((float)damage);
+                info.Sender = attacker;
+              
+                bl_DamageDelegate.OnDamageEvent(info);
+
+                attacker.SetIndicator();
+            }
         }
         else
         {
@@ -54,24 +72,48 @@ public class DamageManager : MonoBehaviour
         }
 
         //Particle System
-        if (health <= 60 && !playerParticelSystem.isPlaying)
-            playerParticelSystem.Play();
-        
-        if(playerParticelSystem.isPlaying)
+        if (health <= 60 && !smokeParticle.isPlaying)
         {
-            var particleEmission = playerParticelSystem.emission;
+            smokeParticle.Play();
+            Debug.Log("smoke emit");
+        }
+        
+        if(smokeParticle.isPlaying)
+        {
+            var particleEmission = smokeParticle.emission;
             particleEmission.rateOverTime = particleEmission.rateOverTime.constant + smokeEmition;
         }
     }
-
     void Die()
     {
         die = true;
 
         if (character == Character.enemy)
-            Destroy(this.gameObject, 1);
+        {
+            GetComponent<RCC_AICarController>().enabled = false;
+            GetComponent<Enemy_Weapon_Controller>().enabled = false;
+            //Destroy(this.gameObject, 1);
+        }
         else if (character == Character.player)
-            Debug.Log("GameOver");
+        {        
+            bl_DamageDelegate.OnDie();
+        }
         
+        GetComponent<RCC_CarControllerV3>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;      
+      
+        blastEffect.Play();
+    }
+
+    public void ActivateShield(bool activate)
+    {
+        shieldActivated = activate;
+        StartCoroutine(StartTimer());      
+    }
+    IEnumerator StartTimer()
+    {      
+        yield return new WaitForSeconds(10f);
+        shield.SetActive(false);
+        shieldActivated = false;        
     }
 }

@@ -64,7 +64,7 @@ public class LevelsData : ScriptableObject
 
     public int Total_Enemy(int levelNumber)
     {
-        return levels[levelNumber].enemyCars.Count;
+        return levels[levelNumber].enemyCars.Count;        
     }
     public CarType.Car_Type EnemyType(int levelNumber,int enemyNumber)
     {

@@ -11,7 +11,7 @@ public class Enemy_Weapon_Controller : MonoBehaviour
     public float impactForce = 30f;
 
     public Transform start_RayPoint;
-    public GameObject muzzleFlash;
+    public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
     private float nextTimeToFire = 0f;
@@ -68,29 +68,26 @@ public class Enemy_Weapon_Controller : MonoBehaviour
     }
     void Shoot(RaycastHit hit)
     {        
+
         DamageManager damageManager = hit.transform.GetComponent<DamageManager>();
 
-
         if (damageManager != null && !damageManager.die)
-        {
-            Debug.Log("Muzzle"+hit.transform.gameObject.name);
+        {            
 
             playSound.PlayOneShot(fireSound);
-            muzzleFlash.SetActive(false);
-            muzzleFlash.SetActive(true);
+           
+            muzzleFlash.Play();
 
-            damageManager.Take_Damage(damage);            
+            damageManager.Take_Damage(damage,this.gameObject);            
 
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
-
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal),damageManager.transform);
-            Destroy(impactGO, 2f);
+            
+            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal), damageManager.transform);            
         }
     }
-
     void Shoot_Missile()
     {
         if (Time.time >= nextTimeToMissile)

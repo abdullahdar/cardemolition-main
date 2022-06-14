@@ -8,6 +8,9 @@ public class LevelManager : MonoBehaviour
     public int levelSelected;
     private int selectedCar;
 
+    [SerializeField]
+    private bl_IndicatorManager _bl_IndicatorManager;
+
     [Header("PLAYER ATTRIBUTES")]    
     public GameObject[] playerCar;
     public CinemachineFreeLook playerCamera;
@@ -43,6 +46,8 @@ public class LevelManager : MonoBehaviour
                 _playerCar.ActivateGun(carData.Selected_Gun(selectedCar));
 
                 _playerCar.ActivatePlayer();
+
+                _bl_IndicatorManager.SetPlayer(_playerCar.transform);
 
                 CameraSettings(playerCar[i].transform);
                 break;

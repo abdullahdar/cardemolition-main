@@ -23,8 +23,10 @@ public class Shooting_Control : MonoBehaviour
     private bool isReloading = false;
 
     public Transform start_RayPoint;
-    public /*ParticleSystem*/GameObject muzzleFlash;
+    public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    [SerializeField]
+    private TrailRenderer BulletTrail;
 
     private float nextTimeToFire = 0f;
     private Animator animator;
@@ -51,8 +53,7 @@ public class Shooting_Control : MonoBehaviour
     float rotationY = 0;
     Vector3 localScale = new Vector3(0f, 80f, 0f);
     RaycastHit m_Hit;
-    private Transform enemyTransform;
-    public Transform cube;
+    private Transform enemyTransform;    
 
     [Header("MISSILE")]
     public GameObject missilePrefab;
@@ -131,7 +132,8 @@ public class Shooting_Control : MonoBehaviour
                      Shoot(hit);
                  }         
                 if (ControlFreak2.CF2Input.GetButton("Fire2") && Time.time >= nextTimeToMissile)
-                {                   
+                {
+                    Debug.Log("Missile");
                     nextTimeToMissile = Time.time + 1f / missileFireRate;                    
                     Missile(hit);
                 }
@@ -139,7 +141,8 @@ public class Shooting_Control : MonoBehaviour
                 {                    
                     missileImage.fillAmount = 1-((nextTimeToMissile - Time.time) / 4 );
                 }
-            }          
+            }
+            
         }
     }
     void Missile(RaycastHit hit)
@@ -163,25 +166,30 @@ public class Shooting_Control : MonoBehaviour
 
     }
     void Shoot(RaycastHit hit)
-    {                
+    {
+        TrailRenderer trail = Instantiate(BulletTrail, start_RayPoint.position, Quaternion.identity);
+        StartCoroutine(SpawnTrail(trail, hit));
+
         playSound.PlayOneShot(fireSound);
-        muzzleFlash.SetActive(false);
-        muzzleFlash.SetActive(true);
+       
+        muzzleFlash.Play();
                 
         DamageManager damageManager = hit.transform.GetComponent<DamageManager>();
         
         if (damageManager != null)
         {
-            damageManager.Take_Damage(damage);
+            damageManager.Take_Damage(damage,this.gameObject);
         }
         
         if (hit.rigidbody != null)
         {
             hit.rigidbody.AddForce(-hit.normal * impactForce);
-        }
-        
-        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(impactGO, 2f);        
+        }                                  
+    }
+
+    public void Set_NextTimeToMissile()
+    {
+        nextTimeToMissile = Time.time;
     }
     void OnDrawGizmos()
     {
@@ -203,5 +211,25 @@ public class Shooting_Control : MonoBehaviour
             //Draw a cube at the maximum distance
             Gizmos.DrawWireCube(start_RayPoint.position + start_RayPoint.forward * m_MaxDistance, transform.localScale);
         }
+    }
+
+    private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit Hit)
+    {
+        float time = 0;
+        Vector3 startPosition = Trail.transform.position;
+
+        while (time < 1)
+        {
+            Trail.transform.position = Vector3.Lerp(startPosition, Hit.point, time);
+            time += Time.deltaTime / Trail.time;
+
+            yield return null;
+        }
+        //Animator.SetBool("IsShooting", false);
+        Trail.transform.position = Hit.point;
+       
+        Instantiate(impactEffect, Hit.point, Quaternion.LookRotation(Hit.normal));
+
+        Destroy(Trail.gameObject, Trail.time);
     }
 }
