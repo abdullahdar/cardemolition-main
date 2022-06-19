@@ -226,5 +226,143 @@ MonoBehaviour:
       hasMissile: 1
       missileNumber: 0
       missileDamage: 50
-  levelSelected: 1
+  - levelIndex: 3
+    sceneName: GamaPlay
+    levelNumber: 3
+    reward: 150
+    isLocked: 0
+    isCompleted: 0
+    startPosition: {x: 0, y: 2.23, z: -462}
+    startRotation: {x: 0, y: 0, z: 0}
+    enemyCars:
+    - carNo: 1
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -277, y: 4, z: 374}
+      hasBarrier: 1
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 2
+      carType: 1
+      chaseRange: 100
+      spawnPoint: {x: 317, y: 4, z: 374}
+      hasBarrier: 1
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 3
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: -363, y: 4, z: -3}
+      hasBarrier: 1
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 4
+      carType: 3
+      chaseRange: 100
+      spawnPoint: {x: 382, y: 4, z: -3}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+  - levelIndex: 4
+    sceneName: GamaPlay
+    levelNumber: 4
+    reward: 150
+    isLocked: 0
+    isCompleted: 0
+    startPosition: {x: 0, y: 2.23, z: -462}
+    startRotation: {x: 0, y: 0, z: 0}
+    enemyCars:
+    - carNo: 1
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -277, y: 4, z: 374}
+      hasBarrier: 1
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 2
+      carType: 1
+      chaseRange: 100
+      spawnPoint: {x: 317, y: 4, z: 374}
+      hasBarrier: 1
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 3
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: -363, y: 4, z: -3}
+      hasBarrier: 1
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 4
+      carType: 3
+      chaseRange: 100
+      spawnPoint: {x: 382, y: 4, z: -3}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+  levelSelected: 0
   coins: 0
