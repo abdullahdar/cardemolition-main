@@ -35,6 +35,7 @@ public class bl_HudDamageManager : MonoBehaviour {
     [SerializeField]private Text HealthText = null;
     [SerializeField]private GameObject DeathHUD;
     [SerializeField]private GameObject HealthInfo;
+    [SerializeField] private GameManager gameManager;
 
     private float Alpha = 0;
     private float Health = 100;
@@ -102,7 +103,8 @@ public class bl_HudDamageManager : MonoBehaviour {
     void OnDie()
     {
         //Active the death hud.
-        DeathHUD.SetActive(true);
+        //DeathHUD.SetActive(true);
+        gameManager.ShowGameOver();
     }
 
     /// <summary>
@@ -211,7 +213,8 @@ public class bl_HudDamageManager : MonoBehaviour {
     {
         Debug.Log("Here");
         //Application.LoadLevel(Application.loadedLevel);
-        SceneManager.LoadScene("GamePlay");
+        //SceneManager.LoadScene("GamePlay");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public float BloodFadeSpeed 

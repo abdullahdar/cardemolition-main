@@ -12,13 +12,24 @@ public class LevelsData : ScriptableObject
         public string sceneName;
         public int levelNumber;
         public int reward = 1500;
+        public enum Environment
+        {
+            footBallGround1,
+            footBallGround2,
+            footBallGround3
+        }
+        public Environment environment;
 
         public bool isLocked = true;
         public bool isCompleted = false;
 
+        [Header("LEVEL REQUIREMENTS")]
+        public int requiredCar;
+        public int requiredGun;
+
         [Header("PLAYER CAR")]
         public Vector3 startPosition;
-        public Vector3 startRotation;
+        public Vector3 startRotation;   
 
         [System.Serializable]
         public class EnemyCars
@@ -149,6 +160,90 @@ public class LevelsData : ScriptableObject
     public void AddCoins(int _coins)
     {
         coins += _coins;
+    }
+
+    #endregion
+
+    #region Level Requirement Events
+
+    public int GetRequiredCar(int levelNumber)
+    {
+        return levels[levelNumber].requiredCar - 1;
+    }
+
+    public int GetRequiredGun(int levelNumber)
+    {
+        return levels[levelNumber].requiredGun - 1;
+    }
+
+    #endregion
+
+    #region Level Information
+    public int GetReward()
+    {
+        return levels[levelSelected].reward;
+    }
+    public int GetSceneBuildIndex(int levelNumber)
+    {
+        int buildIndex = 0;
+        if (levels[levelNumber].environment == Levels.Environment.footBallGround1)
+            buildIndex = 1;
+        else if (levels[levelNumber].environment == Levels.Environment.footBallGround2)
+            buildIndex = 2;
+        else if (levels[levelNumber].environment == Levels.Environment.footBallGround3)
+            buildIndex = 3;
+        return buildIndex;
+    }
+    public int GetCurrentSceneIndex()
+    {
+        int buildIndex = 0;
+        if (levels[levelSelected].environment == Levels.Environment.footBallGround1)
+            buildIndex = 1;
+        else if (levels[levelSelected].environment == Levels.Environment.footBallGround2)
+            buildIndex = 2;
+        else if (levels[levelSelected].environment == Levels.Environment.footBallGround3)
+            buildIndex = 3;
+        return buildIndex;
+    }
+    public bool IsLevelLocked(int levelNumber)
+    {
+        return levels[levelNumber].isLocked;
+    }
+    public bool IsLevelCompleted(int levelNumber)
+    {
+        return levels[levelNumber].isCompleted;
+    }
+    public int TotalEnemies(int levelNumber)
+    {
+        return levels[levelNumber].enemyCars.Count;
+    }
+
+    #endregion
+
+    #region Set Level Values
+
+    public void Unlock_NextLevel()
+    {
+        Give_Reward();
+
+        levels[levelSelected].isCompleted = true;
+
+        if (levelSelected < 17)
+        {            
+            levels[levelSelected + 1].isLocked = false;
+        }        
+    }
+    public void Give_Reward()
+    {
+        int completedLevel = -1;
+        for (int i = 0; i < levels.Count; i++)
+        {
+            if (levels[i].isCompleted)
+                completedLevel++;
+        }
+
+        if (levelSelected > completedLevel)
+            AddCoins(GetReward());
     }
 
     #endregion

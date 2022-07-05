@@ -146,6 +146,10 @@ public class CarData : ScriptableObject
         {          
             return guns[gunNumber].isLocked;
         }
+        public bool Is_Gun_Used(int gunNumber)
+        {
+            return guns[gunNumber].isUsed;
+        }
         public void Set_Unlocked_Gun(int gunNumber)
         {
             guns[gunNumber].isLocked = false;
@@ -164,9 +168,13 @@ public class CarData : ScriptableObject
                 }
             }
         }
-        public int Get_Gun_Price(int gunNo)
+        public int Get_Gun_Price(int gunNumber)
         {
-            return barriers[gunNo].price;
+            return guns[gunNumber].price;
+        }
+        public string Get_Gun_Name(int gunNumber)
+        {
+            return guns[gunNumber].name;
         }
 
         #endregion
@@ -255,12 +263,8 @@ public class CarData : ScriptableObject
 
     }
     public bool isUsed(int carNo)
-    {
-        bool isused = false;
-
-        isused = carData[carNo].isUsed;
-
-        return isused;
+    {        
+        return carData[carNo].isUsed;
     }
     public int Selected_Car()
     {
@@ -479,11 +483,11 @@ public class CarData : ScriptableObject
     }
     public bool IsGunLocked(int carNumber, int gunNumber)
     {
-        bool is_Locked = false;
-
-        is_Locked = carData[carNumber].Is_Gun_Locked(gunNumber);
-
-        return is_Locked;
+        return carData[carNumber].Is_Gun_Locked(gunNumber);
+    }
+    public bool IsUsedGun(int carNumber, int gunNumber)
+    {
+        return carData[carNumber].Is_Gun_Used(gunNumber);
     }
     public void Set_Unlocked_Gun(int carNumber, int gunNumber)
     {
@@ -521,6 +525,10 @@ public class CarData : ScriptableObject
 
         price = carData[carNumber].Get_Gun_Price(gunNumber);
         return price;
+    }
+    public string Get_Gun_Name(int carNumber, int gunNumber)
+    {
+        return carData[carNumber].Get_Gun_Name(gunNumber);
     }
 
     #endregion

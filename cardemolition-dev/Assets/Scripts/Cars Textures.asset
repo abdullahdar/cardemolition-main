@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f85c36b151186846b6befc9c70b51dc, type: 3}
+  m_Name: Cars Textures
+  m_EditorClassIdentifier: 
+  cars:
+  - name: 1
+    carTexture: {fileID: 21300000, guid: 60202e052a6550f43a1153517772718b, type: 3}
+    material: {fileID: 0}
+    guns:
+    - name: 1
+      texture: {fileID: 21300000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+      gunTexture: {fileID: 2800000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+    - name: 2
+      texture: {fileID: 21300000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+      gunTexture: {fileID: 2800000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+    - name: 3
+      texture: {fileID: 21300000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+    - name: 4
+      texture: {fileID: 21300000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+      gunTexture: {fileID: 2800000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+    - name: 5
+      texture: {fileID: 21300000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+    - name: 6
+      texture: {fileID: 21300000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+  - name: 2
+    carTexture: {fileID: 21300000, guid: a35023c4b1b699a4591970a908787a9b, type: 3}
+    material: {fileID: 0}
+    guns:
+    - name: 1
+      texture: {fileID: 21300000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+      gunTexture: {fileID: 2800000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+    - name: 2
+      texture: {fileID: 21300000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+      gunTexture: {fileID: 2800000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+    - name: 3
+      texture: {fileID: 21300000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+    - name: 4
+      texture: {fileID: 21300000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+      gunTexture: {fileID: 2800000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+    - name: 5
+      texture: {fileID: 21300000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+    - name: 6
+      texture: {fileID: 21300000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+  - name: 3
+    carTexture: {fileID: 21300000, guid: be8807c3d4a590e44b807522a1258803, type: 3}
+    material: {fileID: 0}
+    guns:
+    - name: 1
+      texture: {fileID: 21300000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+      gunTexture: {fileID: 2800000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+    - name: 2
+      texture: {fileID: 21300000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+      gunTexture: {fileID: 2800000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+    - name: 3
+      texture: {fileID: 21300000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+    - name: 4
+      texture: {fileID: 21300000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+      gunTexture: {fileID: 2800000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+    - name: 5
+      texture: {fileID: 21300000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+    - name: 6
+      texture: {fileID: 21300000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+  - name: 4
+    carTexture: {fileID: 21300000, guid: 32ce901619cce144bb593a3f745ec657, type: 3}
+    material: {fileID: 0}
+    guns:
+    - name: 1
+      texture: {fileID: 21300000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+      gunTexture: {fileID: 2800000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+    - name: 2
+      texture: {fileID: 21300000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+      gunTexture: {fileID: 2800000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+    - name: 3
+      texture: {fileID: 21300000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+    - name: 4
+      texture: {fileID: 21300000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+      gunTexture: {fileID: 2800000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+    - name: 5
+      texture: {fileID: 21300000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+    - name: 6
+      texture: {fileID: 21300000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+  - name: 5
+    carTexture: {fileID: 21300000, guid: 0310d8148af5c9a4b8a0d478db18538f, type: 3}
+    material: {fileID: 0}
+    guns:
+    - name: 1
+      texture: {fileID: 21300000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+      gunTexture: {fileID: 2800000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+    - name: 2
+      texture: {fileID: 21300000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+      gunTexture: {fileID: 2800000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+    - name: 3
+      texture: {fileID: 21300000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+    - name: 4
+      texture: {fileID: 21300000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+      gunTexture: {fileID: 2800000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+    - name: 5
+      texture: {fileID: 21300000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+    - name: 6
+      texture: {fileID: 21300000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+  - name: 6
+    carTexture: {fileID: 21300000, guid: b7db630a4b6ca234eaf6d58c6aa8b82a, type: 3}
+    material: {fileID: 0}
+    guns:
+    - name: 1
+      texture: {fileID: 21300000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+      gunTexture: {fileID: 2800000, guid: 52309982edc5ed848a2cfa0e4eeedffb, type: 3}
+    - name: 2
+      texture: {fileID: 21300000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+      gunTexture: {fileID: 2800000, guid: cac00d02032ee8340a82e95980fa9d4f, type: 3}
+    - name: 3
+      texture: {fileID: 21300000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9d99ce263681182428e24912dd8f4fca, type: 3}
+    - name: 4
+      texture: {fileID: 21300000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+      gunTexture: {fileID: 2800000, guid: fe0a941e2564ff04b9501c334aad132c, type: 3}
+    - name: 5
+      texture: {fileID: 21300000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 3daa670680949484a8051fbe5d28094e, type: 3}
+    - name: 6
+      texture: {fileID: 21300000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}
+      gunTexture: {fileID: 2800000, guid: 9a3f5ceb689cc9e4086a637042cbf01e, type: 3}

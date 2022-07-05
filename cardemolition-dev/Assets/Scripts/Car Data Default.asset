@@ -13,11 +13,236 @@ MonoBehaviour:
   m_Name: Car Data Default
   m_EditorClassIdentifier: 
   carData:
-  - carName: 4X
+  - carName: B_car_1
     carDescription: 
     isUsed: 1
     isLocked: 0
     price: 0
+    carType: 2
+    cameraHeight: 8
+    cameraRadius: 27
+    barriers:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      barrierDamage: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 200
+    - name: 4
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 300
+    - name: 5
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 400
+    guns:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 100
+    missiles:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      missileDamage: 0
+      missileRange: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      missileDamage: 0
+      missileRange: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      missileDamage: 0
+      missileRange: 0
+      price: 200
+  - carName: AX_car1
+    carDescription: 
+    isUsed: 0
+    isLocked: 1
+    price: 200
+    carType: 1
+    cameraHeight: 8
+    cameraRadius: 27
+    barriers:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      barrierDamage: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 200
+    - name: 4
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 300
+    - name: 5
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 400
+    guns:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 100
+    missiles:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      missileDamage: 0
+      missileRange: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      missileDamage: 0
+      missileRange: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      missileDamage: 0
+      missileRange: 0
+      price: 200
+  - carName: Tos
+    carDescription: 
+    isUsed: 0
+    isLocked: 1
+    price: 200
+    carType: 5
+    cameraHeight: 8
+    cameraRadius: 27
+    barriers:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      barrierDamage: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 200
+    - name: 4
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 300
+    - name: 5
+      isUsed: 0
+      isLocked: 1
+      barrierDamage: 0
+      price: 400
+    guns:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      gunDamage: 0
+      gunRange: 0
+      fireRate: 0
+      price: 100
+    missiles:
+    - name: 1
+      isUsed: 1
+      isLocked: 0
+      missileDamage: 0
+      missileRange: 0
+      price: 0
+    - name: 2
+      isUsed: 0
+      isLocked: 1
+      missileDamage: 0
+      missileRange: 0
+      price: 100
+    - name: 3
+      isUsed: 0
+      isLocked: 1
+      missileDamage: 0
+      missileRange: 0
+      price: 200
+  - carName: 4X
+    carDescription: 
+    isUsed: 0
+    isLocked: 1
+    price: 200
     carType: 0
     cameraHeight: 8
     cameraRadius: 27
@@ -68,21 +293,7 @@ MonoBehaviour:
       gunDamage: 0
       gunRange: 0
       fireRate: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 400
+      price: 100
     missiles:
     - name: 1
       isUsed: 1
@@ -102,227 +313,13 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 400
-  - carName: AX_car1
-    carDescription: 
-    isUsed: 0
-    isLocked: 1
-    price: 1000
-    carType: 1
-    cameraHeight: 12
-    cameraRadius: 27
-    barriers:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      barrierDamage: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 400
-    guns:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 400
-    missiles:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      missileDamage: 0
-      missileRange: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 400
-  - carName: B_car_1
-    carDescription: 
-    isUsed: 0
-    isLocked: 1
-    price: 2000
-    carType: 2
-    cameraHeight: 12
-    cameraRadius: 27
-    barriers:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      barrierDamage: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 400
-    guns:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 400
-    missiles:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      missileDamage: 0
-      missileRange: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 400
   - carName: Buggy
     carDescription: 
     isUsed: 0
     isLocked: 1
-    price: 3000
+    price: 200
     carType: 3
-    cameraHeight: 12
+    cameraHeight: 8
     cameraRadius: 27
     barriers:
     - name: 1
@@ -371,21 +368,7 @@ MonoBehaviour:
       gunDamage: 0
       gunRange: 0
       fireRate: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 400
+      price: 100
     missiles:
     - name: 1
       isUsed: 1
@@ -405,25 +388,13 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 400
   - carName: Jip
     carDescription: 
     isUsed: 0
     isLocked: 1
-    price: 4000
+    price: 200
     carType: 4
-    cameraHeight: 12
+    cameraHeight: 8
     cameraRadius: 27
     barriers:
     - name: 1
@@ -472,21 +443,7 @@ MonoBehaviour:
       gunDamage: 0
       gunRange: 0
       fireRate: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 400
+      price: 100
     missiles:
     - name: 1
       isUsed: 1
@@ -506,117 +463,4 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 400
-  - carName: Tos
-    carDescription: 
-    isUsed: 0
-    isLocked: 1
-    price: 5000
-    carType: 5
-    cameraHeight: 12
-    cameraRadius: 27
-    barriers:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      barrierDamage: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      barrierDamage: 0
-      price: 400
-    guns:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      gunDamage: 0
-      gunRange: 0
-      fireRate: 0
-      price: 400
-    missiles:
-    - name: 1
-      isUsed: 1
-      isLocked: 0
-      missileDamage: 0
-      missileRange: 0
-      price: 0
-    - name: 2
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 100
-    - name: 3
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 200
-    - name: 4
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 300
-    - name: 5
-      isUsed: 0
-      isLocked: 1
-      missileDamage: 0
-      missileRange: 0
-      price: 400
   reward_Achieved: 0

@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private bl_IndicatorManager _bl_IndicatorManager;
+    private GameManager gameManager;
 
     [Header("PLAYER ATTRIBUTES")]    
     public GameObject[] playerCar;
@@ -23,9 +24,20 @@ public class LevelManager : MonoBehaviour
     public LevelsData levelsData;
     public CarData carData;
 
+    [Header("GAME STATS")]
+    private int totalEnemies;
+    private int remainingEnemies;
+
+    private void Awake()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
     private void Start()
     {
         levelSelected = levelsData.levelSelected;
+        totalEnemies = levelsData.TotalEnemies(levelSelected);
+        remainingEnemies = totalEnemies;
+
         SpawnPlayerCar();
         SpawanEnemyCar();
     }
@@ -76,6 +88,7 @@ public class LevelManager : MonoBehaviour
 
             _enemyCar.ActivateEnemyBarrier(levelsData.BarrierNumber(levelSelected,i),levelsData.HasBarrier(levelSelected,i));
             _enemyCar.ActivateEnemyGun(levelsData.GunNumber(levelSelected, i), levelsData.HasGun(levelSelected, i));
+            enemyCar.transform.GetComponent<DamageManager>().levelManager = this;
         }        
     }
     GameObject SetEnemyCar(CarType.Car_Type _car_Type)
@@ -107,4 +120,14 @@ public class LevelManager : MonoBehaviour
         return _enemyCar;
     }
 
-}   
+    #region GamePlay Functions
+    public void Exclude_Enemy()
+    {
+        remainingEnemies--;
+
+        if (remainingEnemies == 0)
+            gameManager.ShowGameComplete();
+    }
+    #endregion
+
+}

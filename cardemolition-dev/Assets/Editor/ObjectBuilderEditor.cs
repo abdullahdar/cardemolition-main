@@ -18,5 +18,13 @@ public class ObjectBuilderEditor : Editor
         {
             myScript.ResetData();
         }
+        if (GUILayout.Button("Set Player Position"))
+        {
+            myScript.SetPlayerPosition();
+        }
+        if (GUILayout.Button("Set Enemy Position"))
+        {
+            myScript.SetEnemyPosition();
+        }
     }
 }

@@ -27,7 +27,7 @@ public class DamageManager : MonoBehaviour
 
     public int smokeEmition;
 
-    Coroutine co;
+    public LevelManager levelManager;
 
     private void Awake()
     {
@@ -93,6 +93,7 @@ public class DamageManager : MonoBehaviour
             GetComponent<RCC_AICarController>().enabled = false;
             GetComponent<Enemy_Weapon_Controller>().enabled = false;
             //Destroy(this.gameObject, 1);
+            levelManager.Exclude_Enemy();
         }
         else if (character == Character.player)
         {        

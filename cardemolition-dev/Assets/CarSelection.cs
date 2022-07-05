@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CarSelection : MonoBehaviour
 {
-    [Header("CAR MENUS")]
+    [Header("CAR MENUS")]    
     public Canvas carPanel;
     public Canvas barrierPanel;
     public Canvas gunPanel;
@@ -47,8 +47,41 @@ public class CarSelection : MonoBehaviour
     [Header("MENU SELECTION")]
     public SelectedMenu selectedMenu;
 
+    [Header("MENU SELECTION SPRITES")]
+    public Button btnCarSelection;
+    public Button btnBarrierSelection;
+    public Button btnGunSelection;
+    public Button btnMissileSelection;
+    public Sprite carSelect;
+    public Sprite carUnselect;
+    public Sprite barrierSelect;
+    public Sprite barrierUnselect;
+    public Sprite gunSelect;
+    public Sprite gunUnselect;
+    public Sprite missileSelect;
+    public Sprite missileUnselect;
+
+    [Header("POP UP THINGS")]
+    public Canvas popUp;
+    public Image itemPopUpImage;
+    public GameObject btnBuy;
+    public GameObject btnUse;
+    public GameObject btnBegin;
+    public GameObject btnWatchVideo;
+    public GameObject coinBox;
+    public Text alertText;
+    public Text itemPrice;
+    public Text itemName;
+
+    [Header("LEVEL REQUIREMENT")]
+    private int requiredCar;
+    private int requiredGun;
+    private int requiredCoins;
+
+    [Header("DATA CLASSES")]
     public CarData carData;
     public LevelsData levelsData;
+    public CarTextures carTextures;
     public Text totalCoins;
 
     [System.Serializable]
@@ -62,11 +95,14 @@ public class CarSelection : MonoBehaviour
     }
     public List<Cars> cars;
 
-    private void Awake()
-    {
-        totalCoins.text = levelsData.coins.ToString()+" $";
-    }
+    private MenuManager menuManager;
+    private Reward_Video_Handler reward_Video_Handler;
 
+    private void Awake()
+    {        
+        menuManager = GetComponent<MenuManager>();
+        reward_Video_Handler = GetComponent<Reward_Video_Handler>();
+    }
     void Start()
     {       
         OpenSelectedCar(carData.Selected_Car());
@@ -96,6 +132,12 @@ public class CarSelection : MonoBehaviour
         OpenSelectedBarrier(carData.Selected_Barrier(selectedCar));
         OpenSelectedGun(carData.Selected_Gun(selectedCar));
         OpenSelectedMissile(carData.Selected_Missile(selectedCar));
+    }    
+    public void OnClick_Car(int selected)
+    {
+        cars[selectedCar].car.SetActive(false);
+        OpenSelectedCar(selected);
+        Show_Car_Stats();
     }
     void Show_Car_Stats()
     {
@@ -108,8 +150,8 @@ public class CarSelection : MonoBehaviour
     {
         if (levelsData.coins >= carData.GetPrice(selectedCar))
         {
-            levelsData.MinusCoins(carData.GetPrice(selectedCar));
-            totalCoins.text = levelsData.coins.ToString() + " $";
+            levelsData.MinusCoins(carData.GetPrice(selectedCar));            
+            menuManager.SetCoins();
 
             carData.SetLockedUnlocked(selectedCar);
             carData.Used(selectedCar);
@@ -123,7 +165,35 @@ public class CarSelection : MonoBehaviour
     }
     public void BeginCar()
     {
-        carData.Used(selectedCar);
+        carData.Used(selectedCar);        
+
+        if (AllRequirement_Completed())
+            menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
+        else
+            ShowPopUp();
+    }
+
+    bool AllRequirement_Completed()
+    {
+        bool levelRequirement = false;
+
+        requiredCar = levelsData.GetRequiredCar(levelsData.levelSelected);
+        requiredGun = levelsData.GetRequiredGun(levelsData.levelSelected);
+
+        if (selectedCar < requiredCar)
+        {
+            levelRequirement = false;
+            SetPopUp_Car();
+        }
+        else if (selectedCar == requiredCar && selectedGun < requiredGun)
+        {
+            SetPopUp_Gun();
+            levelRequirement = false;
+        }
+        else
+            levelRequirement = true;       
+
+        return levelRequirement;
     }
 
     #endregion
@@ -147,9 +217,14 @@ public class CarSelection : MonoBehaviour
     }
     void OpenSelectedBarrier(int selected)
     {
-        selectedBarrier = selected;
-        Debug.Log("selected barrier: "+selectedBarrier);
+        selectedBarrier = selected;        
         cars[selectedCar].barriers[selectedBarrier].enabled = true;
+    }
+    public void OnClick_Barrier(int selected)
+    {
+        cars[selectedCar].barriers[selectedBarrier].enabled = false;
+        OpenSelectedBarrier(selected);
+        Show_Barrier_Stats();      
     }
     void Show_Barrier_Stats()
     {                        
@@ -167,8 +242,8 @@ public class CarSelection : MonoBehaviour
     {
         if (levelsData.coins >= carData.Get_Barrier_Price(selectedCar, selectedBarrier))
         {
-            levelsData.MinusCoins(carData.Get_Barrier_Price(selectedCar, selectedBarrier));
-            totalCoins.text = levelsData.coins.ToString() + " $";
+            levelsData.MinusCoins(carData.Get_Barrier_Price(selectedCar, selectedBarrier));           
+            menuManager.SetCoins();
 
             carData.Set_Unlocked_Barrier(selectedCar, selectedBarrier);
             carData.Use_Barrier(selectedCar, selectedBarrier);
@@ -183,6 +258,11 @@ public class CarSelection : MonoBehaviour
     public void BeginBarrier()
     {
         carData.Use_Barrier(selectedCar, selectedBarrier);
+
+        if (AllRequirement_Completed())
+            menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
+        else
+            ShowPopUp();
     }
 
     #endregion
@@ -209,6 +289,12 @@ public class CarSelection : MonoBehaviour
         selectedGun = selected;
         cars[selectedCar].guns[selectedGun].enabled = true;
     }
+    public void OnClick_Gun(int selected)
+    {
+        cars[selectedCar].guns[selectedGun].enabled = false;
+        OpenSelectedGun(selected);
+        Show_Gun_Stats();
+    }
     void Show_Gun_Stats()
     {
         btnBeginGun.SetActive(!carData.IsGunLocked(selectedCar, selectedGun));
@@ -225,8 +311,8 @@ public class CarSelection : MonoBehaviour
     {
         if (levelsData.coins >= carData.Get_Gun_Price(selectedCar, selectedGun))
         {
-            levelsData.MinusCoins(carData.Get_Gun_Price(selectedCar, selectedGun));
-            totalCoins.text = levelsData.coins.ToString() + " $";
+            levelsData.MinusCoins(carData.Get_Gun_Price(selectedCar, selectedGun));        
+            menuManager.SetCoins();
 
             carData.Set_Unlocked_Gun(selectedCar, selectedGun);
             carData.Use_Gun(selectedCar, selectedGun);
@@ -241,6 +327,11 @@ public class CarSelection : MonoBehaviour
     public void BeginGun()
     {
         carData.Use_Gun(selectedCar, selectedGun);
+
+        if (AllRequirement_Completed())
+            menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
+        else
+            ShowPopUp();
     }
 
     #endregion
@@ -267,6 +358,13 @@ public class CarSelection : MonoBehaviour
         selectedMissile = selected;
         cars[selectedCar].missiles[selectedMissile].enabled = true;
     }
+    public void OnClick_Missile(int selected)
+    {
+        cars[selectedCar].missiles[selectedMissile].enabled = false;
+
+        OpenSelectedMissile(selected);
+        Show_Missile_Stats();
+    }
     void Show_Missile_Stats()
     {
         btnBeginMissile.SetActive(!carData.IsMissileLocked(selectedCar, selectedMissile));
@@ -283,8 +381,8 @@ public class CarSelection : MonoBehaviour
     {
         if (levelsData.coins >= carData.Get_Missile_Price(selectedCar, selectedMissile))
         {
-            levelsData.MinusCoins(carData.Get_Missile_Price(selectedCar, selectedMissile));
-            totalCoins.text = levelsData.coins.ToString() + " $";
+            levelsData.MinusCoins(carData.Get_Missile_Price(selectedCar, selectedMissile));           
+            menuManager.SetCoins();
 
             carData.Set_Unlocked_Missile(selectedCar, selectedMissile);
             carData.Use_Missile(selectedCar, selectedMissile);
@@ -299,6 +397,11 @@ public class CarSelection : MonoBehaviour
     public void BeginMissile()
     {
         carData.Use_Missile(selectedCar, selectedMissile);
+
+        if (AllRequirement_Completed())
+            menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
+        else
+            ShowPopUp();
     }
 
     #endregion
@@ -314,7 +417,7 @@ public class CarSelection : MonoBehaviour
     #region Open Selected Menu
     public void Open_Car_Menu()
     {
-        OpenMenu(SelectedMenu.carSelection);
+        OpenMenu(SelectedMenu.carSelection);      
     }
     public void Open_Barrier_Menu()
     {        
@@ -348,22 +451,26 @@ public class CarSelection : MonoBehaviour
             case SelectedMenu.carSelection:
                 carPanel.enabled = true;
                 selectedMenu = _selectedMenu;
-                Show_Car_Stats();
+                Show_Car_Stats();                
+                btnCarSelection.interactable = false;
                 break;
             case SelectedMenu.barrierSelection:
                 barrierPanel.enabled = true;
                 selectedMenu = _selectedMenu;
-                Show_Barrier_Stats();
+                Show_Barrier_Stats();                
+                btnBarrierSelection.interactable = false;
                 break;
             case SelectedMenu.gunSelection:
                 gunPanel.enabled = true;
                 selectedMenu = _selectedMenu;
-                Show_Gun_Stats();
+                Show_Gun_Stats();                
+                btnGunSelection.interactable = false;
                 break;
             case SelectedMenu.missileSelection:
                 missilePanel.enabled = true;
                 selectedMenu = _selectedMenu;
-                Show_Missile_Stats();
+                Show_Missile_Stats();                
+                btnMissileSelection.interactable = false;
                 break;
             case SelectedMenu.tyreSelection:
                 tyresPanel.enabled = true;
@@ -379,19 +486,23 @@ public class CarSelection : MonoBehaviour
         switch (selectedMenu)
         {
             case SelectedMenu.carSelection:
-                carPanel.enabled = false;
+                carPanel.enabled = false;               
+                btnCarSelection.interactable = true;
                 break;
             case SelectedMenu.barrierSelection:
                 barrierPanel.enabled = false;
-                Back_Barrier();
+                Back_Barrier();             
+                btnBarrierSelection.interactable = true;
                 break;
             case SelectedMenu.gunSelection:
                 gunPanel.enabled = false;
-                Back_Gun();
+                Back_Gun();                
+                btnGunSelection.interactable = true;
                 break;
             case SelectedMenu.missileSelection:
                 missilePanel.enabled = false;
-                Back_Missile();
+                Back_Missile();                
+                btnMissileSelection.interactable = true;
                 break;
             case SelectedMenu.tyreSelection:
                 tyresPanel.enabled = false;
@@ -400,6 +511,157 @@ public class CarSelection : MonoBehaviour
                 break;
         }
     }
-   
+
+    #endregion
+
+    #region PopUp
+
+    void ShowPopUp()
+    {
+        popUp.enabled = true;
+    }
+    void SetPopUp_Car()
+    {
+        itemPopUpImage.sprite = carTextures.GetCarTexture(requiredCar);
+        btnBuy.SetActive(carData.IsLocked(requiredCar));
+        btnBuy.GetComponent<Button>().onClick.AddListener(BuyCar);
+        btnUse.SetActive(!carData.IsLocked(requiredCar));
+        btnUse.GetComponent<Button>().onClick.AddListener(UseCar);
+        alertText.text = "You Need To Upgrade Car To Play Next Level !";
+        itemPrice.text = carData.GetPrice(requiredCar).ToString();
+        itemName.text = carData.Get_Car_Name(requiredCar);
+    }
+    void SetPopUp_Gun()
+    {
+        itemPopUpImage.sprite = carTextures.GetGunTexture(selectedCar,requiredGun);
+        btnBuy.SetActive(carData.IsGunLocked(selectedCar,requiredGun));
+        btnBuy.GetComponent<Button>().onClick.AddListener(BuyGun);
+        btnUse.SetActive(!carData.IsGunLocked(selectedCar, requiredGun));
+        btnUse.GetComponent<Button>().onClick.AddListener(UseGun);
+        alertText.text = "You Need To Upgrade Gun To Play Next Level !";
+        itemPrice.text = carData.Get_Gun_Price(selectedCar, requiredGun).ToString();
+        itemName.text = carData.Get_Gun_Name(selectedCar, requiredGun);
+    }
+    public void UseCar()
+    {
+        carData.Used(requiredCar);        
+
+        alertText.text = "CAR EQUIPPED";
+        coinBox.SetActive(false);
+
+        btnUse.SetActive(!carData.isUsed(requiredCar));
+        btnBegin.SetActive(carData.isUsed(requiredCar));
+
+        cars[selectedCar].car.SetActive(false);  //<= Deactivate Previous Car
+        selectedCar = carData.Selected_Car();
+
+        OpenSelectedCar(selectedCar);
+        Show_Car_Stats();       
+    }
+    public void BuyCar()
+    {
+        requiredCoins = carData.GetPrice(requiredCar);
+
+        if (levelsData.coins >= requiredCoins)
+        {            
+            levelsData.MinusCoins(requiredCoins);      
+            menuManager.SetCoins();
+
+            carData.SetLockedUnlocked(requiredCar);
+            carData.Used(requiredCar);
+
+            btnBegin.SetActive(!carData.IsLocked(requiredCar));
+            btnBuy.SetActive(carData.IsLocked(requiredCar));
+            coinBox.SetActive(false);
+
+            alertText.text = "PURCHASED SUCCESSFULLY";
+
+            cars[selectedCar].car.SetActive(false);  //<= Deactivate Previous Car
+            selectedCar = carData.Selected_Car();
+
+            OpenSelectedCar(selectedCar);
+            Show_Car_Stats();
+        }
+        else
+        {
+            btnBegin.SetActive(false);
+            btnBuy.SetActive(false);
+            btnWatchVideo.SetActive(true);
+            btnWatchVideo.GetComponent<Button>().onClick.AddListener(WatchVideo_Car);
+            alertText.text = "NOT ENOUGH COINS";
+        }
+    }
+    public void UseGun()
+    {
+        carData.Use_Gun(selectedCar, requiredGun);
+
+        alertText.text = "GUN EQUIPPED";
+        coinBox.SetActive(false);
+
+        btnUse.SetActive(!carData.IsUsedGun(selectedCar, requiredGun));
+        btnBegin.SetActive(carData.IsUsedGun(selectedCar, requiredGun));
+
+        cars[selectedCar].guns[selectedGun].enabled = false;  //<= Deactivate Previous Gun
+        selectedGun = carData.Selected_Gun(selectedCar);
+
+        OpenSelectedGun(selectedGun);
+        Show_Gun_Stats();
+    }
+    public void BuyGun()
+    {
+        requiredCoins = carData.Get_Gun_Price(selectedCar,requiredGun);
+
+        if (levelsData.coins >= requiredCoins)
+        {
+            levelsData.MinusCoins(requiredCoins);          
+            menuManager.SetCoins();
+
+            carData.Set_Unlocked_Gun(selectedCar,requiredGun);
+            carData.Use_Gun(selectedCar, requiredGun);
+
+            btnBegin.SetActive(!carData.IsGunLocked(selectedCar, requiredGun));
+            btnBuy.SetActive(carData.IsGunLocked(selectedCar, requiredGun));
+            coinBox.SetActive(false);
+
+            alertText.text = "PURCHASED SUCCESSFULLY";
+
+            cars[selectedCar].guns[selectedGun].enabled = false;  //<= Deactivate Previous Gun
+            selectedGun = carData.Selected_Gun(selectedCar);
+
+            OpenSelectedGun(selectedGun);
+            Show_Gun_Stats();
+        }
+        else
+        {
+            btnBegin.SetActive(false);
+            btnBuy.SetActive(false);
+            btnWatchVideo.SetActive(true);
+            btnWatchVideo.GetComponent<Button>().onClick.AddListener(WatchVideo_Gun);
+            alertText.text = "NOT ENOUGH COINS";
+        }
+    }
+    public void Skip_PopUp()
+    {
+        menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
+    }
+    public void Disable_PopUp()
+    {
+        btnBuy.GetComponent<Button>().onClick.RemoveAllListeners();
+        btnUse.GetComponent<Button>().onClick.RemoveAllListeners();
+        btnWatchVideo.GetComponent<Button>().onClick.RemoveAllListeners();
+        popUp.enabled = false;
+    }
+    public void WatchVideo_Car()
+    {
+        reward_Video_Handler.Watch_Video(requiredCoins, Reward_Video_Handler.RewardType.carReward);       
+        btnWatchVideo.SetActive(false);
+        Disable_PopUp();
+    }
+    public void WatchVideo_Gun()
+    {
+        reward_Video_Handler.Watch_Video(requiredCoins, Reward_Video_Handler.RewardType.gunReward);
+        Disable_PopUp();
+        btnWatchVideo.SetActive(false);
+    }
     #endregion
 }

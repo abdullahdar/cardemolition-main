@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/MainMenu.unity
+    guid: ea331618c32220b4cb77ba0aa4085d5a
+  - enabled: 1
+    path: Assets/Scenes/Stadium 1.unity
+    guid: e9d7b0be79ce6b0459e36940ff99e63c
+  - enabled: 1
+    path: Assets/Scenes/Stadium 2.unity
+    guid: 88c17a385d4515e4c91147933413c596
+  - enabled: 1
+    path: Assets/Scenes/Stadium 3.unity
+    guid: 284cc7373f45db14db13169e30e298c0
   m_configObjects: {}
