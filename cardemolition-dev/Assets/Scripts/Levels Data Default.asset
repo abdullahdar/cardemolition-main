@@ -26,7 +26,7 @@ MonoBehaviour:
     startRotation: {x: -0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
       spawnPoint: {x: -324, y: 2.68, z: 355}
       hasBarrier: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 2
-      carType: 5
+      carType: 1
       chaseRange: 100
       spawnPoint: {x: 314, y: 2.68, z: 355}
       hasBarrier: 1
@@ -68,9 +68,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -508.0001, y: 4.8, z: 171.0001}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -83,40 +83,10 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 2
-      carType: 1
+      carType: 0
       chaseRange: 100
-      spawnPoint: {x: -156, y: 4.8, z: -102}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
-      barrierNumber: 0
-      barrierDamage: 50
-      hasGun: 1
-      gunNumber: 0
-      gunDamage: 50
-      fireRate: 0.5
-      gunRange: 20
-      hasMissile: 1
-      missileNumber: 0
-      missileDamage: 50
-    - carNo: 3
-      carType: 4
-      chaseRange: 100
-      spawnPoint: {x: 246.0001, y: 4.8, z: 158.0001}
-      hasBarrier: 1
-      barrierNumber: 0
-      barrierDamage: 50
-      hasGun: 1
-      gunNumber: 0
-      gunDamage: 50
-      fireRate: 0.5
-      gunRange: 20
-      hasMissile: 1
-      missileNumber: 0
-      missileDamage: 50
-    - carNo: 4
-      carType: 3
-      chaseRange: 100
-      spawnPoint: {x: 646.0002, y: 4.8, z: -15.00003}
-      hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
       hasGun: 1
@@ -140,9 +110,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -157,7 +127,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -170,25 +140,10 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
-      barrierNumber: 0
-      barrierDamage: 50
-      hasGun: 1
-      gunNumber: 0
-      gunDamage: 50
-      fireRate: 0.5
-      gunRange: 20
-      hasMissile: 1
-      missileNumber: 0
-      missileDamage: 50
-    - carNo: 4
-      carType: 3
-      chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
-      hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
       hasGun: 1
@@ -214,7 +169,7 @@ MonoBehaviour:
     - carNo: 1
       carType: 0
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -345, y: 2.68, z: -311}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -227,9 +182,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 2
-      carType: 1
+      carType: 3
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 399, y: 2.68, z: -301}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -244,23 +199,8 @@ MonoBehaviour:
     - carNo: 3
       carType: 4
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -7, y: 2.68, z: 341}
       hasBarrier: 1
-      barrierNumber: 0
-      barrierDamage: 50
-      hasGun: 1
-      gunNumber: 0
-      gunDamage: 50
-      fireRate: 0.5
-      gunRange: 20
-      hasMissile: 1
-      missileNumber: 0
-      missileDamage: 50
-    - carNo: 4
-      carType: 3
-      chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
-      hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
       hasGun: 1
@@ -284,9 +224,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -299,9 +239,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 2
-      carType: 1
+      carType: 0
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -314,9 +254,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 3
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -329,9 +269,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
-      carType: 3
+      carType: 4
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -256, y: 0.012689067, z: 250.99997}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -356,9 +296,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: 0, y: 0, z: 260}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -373,7 +313,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 0, y: 0, z: -568}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -386,9 +326,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -287, y: 0, z: -135}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -401,9 +341,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
-      carType: 3
+      carType: 0
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: 328, y: 0, z: -135}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -428,9 +368,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -7, y: 2.68, z: 341}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -445,7 +385,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -7, y: 2.68, z: 341}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -458,9 +398,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -7, y: 2.68, z: 341}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -473,9 +413,24 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -7, y: 2.68, z: 341}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -7, y: 2.68, z: 341}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -500,9 +455,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 1
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -13, y: 0.012689067, z: 420}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -515,9 +470,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 2
-      carType: 1
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 406, y: 0.012689067, z: -36}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -530,9 +485,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 0
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -3, y: 0.012689067, z: -597}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -547,7 +502,22 @@ MonoBehaviour:
     - carNo: 4
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -425, y: 0.012689067, z: -39}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: -371, y: 0.012689067, z: 488}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -572,9 +542,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -294, y: 0, z: 315}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -589,7 +559,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 321, y: 0, z: 315}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -602,9 +572,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -345, y: 0, z: -141}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -617,9 +587,39 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: 361, y: 0, z: -141}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -291, y: 0, z: -577}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 314, y: 0, z: -577}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -644,9 +644,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -321, y: 2.68, z: 486}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -661,7 +661,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 338, y: 2.68, z: 486}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -674,9 +674,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -443, y: 2.68, z: 13}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -689,9 +689,39 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: 395, y: 2.68, z: 13}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -372, y: 2.68, z: -484}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 385, y: 2.68, z: -484}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -716,9 +746,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: 393, y: 0.012689067, z: -580}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -733,7 +763,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -384, y: 0.012689067, z: -580}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -746,9 +776,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: 420, y: 0.012689067, z: -49}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -761,9 +791,54 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -408, y: 0.012689067, z: -49}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -408, y: 0.012689067, z: 441}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 383, y: 0.012689067, z: 441}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -6, y: 0.012689067, z: 441}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -788,9 +863,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: 338, y: 0, z: 332}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -805,7 +880,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -335, y: 0, z: 332}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -818,9 +893,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -335, y: 0, z: -138}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -833,9 +908,54 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: 402, y: 0, z: -138}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: 402, y: 0, z: -672}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: -362, y: 0, z: -672}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 2
+      chaseRange: 100
+      spawnPoint: {x: -7, y: 0, z: -807}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -860,9 +980,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -480, y: 2.68, z: -11}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -877,7 +997,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 429, y: 2.68, z: -11}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -890,9 +1010,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -382, y: 2.68, z: 516}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -905,9 +1025,69 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: 378, y: 2.68, z: 516}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -423, y: 2.68, z: -569}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 422, y: 2.68, z: -569}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 1
+      chaseRange: 100
+      spawnPoint: {x: -0, y: 2.68, z: 688}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 8
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -0, y: 2.68, z: -762}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -932,9 +1112,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -402, y: 0.012689067, z: -627}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -949,7 +1129,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 372, y: 0.012689067, z: -627}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -962,9 +1142,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: 372, y: 0.012689067, z: -56}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -977,9 +1157,69 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -416, y: 0.012689067, z: -56}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -402, y: 0.012689067, z: 468}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 358, y: 0.012689067, z: 468}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 1
+      chaseRange: 100
+      spawnPoint: {x: 3, y: 0.012689067, z: 465}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 8
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 3, y: 0.012689067, z: -603}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -1004,9 +1244,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -7, y: 0, z: 464}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1021,7 +1261,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -7, y: 0, z: -766}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1034,9 +1274,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: 395, y: 0, z: -124}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1049,9 +1289,84 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -362, y: 0, z: -124}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -332, y: 0, z: 336}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 341, y: 0, z: 336}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 5
+      chaseRange: 100
+      spawnPoint: {x: 341, y: 0, z: -627}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 8
+      carType: 3
+      chaseRange: 100
+      spawnPoint: {x: -379, y: 0, z: -627}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 9
+      carType: 2
+      chaseRange: 100
+      spawnPoint: {x: -11, y: 0, z: -397}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -1076,9 +1391,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -355, y: 2.68, z: 512}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1093,7 +1408,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: 382, y: 2.68, z: 512}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1106,9 +1421,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: 382, y: 2.68, z: -573}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1121,9 +1436,84 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -402, y: 2.68, z: -573}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: -402, y: 2.68, z: -19}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 446, y: 2.68, z: -19}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 2
+      chaseRange: 100
+      spawnPoint: {x: 7, y: 2.68, z: 650}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 8
+      carType: 1
+      chaseRange: 100
+      spawnPoint: {x: 7, y: 2.68, z: -665}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 9
+      carType: 5
+      chaseRange: 100
+      spawnPoint: {x: 7, y: 2.68, z: 390}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -1148,9 +1538,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -409, y: 0.012689067, z: 485}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1165,7 +1555,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -429, y: 0.012689067, z: 201}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1178,9 +1568,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -429, y: 0.012689067, z: -164}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1193,9 +1583,99 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -429, y: 0.012689067, z: -478}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: 399, y: 0.012689067, z: 451}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 399, y: 0.012689067, z: 225}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 2
+      chaseRange: 100
+      spawnPoint: {x: 399, y: 0.012689067, z: -164}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 8
+      carType: 1
+      chaseRange: 100
+      spawnPoint: {x: 399, y: 0.012689067, z: -458}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 9
+      carType: 5
+      chaseRange: 100
+      spawnPoint: {x: -7, y: 0.012689067, z: -668}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 10
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -7, y: 0.012689067, z: 596}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50
@@ -1220,9 +1700,9 @@ MonoBehaviour:
     startRotation: {x: 0, y: 0, z: 0}
     enemyCars:
     - carNo: 1
-      carType: 0
+      carType: 2
       chaseRange: 100
-      spawnPoint: {x: -277, y: 4, z: 374}
+      spawnPoint: {x: -366, y: 0, z: 326}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1237,7 +1717,7 @@ MonoBehaviour:
     - carNo: 2
       carType: 1
       chaseRange: 100
-      spawnPoint: {x: 317, y: 4, z: 374}
+      spawnPoint: {x: -366, y: 0, z: 76}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1250,9 +1730,9 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 3
-      carType: 4
+      carType: 5
       chaseRange: 100
-      spawnPoint: {x: -363, y: 4, z: -3}
+      spawnPoint: {x: -366, y: 0, z: -313}
       hasBarrier: 1
       barrierNumber: 0
       barrierDamage: 50
@@ -1265,9 +1745,99 @@ MonoBehaviour:
       missileNumber: 0
       missileDamage: 50
     - carNo: 4
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -366, y: 0, z: -563}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 5
       carType: 3
       chaseRange: 100
-      spawnPoint: {x: 382, y: 4, z: -3}
+      spawnPoint: {x: 327, y: 0, z: 343}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 6
+      carType: 4
+      chaseRange: 100
+      spawnPoint: {x: 327, y: 0, z: 103}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 7
+      carType: 1
+      chaseRange: 100
+      spawnPoint: {x: 327, y: 0, z: -235}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 8
+      carType: 5
+      chaseRange: 100
+      spawnPoint: {x: 327, y: 0, z: -580}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 9
+      carType: 0
+      chaseRange: 100
+      spawnPoint: {x: -4, y: 0, z: -766}
+      hasBarrier: 0
+      barrierNumber: 0
+      barrierDamage: 50
+      hasGun: 1
+      gunNumber: 0
+      gunDamage: 50
+      fireRate: 0.5
+      gunRange: 20
+      hasMissile: 1
+      missileNumber: 0
+      missileDamage: 50
+    - carNo: 10
+      carType: 3
+      chaseRange: 100
+      spawnPoint: {x: -4, y: 0, z: 485}
       hasBarrier: 0
       barrierNumber: 0
       barrierDamage: 50

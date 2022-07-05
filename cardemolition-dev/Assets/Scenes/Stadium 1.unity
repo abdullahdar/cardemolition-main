@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2041645472}
-  m_IndirectSpecularColor: {r: 0.15202957, g: 0.16833717, b: 0.20317075, a: 1}
+  m_IndirectSpecularColor: {r: 0.15202978, g: 0.1683375, b: 0.20317096, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1590,11 +1590,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826575285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 314, y: 2.68, z: 355}
+  m_LocalPosition: {x: 7, y: 2.68, z: 390}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &843753738
 PrefabInstance:
@@ -3160,12 +3160,12 @@ PrefabInstance:
     - target: {fileID: 6027795340667886981, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6027795340667886981, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 345
       objectReference: {fileID: 0}
     - target: {fileID: 6027795340667886981, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
@@ -3175,7 +3175,7 @@ PrefabInstance:
     - target: {fileID: 6027795340667886981, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -476
       objectReference: {fileID: 0}
     - target: {fileID: 6027795340667886981, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
@@ -3215,12 +3215,12 @@ PrefabInstance:
     - target: {fileID: 6595125581878879934, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
       propertyPath: enemyNumber
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6595125581878879934, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
       propertyPath: levelNumber
-      value: 1
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6595125581878879934, guid: f7f60190a3c19c843a2648830440774d,
         type: 3}
