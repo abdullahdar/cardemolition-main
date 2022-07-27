@@ -30,4 +30,9 @@ public class LevelSelection : MonoBehaviour
         levelsData.levelSelected = levelNumber - 1;
         menuManager.Show_CarSelection();       
     }
+    public void SelectLevel()
+    {
+        levelsData.levelSelected = levelsData.GetLastOpenedLevel();
+        menuManager.Show_CarSelection();
+    }
 }

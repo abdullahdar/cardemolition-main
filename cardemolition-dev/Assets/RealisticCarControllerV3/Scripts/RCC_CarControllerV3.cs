@@ -1006,7 +1006,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 					else
 						brakeInput = 0f;
 				}
-
+				
 				steerInput = inputs.steerInput;
 				boostInput = inputs.boostInput;
 				handbrakeInput = inputs.handbrakeInput;
@@ -1014,8 +1014,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 				if(!useAutomaticClutch)
 					clutchInput = inputs.clutchInput;
 
-                GetExternalInputs();
-
+                GetExternalInputs();				
 			}
 
 		} else if (!externalController) {
@@ -1034,7 +1033,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 		if (changingGear || cutGas)
 			throttleInput = 0f;
 
-		if (!useNOS || NoS < 5 || throttleInput < .75f)
+		if (!useNOS || NoS < 5/* || throttleInput < .75f*/)
 			boostInput = 0f;
 
 		if (useCounterSteering)
@@ -1390,8 +1389,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 	public bool turnPressed = false;
 
 	public void Turn()
-    {
-		Debug.Log("Turn");
+    {		
 		if (isGrounded)
 		{
 			//turnPressed = true;
@@ -2040,25 +2038,41 @@ public class RCC_CarControllerV3 : RCC_Core {
 	/// NOS.
 	/// </summary>
 	private void NOS(){
-
-		if(!useNOS)
+		
+		if (!useNOS)
 			return;
-
-		if(!NOSSound)
+		
+		if (!NOSSound)
 			NOSSound = NewAudioSource(RCCSettings.audioMixer, gameObject, exhaustSoundPosition, "NOS Sound AudioSource", 5f, 10f, .5f, NOSClip, true, false, false);
 
 		if(!blowSound)
 			blowSound = NewAudioSource(RCCSettings.audioMixer, gameObject, exhaustSoundPosition, "NOS Blow", 1f, 10f, .5f, null, false, false, false);
 
-		if(boostInput >= .8f && throttleInput >= .8f && NoS > 5){
+		if(boostInput >= .8f && NoS > 5 && engineRunning == true)//if(boostInput >= .8f && throttleInput >= .8f && NoS > 5)
+		{
 			
+			if (speed < 5f && isGrounded)
+			{				
+				rigid.AddForce(1000.5f * transform.forward, ForceMode.Acceleration);
+			}
+			else
+			{				
+				if (speed < maxspeed && isGrounded)
+				{
+					Vector3 v3Force = 30.5f * transform.forward;
+					rigid.AddForce(v3Force, ForceMode.Acceleration);
+				}
+
+			}
+
 			NoS -= NoSConsumption * Time.fixedDeltaTime;
 			NoSRegenerateTime = 0f;
-
-			if(!NOSSound.isPlaying)
-				NOSSound.Play();
 			
-		}else{
+			if (!NOSSound.isPlaying)
+				NOSSound.Play();
+
+		}
+		else{
 			
 			if(NoS < 100 && NoSRegenerateTime > 3)
 				NoS += (NoSConsumption / 1.5f) * Time.fixedDeltaTime;
@@ -2272,7 +2286,7 @@ public class RCC_CarControllerV3 : RCC_Core {
 		{
 			playerScript.Take_Damage(10,this.gameObject);
 		}
-		else if (collision.collider.gameObject.tag == "Player" || collision.collider.gameObject.tag == "Enemy")
+		else if (collision.collider.gameObject.tag == "Player" || collision.collider.gameObject.tag == "Enemy" || collision.collider.gameObject.tag == "Malang")
 		{
 			playerScript.Take_Damage(5,this.gameObject);
 		}

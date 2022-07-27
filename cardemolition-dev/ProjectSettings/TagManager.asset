@@ -8,6 +8,7 @@ TagManager:
   - Tornado
   - Buffer
   - Shield
+  - Malang
   layers:
   - Default
   - TransparentFX

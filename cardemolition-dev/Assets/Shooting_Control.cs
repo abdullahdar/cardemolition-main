@@ -46,14 +46,15 @@ public class Shooting_Control : MonoBehaviour
     /// <summary>
     /// BoxCast Things
     /// </summary>
-    float m_MaxDistance = 2200f;
+    //float m_MaxDistance = /*2200f*/200f;
     bool m_HitDetect;
 
     float rotationX = 0;
     float rotationY = 0;
-    Vector3 localScale = new Vector3(0f, 80f, 0f);
+    Vector3 localScale = new Vector3(0f, 80f, 0f); //=> was 80
     RaycastHit m_Hit;
-    private Transform enemyTransform;    
+    private Transform enemyTransform;
+    public Vector3 defaultScopePosition;
 
     [Header("MISSILE")]
     public GameObject missilePrefab;
@@ -73,12 +74,12 @@ public class Shooting_Control : MonoBehaviour
         if (RCC_SceneManager.Instance.activeMainCamera)
         {
             ////BoxCast Attributes
-            m_HitDetect = Physics.BoxCast(start_RayPoint.position, localScale / 2, start_RayPoint.forward, out m_Hit, start_RayPoint.rotation, m_MaxDistance);
+            m_HitDetect = Physics.BoxCast(start_RayPoint.position, localScale / 2, start_RayPoint.forward, out m_Hit, start_RayPoint.rotation, range);
            
             if (m_HitDetect)           
             {
                 //Output the name of the Collider your Box hit                
-                if (m_Hit.transform.tag == "Enemy")
+                if (m_Hit.transform.tag == "Enemy" || m_Hit.transform.tag == "Malang")
                 {                    
                     aimImage.color = Color.red;
                     focusOnEnemy = true;
@@ -88,13 +89,13 @@ public class Shooting_Control : MonoBehaviour
                 else
                 {                    
                     aimImage.color = Color.black;                    
-                }
+                }                
             }
             else
             {       
-                aimImage.color = Color.black;
+                aimImage.color = Color.black;                
             }
-
+           
             if(focusOnEnemy && enemyTransform)
             {             
                 Vector3 right = RCC_SceneManager.Instance.activeMainCamera.transform.TransformDirection(Vector3.right);
@@ -118,29 +119,34 @@ public class Shooting_Control : MonoBehaviour
             {                
                 weapon.transform.rotation = Quaternion.Euler(0, RCC_SceneManager.Instance.activeMainCamera.transform.eulerAngles.y, 0f);                
             }            
-            
+
             RaycastHit hit;
             
             if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
-            {                
+            {               
                 Vector2 pos = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
-                aim.position = pos;                
+                aim.position = pos;
+                //aimImage.color = Color.red;
 
-                 if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+                if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
                  {
                      nextTimeToFire = Time.time + 1f / fireRate;
                      Shoot(hit);
                  }         
                 if (ControlFreak2.CF2Input.GetButton("Fire2") && Time.time >= nextTimeToMissile)
-                {
-                    Debug.Log("Missile");
+                {                   
                     nextTimeToMissile = Time.time + 1f / missileFireRate;                    
                     Missile(hit);
                 }
                 else
                 {                    
                     missileImage.fillAmount = 1-((nextTimeToMissile - Time.time) / 4 );
-                }
+                }               
+            }
+            else
+            {                
+                aim.localPosition = defaultScopePosition;
+                //aimImage.color = Color.black;
             }
             
         }
@@ -207,9 +213,9 @@ public class Shooting_Control : MonoBehaviour
         else
         {
             //Draw a Ray forward from GameObject toward the maximum distance
-            Gizmos.DrawRay(start_RayPoint.position, start_RayPoint.forward * m_MaxDistance);
+            Gizmos.DrawRay(start_RayPoint.position, start_RayPoint.forward * range);
             //Draw a cube at the maximum distance
-            Gizmos.DrawWireCube(start_RayPoint.position + start_RayPoint.forward * m_MaxDistance, transform.localScale);
+            Gizmos.DrawWireCube(start_RayPoint.position + start_RayPoint.forward * range, transform.localScale);
         }
     }
 
@@ -231,5 +237,10 @@ public class Shooting_Control : MonoBehaviour
         Instantiate(impactEffect, Hit.point, Quaternion.LookRotation(Hit.normal));
 
         Destroy(Trail.gameObject, Trail.time);
+    }
+
+    public void SetRange(float _range)
+    {
+        range = _range;
     }
 }

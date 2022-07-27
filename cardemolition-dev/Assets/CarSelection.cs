@@ -16,24 +16,28 @@ public class CarSelection : MonoBehaviour
     public int selectedCar = 0;
     public GameObject btnBeginCar;
     public GameObject btnPurchaseCar;
+    public GameObject[] carIconList;
     public Text carPrice;
 
     [Header("BARRIER SELECTION")]
     public int selectedBarrier = 0;
     public GameObject btnBeginBarrier;
     public GameObject btnPurchaseBarrier;
+    public GameObject[] barrierIconList;
     public Text barrierPrice;    
 
     [Header("GUN SELECTION")]
     public int selectedGun = 0;
     public GameObject btnBeginGun;
     public GameObject btnPurchaseGun;
+    public GameObject[] gunIconList;
     public Text gunPrice;
 
     [Header("MISSILE SELECTION")]
     public int selectedMissile = 0;
     public GameObject btnBeginMissile;
     public GameObject btnPurchaseMissile;
+    public GameObject[] missileIconList;
     public Text missilePrice;
     public enum SelectedMenu
     {
@@ -145,6 +149,7 @@ public class CarSelection : MonoBehaviour
         btnPurchaseCar.SetActive(carData.IsLocked(selectedCar));
         carPrice.text = carData.GetPrice(selectedCar).ToString()+" $";
         carPrice.enabled = carData.IsLocked(selectedCar);
+        CarIconList_Status();
     }
     public void PurchaseCar()
     {
@@ -196,6 +201,23 @@ public class CarSelection : MonoBehaviour
         return levelRequirement;
     }
 
+    void CarIconList_Status()
+    {
+        for(int i = 0; i < carIconList.Length; i++)
+        {
+            if (carData.carData[i].isLocked)
+            {
+                carIconList[i].transform.GetComponent<Image>().color = Color.gray;
+                carIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                carIconList[i].transform.GetComponent<Image>().color = Color.white;
+                carIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = false;
+            }
+        }
+    }
+
     #endregion
 
     #region Barrier Selection
@@ -232,6 +254,7 @@ public class CarSelection : MonoBehaviour
         btnPurchaseBarrier.SetActive(carData.IsBarrierLocked(selectedCar, selectedBarrier));
         barrierPrice.text = carData.Get_Barrier_Price(selectedCar, selectedBarrier).ToString() + " $";
         barrierPrice.enabled = carData.IsBarrierLocked(selectedCar,selectedBarrier);
+        BarrierIconList_Status();
     }
     public void Back_Barrier()
     {
@@ -263,6 +286,22 @@ public class CarSelection : MonoBehaviour
             menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
         else
             ShowPopUp();
+    }
+    void BarrierIconList_Status()
+    {
+        for (int i = 0; i < barrierIconList.Length; i++)
+        {
+            if (carData.IsBarrierLocked(selectedCar,i))
+            {
+                barrierIconList[i].transform.GetComponent<Image>().color = Color.gray;
+                barrierIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                barrierIconList[i].transform.GetComponent<Image>().color = Color.white;
+                barrierIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = false;
+            }
+        }
     }
 
     #endregion
@@ -301,6 +340,7 @@ public class CarSelection : MonoBehaviour
         btnPurchaseGun.SetActive(carData.IsGunLocked(selectedCar, selectedGun));
         gunPrice.text = carData.Get_Gun_Price(selectedCar, selectedGun).ToString() + " $";
         gunPrice.enabled = carData.IsGunLocked(selectedCar, selectedGun);
+        GunIconList_Status();
     }
     public void Back_Gun()
     {
@@ -332,6 +372,22 @@ public class CarSelection : MonoBehaviour
             menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
         else
             ShowPopUp();
+    }
+    void GunIconList_Status()
+    {
+        for (int i = 0; i < gunIconList.Length; i++)
+        {
+            if (carData.IsGunLocked(selectedCar, i))
+            {
+                gunIconList[i].transform.GetComponent<Image>().color = Color.gray;
+                gunIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                gunIconList[i].transform.GetComponent<Image>().color = Color.white;
+                gunIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = false;
+            }
+        }
     }
 
     #endregion
@@ -371,6 +427,7 @@ public class CarSelection : MonoBehaviour
         btnPurchaseMissile.SetActive(carData.IsMissileLocked(selectedCar, selectedMissile));
         missilePrice.text = carData.Get_Missile_Price(selectedCar, selectedMissile).ToString() + " $";
         missilePrice.enabled = carData.IsMissileLocked(selectedCar, selectedMissile);
+        MissileIconList_Status();
     }
     public void Back_Missile()
     {
@@ -402,6 +459,22 @@ public class CarSelection : MonoBehaviour
             menuManager.Show_Loading(levelsData.GetCurrentSceneIndex());
         else
             ShowPopUp();
+    }
+    void MissileIconList_Status()
+    {
+        for (int i = 0; i < missileIconList.Length; i++)
+        {
+            if (carData.IsMissileLocked(selectedCar, i))
+            {
+                missileIconList[i].transform.GetComponent<Image>().color = Color.gray;
+                missileIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                missileIconList[i].transform.GetComponent<Image>().color = Color.white;
+                missileIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = false;
+            }
+        }
     }
 
     #endregion
@@ -519,6 +592,7 @@ public class CarSelection : MonoBehaviour
     void ShowPopUp()
     {
         popUp.enabled = true;
+        menuManager.cars.SetActive(false);
     }
     void SetPopUp_Car()
     {
@@ -650,6 +724,7 @@ public class CarSelection : MonoBehaviour
         btnUse.GetComponent<Button>().onClick.RemoveAllListeners();
         btnWatchVideo.GetComponent<Button>().onClick.RemoveAllListeners();
         popUp.enabled = false;
+        menuManager.cars.SetActive(true);
     }
     public void WatchVideo_Car()
     {

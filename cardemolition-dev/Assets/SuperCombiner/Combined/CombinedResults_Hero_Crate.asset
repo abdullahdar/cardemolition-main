@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7375f37a1ffc945b478bd41f115dab, type: 3}
+  m_Name: CombinedResults_Hero_Crate
+  m_EditorClassIdentifier: 
+  _showCombinedMaterials: 0
+  _showCombinedMeshes: 0
+  _showLogs: 0
+  _logs: ' DEBUG: [SuperCombiner] Start processing...
+
+    DEBUG: [SuperCombiner]
+    Processing ''Crate_1''...
+
+    DEBUG: [SuperCombiner] Processing ''Crate_inside''...
+
+    DEBUG:
+    [SuperCombiner] Processing ''Crate_lid''...
+
+    DEBUG: [SuperCombiner] Processing
+    ''Crate_lid''...
+
+    DEBUG: [SuperCombiner] Successfully combined game objects!
+
+    Execution
+    time is 00:00:27.6719300
+
+    DEBUG: [SuperCombiner] Textures saved in ''Assets/SuperCombiner/Combined/Textures/''
+
+    DEBUG:
+    [SuperCombiner] Materials saved in ''Assets/SuperCombiner/Combined/Materials/''
+
+    DEBUG:
+    [SuperCombiner] Meshes saved in ''Assets/SuperCombiner/Combined/Meshes/''
+
+    DEBUG:
+    [SuperCombiner] Prefabs saved in ''Assets/SuperCombiner/Combined/Prefabs/''
+
+'
+  _warningMessages: []
+  _combinedMaterials:
+  - material: {fileID: 2100000, guid: 0b782e20a152c9548a7eb1b409565756, type: 2}
+    uvs:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0.75
+      height: 0.75
+    - serializedVersion: 2
+      x: 0.75
+      y: 0
+      width: 0.1875
+      height: 0.1875
+    uvs2: []
+    scaleFactors:
+    - 1
+    - 1
+    meshUVBounds:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    isOriginalMaterial: 0
+    displayedIndex: 0
+    showCombinedMaterial: 0
+    showUVs: 0
+    showMeshUVBounds: 0
+  _meshResults:
+  - names:
+    - Crate_1
+    - Crate_inside
+    - Crate_lid
+    instanceIds: be36fcffb636fcffae36fcff
+    indexes:
+    - firstVertexIndex: 248
+      vertexCount: 248
+      firstTriangleIndex: 426
+      triangleCount: 426
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 416
+      vertexCount: 168
+      firstTriangleIndex: 696
+      triangleCount: 270
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 444
+      vertexCount: 28
+      firstTriangleIndex: 774
+      triangleCount: 78
+      showCombinedInstanceIndex: 0
+    showMeshCombined: 0
+  _materialCombinedCount: 2
+  _combinedMaterialCount: 1
+  _meshesCombinedCount: 3
+  _skinnedMeshesCombinedCount: 0
+  _totalVertexCount: 710
+  _subMeshCount: 1

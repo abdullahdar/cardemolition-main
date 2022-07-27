@@ -19,8 +19,8 @@ MonoBehaviour:
     isLocked: 0
     price: 0
     carType: 2
-    cameraHeight: 8
-    cameraRadius: 27
+    cameraHeight: 3
+    cameraRadius: 9
     barriers:
     - name: 1
       isUsed: 1
@@ -94,8 +94,8 @@ MonoBehaviour:
     isLocked: 1
     price: 200
     carType: 1
-    cameraHeight: 8
-    cameraRadius: 27
+    cameraHeight: 3
+    cameraRadius: 9
     barriers:
     - name: 1
       isUsed: 1
@@ -169,8 +169,8 @@ MonoBehaviour:
     isLocked: 1
     price: 200
     carType: 5
-    cameraHeight: 8
-    cameraRadius: 27
+    cameraHeight: 3
+    cameraRadius: 9
     barriers:
     - name: 1
       isUsed: 1
@@ -244,8 +244,8 @@ MonoBehaviour:
     isLocked: 1
     price: 200
     carType: 0
-    cameraHeight: 8
-    cameraRadius: 27
+    cameraHeight: 3
+    cameraRadius: 9
     barriers:
     - name: 1
       isUsed: 1
@@ -319,8 +319,8 @@ MonoBehaviour:
     isLocked: 1
     price: 200
     carType: 3
-    cameraHeight: 8
-    cameraRadius: 27
+    cameraHeight: 3
+    cameraRadius: 9
     barriers:
     - name: 1
       isUsed: 1
@@ -394,8 +394,8 @@ MonoBehaviour:
     isLocked: 1
     price: 200
     carType: 4
-    cameraHeight: 8
-    cameraRadius: 27
+    cameraHeight: 3
+    cameraRadius: 9
     barriers:
     - name: 1
       isUsed: 1

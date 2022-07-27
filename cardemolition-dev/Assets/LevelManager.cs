@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("LEVELS ATTRIBUTES")]
     public int levelSelected;
+    public GameObject[] levels;
     private int selectedCar;
 
+    [Header("REFERENCES")]
     [SerializeField]
     private bl_IndicatorManager _bl_IndicatorManager;
     private GameManager gameManager;
@@ -15,8 +19,10 @@ public class LevelManager : MonoBehaviour
     [Header("PLAYER ATTRIBUTES")]    
     public GameObject[] playerCar;
     public CinemachineFreeLook playerCamera;
+    private Transform playerTransform;
 
     [Header("ENEMY ATTRIBUTES")]
+    public GameObject[] enemyCarUi;
     public GameObject[] enemyCarPrefabs;
     public RCC_AIWaypointsContainer enemyWayPointContainer;
 
@@ -27,6 +33,7 @@ public class LevelManager : MonoBehaviour
     [Header("GAME STATS")]
     private int totalEnemies;
     private int remainingEnemies;
+    
 
     private void Awake()
     {
@@ -35,6 +42,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         levelSelected = levelsData.levelSelected;
+        OpenLevel(levelSelected);
         totalEnemies = levelsData.TotalEnemies(levelSelected);
         remainingEnemies = totalEnemies;
 
@@ -59,9 +67,13 @@ public class LevelManager : MonoBehaviour
 
                 _playerCar.ActivatePlayer();
 
+                Shooting_Control shooting_Control = playerCar[i].GetComponent<Shooting_Control>();
+                shooting_Control.SetRange(levelsData.levels[levelSelected].playerRange);
+
                 _bl_IndicatorManager.SetPlayer(_playerCar.transform);
 
                 CameraSettings(playerCar[i].transform);
+                playerTransform = playerCar[i].transform;
                 break;
             }
         }      
@@ -77,12 +89,29 @@ public class LevelManager : MonoBehaviour
             playerCamera.m_Orbits[i].m_Radius = carData.CameraRadius(selectedCar);
         }
         playerCamera.enabled = true;
+        playerCamera.m_XAxis.Value = levelsData.PlayerRotation(levelSelected).y;
     }
     void SpawanEnemyCar()
     {
         for(int i = 0; i < levelsData.TotalEnemyCars(levelSelected); i++)
-        {           
+        {
+            Spawn_CarUi(i);
+
+            SetEnemyCar(levelsData.EnemyType(levelSelected, i)).GetComponent<RCC_AICarController>().justFollowPlayer = levelsData.FollowPlayer(levelSelected, i);            
+            
             GameObject enemyCar = Instantiate(SetEnemyCar(levelsData.EnemyType(levelSelected,i)), levelsData.EnemySpawnPoint(levelSelected,i), Quaternion.identity);
+            enemyCar.transform.GetComponent<RCC_AICarController>().canChaseEnemy = levelsData.FightOtherEnemy(levelSelected, i);
+            enemyCar.transform.GetComponent<RCC_AICarController>().chaseDistance = levelsData.ChaseRange(levelSelected, i);
+            enemyCar.transform.GetComponent<Enemy_Weapon_Controller>().damage = levelsData.GunDamage(levelSelected, i);
+            enemyCar.transform.GetComponent<Enemy_Weapon_Controller>().fireRate = levelsData.FireRate(levelSelected, i);
+            enemyCar.transform.GetComponent<Enemy_Weapon_Controller>().range = levelsData.GunRange(levelSelected, i);
+
+            if (levelsData.FollowPlayer(levelSelected, i))
+            {                
+                enemyCar.transform.GetComponent<RCC_AICarController>().targetsInZone.Add(playerTransform);
+            }
+
+            enemyCar.transform.tag = levelsData.GetEnemyTag(levelSelected, i);
             enemyCar.GetComponent<RCC_AICarController>().waypointsContainer = enemyWayPointContainer;
             CarType _enemyCar = enemyCar.GetComponent<CarType>();
 
@@ -124,9 +153,27 @@ public class LevelManager : MonoBehaviour
     public void Exclude_Enemy()
     {
         remainingEnemies--;
+        Debug.Log("Enemy Number: " + (remainingEnemies - totalEnemies));
+        Destroy_CarUi((totalEnemies - remainingEnemies) - 1);
 
         if (remainingEnemies == 0)
             gameManager.ShowGameComplete();
+    }
+
+    public void OpenLevel(int levelNumber)
+    {
+        levels[levelNumber].SetActive(true);
+    }
+    #endregion
+
+    #region Enemy Car Ui
+    void Spawn_CarUi(int enemyNumber)
+    {
+        enemyCarUi[enemyNumber].SetActive(true);
+    }
+    void Destroy_CarUi(int enemyNumber)
+    {
+        enemyCarUi[enemyNumber].GetComponent<Image>().color = Color.red;
     }
     #endregion
 

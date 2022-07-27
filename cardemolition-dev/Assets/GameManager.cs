@@ -33,15 +33,20 @@ public class GameManager : MonoBehaviour
     public GameStatus gameStatus;
 
     private LevelsData levelsData;
+    private CarData carData;
 
     private void Awake()
     {
         levelsData = GetComponent<LevelManager>().levelsData;
+        carData = GetComponent<LevelManager>().carData;
     }
 
     #region Events
     public void Restart()
     {
+        if (Time.timeScale != 1)
+            Time.timeScale = 1;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Resume()
@@ -50,12 +55,50 @@ public class GameManager : MonoBehaviour
     }
     public void Next()
     {
-        SceneManager.LoadScene(0);
+        if (levelsData.levelSelected < levelsData.levels.Count - 1)
+        {            
+            levelsData.levelSelected ++;
+            
+            if (AllRequirement_Completed())
+                SceneManager.LoadScene(levelsData.GetCurrentSceneIndex());
+            else
+            {
+                levelsData.openCarSelection = true;
+                SceneManager.LoadScene(0);
+            }
+        }
+        else
+            SceneManager.LoadScene(0);
     }
     public void Home()
     {
+        if (Time.timeScale != 1)
+            Time.timeScale = 1;
         SceneManager.LoadScene(0);
-    }    
+    }
+
+    bool AllRequirement_Completed()
+    {
+        bool levelRequirement = false;
+
+        int selectedCar = carData.Selected_Car();
+        int selectedGun = carData.Selected_Gun(selectedCar);
+        int requiredCar = levelsData.GetRequiredCar(levelsData.levelSelected);
+        int requiredGun = levelsData.GetRequiredGun(levelsData.levelSelected);
+
+        if (selectedCar < requiredCar)
+        {
+            levelRequirement = false;            
+        }
+        else if (selectedCar == requiredCar && selectedGun < requiredGun)
+        {            
+            levelRequirement = false;
+        }
+        else
+            levelRequirement = true;
+
+        return levelRequirement;
+    }
 
     #endregion
 
@@ -112,7 +155,7 @@ public class GameManager : MonoBehaviour
         }
     }
     public void ShowGamePlay()
-    {
+    {        
         OpenPanel(GameStatus.gamePlay);
     }
     public void ShowPaused()
@@ -121,12 +164,20 @@ public class GameManager : MonoBehaviour
     }
     public void ShowGameOver()
     {
-        OpenPanel(GameStatus.gameOver);
+        Invoke("GameOver", 2.0f);
     }
     public void ShowGameComplete()
     {
+        Invoke("Complete", 2.0f);
+    }
+    void Complete()
+    {        
         OpenPanel(GameStatus.gameComplete);
         levelsData.Unlock_NextLevel();
+    }
+    void GameOver()
+    {
+        OpenPanel(GameStatus.gameOver);
     }
 
     #endregion

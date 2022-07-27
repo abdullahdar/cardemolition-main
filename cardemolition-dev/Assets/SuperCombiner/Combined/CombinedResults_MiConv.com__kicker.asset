@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7375f37a1ffc945b478bd41f115dab, type: 3}
+  m_Name: CombinedResults_MiConv.com__kicker
+  m_EditorClassIdentifier: 
+  _showCombinedMaterials: 0
+  _showCombinedMeshes: 0
+  _showLogs: 0
+  _logs: ' DEBUG: [SuperCombiner] Start processing...
+
+    DEBUG: [SuperCombiner]
+    Texture ''plywood_diff_1k_1'' is being tiled in the atlas because mesh using
+    it has UVs out of [0, 1] bound. The tiled size is 1024x1043 pixels.
+
+    DEBUG:
+    [SuperCombiner] Texture ''plywood_nor_gl_1k_0'' is being tiled in the atlas because
+    mesh using it has UVs out of [0, 1] bound. The tiled size is 1024x1043 pixels.
+
+    DEBUG:
+    [SuperCombiner] Texture ''wood_peeling_paint_weathered_diff_1k_4'' is being tiled
+    in the atlas because mesh using it has UVs out of [0, 1] bound. The tiled size
+    is 1672x1024 pixels.
+
+    DEBUG: [SuperCombiner] Texture ''wood_peeling_paint_weathered_nor_gl_1k_3''
+    is being tiled in the atlas because mesh using it has UVs out of [0, 1] bound.
+    The tiled size is 1672x1024 pixels.
+
+    DEBUG: [SuperCombiner] Texture ''osb_custom_7''
+    is being tiled in the atlas because mesh using it has UVs out of [0, 1] bound.
+    The tiled size is 471x1024 pixels.
+
+    WARNING: [SuperCombiner] Found materials
+    with properties that don''t match. Material ''SB'' do not have the property _BumpMap
+    whereas others material don''t, combining materials with differents properties
+    together may lead to inconsistent results.
+
+    DEBUG: [SuperCombiner] Creating
+    a colored texture RGBA(0.500, 0.500, 1.000, 1.000) of size 1024x1043 pixels for
+    Normal because texture is missing.
+
+    DEBUG: [SuperCombiner] Processing ''Cube''...
+
+    DEBUG:
+    [SuperCombiner] Processing ''Cube.001''...
+
+    DEBUG: [SuperCombiner] Processing
+    ''Cube.002''...
+
+    DEBUG: [SuperCombiner] Processing ''Cube.003''...
+
+    DEBUG:
+    [SuperCombiner] Processing ''Cube.004''...
+
+    DEBUG: [SuperCombiner] Processing
+    ''Cube.005''...
+
+    DEBUG: [SuperCombiner] Processing ''Cube.006''...
+
+    DEBUG:
+    [SuperCombiner] Processing ''Cube.007''...
+
+    DEBUG: [SuperCombiner] Processing
+    ''Cube.008''...
+
+    DEBUG: [SuperCombiner] Processing ''Cube.009''...
+
+    DEBUG:
+    [SuperCombiner] Processing ''Plane''...
+
+    DEBUG: [SuperCombiner] Successfully
+    combined game objects!
+
+    Execution time is 00:00:20.8040777
+
+    DEBUG: [SuperCombiner]
+    Textures saved in ''Assets/SuperCombiner/Combined/Textures/''
+
+    DEBUG: [SuperCombiner]
+    Materials saved in ''Assets/SuperCombiner/Combined/Materials/''
+
+    DEBUG: [SuperCombiner]
+    Meshes saved in ''Assets/SuperCombiner/Combined/Meshes/''
+
+    DEBUG: [SuperCombiner]
+    Prefabs saved in ''Assets/SuperCombiner/Combined/Prefabs/''
+
+'
+  _warningMessages:
+  - Several materials where found that don't share the same property, this can lead
+    to inconsistent results. You should always combine materials of the same type
+    or which share the same properties, consider splitting your GameObjects to combine
+    by types of materials or use multi material feature to group them.
+  _combinedMaterials:
+  - material: {fileID: 2100000, guid: 7dcea9f64b0eb944987d7d5d3bc74025, type: 2}
+    uvs:
+    - serializedVersion: 2
+      x: 0
+      y: 0.375
+      width: 0.375
+      height: 0.38183594
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0.6123047
+      height: 0.375
+    - serializedVersion: 2
+      x: 0.6123047
+      y: 0
+      width: 0.17236328
+      height: 0.375
+    uvs2: []
+    scaleFactors:
+    - 1
+    - 1
+    - 1
+    meshUVBounds:
+    - serializedVersion: 2
+      x: 0
+      y: -0.019277811
+      width: 1
+      height: 1.0192778
+    - serializedVersion: 2
+      x: -0.31691724
+      y: 0
+      width: 1.6329153
+      height: 1
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0.46038908
+      height: 1
+    isOriginalMaterial: 0
+    displayedIndex: 0
+    showCombinedMaterial: 0
+    showUVs: 0
+    showMeshUVBounds: 0
+  _meshResults:
+  - names:
+    - Cube
+    - Cube.001
+    - Cube.002
+    - Cube.003
+    - Cube.004
+    - Cube.005
+    - Cube.006
+    - Cube.007
+    - Cube.008
+    - Cube.009
+    - Plane
+    instanceIds: eca6fbffe4a6fbffdca6fbffd4a6fbffcca6fbffc4a6fbffbca6fbffb4a6fbffaca6fbffa4a6fbff9ca6fbff
+    indexes:
+    - firstVertexIndex: 48
+      vertexCount: 48
+      firstTriangleIndex: 72
+      triangleCount: 72
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 96
+      vertexCount: 48
+      firstTriangleIndex: 144
+      triangleCount: 72
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 144
+      vertexCount: 48
+      firstTriangleIndex: 216
+      triangleCount: 72
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 168
+      vertexCount: 24
+      firstTriangleIndex: 252
+      triangleCount: 36
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 192
+      vertexCount: 24
+      firstTriangleIndex: 288
+      triangleCount: 36
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 216
+      vertexCount: 24
+      firstTriangleIndex: 324
+      triangleCount: 36
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 288
+      vertexCount: 72
+      firstTriangleIndex: 444
+      triangleCount: 120
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 360
+      vertexCount: 72
+      firstTriangleIndex: 564
+      triangleCount: 120
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 384
+      vertexCount: 24
+      firstTriangleIndex: 600
+      triangleCount: 36
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 408
+      vertexCount: 24
+      firstTriangleIndex: 636
+      triangleCount: 36
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 432
+      vertexCount: 24
+      firstTriangleIndex: 672
+      triangleCount: 36
+      showCombinedInstanceIndex: 0
+    showMeshCombined: 0
+  _materialCombinedCount: 3
+  _combinedMaterialCount: 1
+  _meshesCombinedCount: 11
+  _skinnedMeshesCombinedCount: 0
+  _totalVertexCount: 432
+  _subMeshCount: 0

@@ -73,7 +73,7 @@ namespace Tarodev {
         private void OnCollisionEnter(Collision collision) {
             if(_explosionPrefab) Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             //if (collision.transform.TryGetComponent<IExplode>(out var ex)) ex.Explode();
-            if(collision.transform.tag == "Enemy")
+            if(collision.transform.tag == "Enemy" || collision.transform.tag == "Malang")
             {
                 collision.transform.GetComponent<DamageManager>().Take_Damage(10,this.gameObject);
             }

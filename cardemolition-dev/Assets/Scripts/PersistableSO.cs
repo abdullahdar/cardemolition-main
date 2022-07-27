@@ -12,9 +12,11 @@ public class PersistableSO : MonoBehaviour
     [Header("Scriptable Objects")]
     public List<ScriptableObject> objectsToPersist;
 
+    bool persist = false;
+
     protected void Awake()
-    {
-            for (int i = 0; i < objectsToPersist.Count; i++)
+    {       
+        for (int i = 0; i < objectsToPersist.Count; i++)
             {
                 if (File.Exists(Application.persistentDataPath + string.Format("/{0}_{1}.pso", persisterName, i)))
                 {
@@ -24,14 +26,14 @@ public class PersistableSO : MonoBehaviour
                     JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), objectsToPersist[i]);
 
                     file.Close();
-
+                persist = true;
                 }
                 else
                 {
                     //Do Nothing
                 }
             }       
-    }
+    } 
 
     protected void OnDisable()
     {

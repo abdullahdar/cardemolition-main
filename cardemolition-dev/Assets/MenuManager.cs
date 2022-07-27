@@ -43,7 +43,14 @@ public class MenuManager : MonoBehaviour
         levelSelectionScript = GetComponent<LevelSelection>();
         carSelectionScript = GetComponent<CarSelection>();
         levelsData = levelSelectionScript.levelsData;
-        Show_MainMenu();
+        if (levelsData.openCarSelection)
+        {
+            Show_CarSelection();
+            levelsData.openCarSelection = false;
+        }
+        else
+            Show_MainMenu();
+                
     }
     void OpenMenu(SelectedMenu _selectedMenu)
     {

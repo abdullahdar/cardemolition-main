@@ -26,7 +26,9 @@ public class RCC_AICarController : MonoBehaviour {
 	public RCC_AIWaypointsContainer waypointsContainer;					// Waypoints Container.
 	public int currentWaypointIndex = 0;											// Current index in Waypoint Container.
 	public Transform targetChase;                                           // Target Gameobject for chasing.
-	public string[] targetTag /*= new string[] { "Player", "Enemy" }*/;									// Search and chase Gameobjects with tags.
+	public string[] targetTag /*= new string[] { "Player", "Enemy" }*/;                                 // Search and chase Gameobjects with tags.
+	public bool canChaseEnemy = true;
+	public bool justFollowPlayer = false;
 
 	// AI Type
 	public NavigationMode navigationMode;
@@ -88,11 +90,7 @@ public class RCC_AICarController : MonoBehaviour {
 
 		// Getting main controller and enabling external controller.
 		carController = GetComponent<RCC_CarControllerV3>();
-		carController.externalController = true;
-
-		// If Waypoints Container is not selected in Inspector Panel, find it on scene.
-		/*if(!waypointsContainer)
-			waypointsContainer = FindObjectOfType(typeof(RCC_AIWaypointsContainer)) as RCC_AIWaypointsContainer;*/
+		carController.externalController = true;		
 
 		// Creating our Navigator and setting properties.
 		GameObject navigatorObject = new GameObject("Navigator");
@@ -106,15 +104,19 @@ public class RCC_AICarController : MonoBehaviour {
 		navigator.avoidancePriority = 0;
 
 		// Creating our Detector and setting properties. Used for getting nearest target gameobjects.
-		GameObject detectorGO = new GameObject ("Detector");
-		detectorGO.transform.SetParent (transform, false);
-		detectorGO.layer = LayerMask.NameToLayer("Ignore Raycast");		
-		detector = detectorGO.gameObject.AddComponent<SphereCollider> ();
-		detector.isTrigger = true;
-		detector.radius = /*10f*/chaseDistance;
-
-		//currentWaypointIndex= Random.Range(0, waypointsContainer.waypoints.Count);
-
+		if (!justFollowPlayer)
+		{
+			GameObject detectorGO = new GameObject("Detector");
+			detectorGO.transform.SetParent(transform, false);
+			detectorGO.layer = LayerMask.NameToLayer("Ignore Raycast");
+			detector = detectorGO.gameObject.AddComponent<SphereCollider>();
+			detector.isTrigger = true;
+			detector.radius = /*10f*/chaseDistance;
+		}
+		else
+        {
+			navigationMode = NavigationMode.ChaseTarget;
+		}
 	}
 
 	void OnEnable(){
@@ -235,7 +237,8 @@ public class RCC_AICarController : MonoBehaviour {
 
 		case NavigationMode.ChaseTarget:
 
-				detector.radius = chaseDistance;
+				if(detector)
+					detector.radius = chaseDistance;
 
 				// If our scene doesn't have a Waypoints Container, return with error.
 				if (!targetChase){
@@ -509,22 +512,34 @@ public class RCC_AICarController : MonoBehaviour {
 		else
 		{
 			navigationMode = NavigationMode.FollowWaypoints;
-			targetChase = null;
+			targetChase = null;			
 			//temp = null;
 		}
 
 	}
 	
-	void OnTriggerEnter (Collider col){
-
-		if(col.transform.root.CompareTag(targetTag[0]) || col.transform.root.CompareTag(targetTag[1]))
+	void OnTriggerEnter (Collider col)
+	{
+		if (canChaseEnemy)
 		{
-
-			if (!targetsInZone.Contains(col.transform.root))
+			if (col.transform.root.CompareTag(targetTag[0]) || col.transform.root.CompareTag(targetTag[1]))
 			{
-				targetsInZone.Add(col.transform.root);				
-			}			
-		}				
+				if (!targetsInZone.Contains(col.transform.root))
+				{
+					targetsInZone.Add(col.transform.root);
+				}
+			}
+		}
+		else
+        {
+			if (col.transform.root.CompareTag(targetTag[0]))
+			{
+				if (!targetsInZone.Contains(col.transform.root))
+				{
+					targetsInZone.Add(col.transform.root);
+				}
+			}
+		}
 	}
 	void OnTriggerExit(Collider col)
 	{

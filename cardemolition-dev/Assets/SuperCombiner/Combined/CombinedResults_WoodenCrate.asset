@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7375f37a1ffc945b478bd41f115dab, type: 3}
+  m_Name: CombinedResults_WoodenCrate
+  m_EditorClassIdentifier: 
+  _showCombinedMaterials: 0
+  _showCombinedMeshes: 0
+  _showLogs: 0
+  _logs: ' DEBUG: [SuperCombiner] Start processing...
+
+    DEBUG: [SuperCombiner]
+    Texture ''WoodenCrate_Albedo'' is being tiled in the atlas because mesh using
+    it has UVs out of [0, 1] bound. The tiled size is 2048x1824 pixels.
+
+    DEBUG:
+    [SuperCombiner] Texture ''WoodenCrate_Normal'' is being tiled in the atlas because
+    mesh using it has UVs out of [0, 1] bound. The tiled size is 2048x1824 pixels.
+
+    DEBUG:
+    [SuperCombiner] Only one material found, skipping combine material process and
+    keep this material (lambert1) for the combined mesh.
+
+    DEBUG: [SuperCombiner]
+    Successfully combined game objects!
+
+    Execution time is 00:00:21.8530231
+
+    DEBUG:
+    [SuperCombiner] Textures saved in ''Assets/SuperCombiner/Combined/Textures/''
+
+    DEBUG:
+    [SuperCombiner] Materials saved in ''Assets/SuperCombiner/Combined/Materials/''
+
+    DEBUG:
+    [SuperCombiner] Meshes saved in ''Assets/SuperCombiner/Combined/Meshes/''
+
+    DEBUG:
+    [SuperCombiner] Prefabs saved in ''Assets/SuperCombiner/Combined/Prefabs/''
+
+'
+  _warningMessages: []
+  _combinedMaterials:
+  - material: {fileID: 2100000, guid: 41285c1ba61f3164da4f8de8a97aea5a, type: 2}
+    uvs:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    uvs2: []
+    scaleFactors:
+    - 1
+    meshUVBounds:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 0.89063907
+    isOriginalMaterial: 1
+    displayedIndex: 0
+    showCombinedMaterial: 0
+    showUVs: 0
+    showMeshUVBounds: 0
+  _meshResults:
+  - names:
+    - pCube1
+    - pCube2
+    - pCube6
+    - polySurface5
+    instanceIds: dcf0fbffd4f0fbffccf0fbffc4f0fbff
+    indexes:
+    - firstVertexIndex: 24
+      vertexCount: 24
+      firstTriangleIndex: 36
+      triangleCount: 36
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 120
+      vertexCount: 96
+      firstTriangleIndex: 180
+      triangleCount: 144
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 264
+      vertexCount: 144
+      firstTriangleIndex: 396
+      triangleCount: 216
+      showCombinedInstanceIndex: 0
+    - firstVertexIndex: 408
+      vertexCount: 144
+      firstTriangleIndex: 612
+      triangleCount: 216
+      showCombinedInstanceIndex: 0
+    showMeshCombined: 0
+  _materialCombinedCount: 1
+  _combinedMaterialCount: 1
+  _meshesCombinedCount: 4
+  _skinnedMeshesCombinedCount: 0
+  _totalVertexCount: 408
+  _subMeshCount: 0

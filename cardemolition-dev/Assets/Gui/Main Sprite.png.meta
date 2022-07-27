@@ -404,6 +404,51 @@ TextureImporter:
   - first:
       213: -8140340011282608901
     second: Buttons_133
+  - first:
+      213: -7372150718149907696
+    second: Next Button
+  - first:
+      213: 8976826049015352248
+    second: Begin
+  - first:
+      213: -9002357037867236383
+    second: Buy
+  - first:
+      213: 6819756787664759762
+    second: Enemy Name 1
+  - first:
+      213: 3449273388261027971
+    second: Enemy Name 2
+  - first:
+      213: 5159994268987686741
+    second: Enemy Name 3
+  - first:
+      213: -3484127426207496051
+    second: Enemy Name 4
+  - first:
+      213: -2089114477432604047
+    second: Enemy Name 5
+  - first:
+      213: -5348266505315652742
+    second: Enemy Name 6
+  - first:
+      213: -236257607464874848
+    second: Enemy Name 7
+  - first:
+      213: -32949731163503212
+    second: Enemy Name 8
+  - first:
+      213: 567955715502097466
+    second: Enemy Name 9
+  - first:
+      213: -6873119286918217198
+    second: Enemy Health Bar
+  - first:
+      213: 8784342845878157563
+    second: Nos
+  - first:
+      213: -2020035925098165617
+    second: Scope
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1835,6 +1880,321 @@ TextureImporter:
       bones: []
       spriteID: 08338d8b325af6f00800000000000000
       internalID: 1112289205827416960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Next Button
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1888
+        width: 164
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ba80e2bfbd0b990800000000000000
+      internalID: -7372150718149907696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Begin
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 378
+        width: 371
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb8806fab7149c70800000000000000
+      internalID: 8976826049015352248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buy
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 248
+        width: 371
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e38fa878f3311380800000000000000
+      internalID: -9002357037867236383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 1
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 507
+        width: 151
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db215f6aa4a4ae50800000000000000
+      internalID: 6819756787664759762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 2
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 470
+        width: 280
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380b1802fd74edf20800000000000000
+      internalID: 3449273388261027971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 3
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 432
+        width: 200
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fff06e27bfb9740800000000000000
+      internalID: 5159994268987686741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 4
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 394
+        width: 77
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88c4b8c094e5afc0800000000000000
+      internalID: -3484127426207496051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 5
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 342
+        width: 216
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17af08d8379f103e0800000000000000
+      internalID: -2089114477432604047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 6
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 303
+        width: 225
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b6a8223f327c5b0800000000000000
+      internalID: -5348266505315652742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 7
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 265
+        width: 277
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac829f25f4a8bcf0800000000000000
+      internalID: -236257607464874848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 8
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 228
+        width: 266
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4950e82e460fa8ff0800000000000000
+      internalID: -32949731163503212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Name 9
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 181
+        width: 167
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34c7aec6b8c1e700800000000000000
+      internalID: 567955715502097466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Health Bar
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 201
+        width: 978
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2128a548c66cd90a0800000000000000
+      internalID: -6873119286918217198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nos
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 880
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0cfc1e64148e970800000000000000
+      internalID: 8784342845878157563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scope
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 579
+        width: 150
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a0ffa570467f3e0800000000000000
+      internalID: -2020035925098165617
       vertices: []
       indices: 
       edges: []

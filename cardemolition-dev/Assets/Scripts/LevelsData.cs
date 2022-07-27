@@ -29,7 +29,8 @@ public class LevelsData : ScriptableObject
 
         [Header("PLAYER CAR")]
         public Vector3 startPosition;
-        public Vector3 startRotation;   
+        public Vector3 startRotation;
+        public float playerRange = 300f;
 
         [System.Serializable]
         public class EnemyCars
@@ -41,6 +42,8 @@ public class LevelsData : ScriptableObject
             [Header("GENERAL SETTINGS")]           
             public int chaseRange;
             public Vector3 spawnPoint;
+            public bool fightOtherEnemy = true;
+            public bool followPlayer;
 
             [Header("BARRIER ATTRIBUTES")]
             public bool hasBarrier;
@@ -52,7 +55,7 @@ public class LevelsData : ScriptableObject
             public bool hasGun;
             [Tooltip("Gun value between 0 and 4.")]
             public int gunNumber;
-            public int gunDamage;
+            public float gunDamage;
             public float fireRate;
             public float gunRange;
 
@@ -70,6 +73,8 @@ public class LevelsData : ScriptableObject
     public int levelSelected;
 
     public int coins;
+
+    public bool openCarSelection = false;    
 
     #region Enemy Cars
 
@@ -97,11 +102,19 @@ public class LevelsData : ScriptableObject
     {
         return levels[levelNumber].enemyCars[enemyNumber].chaseRange;
     }
+    public bool FightOtherEnemy(int levelNumber, int enemyNumber)
+    {
+        return levels[levelNumber].enemyCars[enemyNumber].fightOtherEnemy;
+    }    
+    public bool FollowPlayer(int levelNumber, int enemyNumber)
+    {
+        return levels[levelNumber].enemyCars[enemyNumber].followPlayer;
+    }
     public int BarrierDamage(int levelNumber, int enemyNumber)
     {
         return levels[levelNumber].enemyCars[enemyNumber].barrierDamage;
     }
-    public int GunDamage(int levelNumber, int enemyNumber)
+    public float GunDamage(int levelNumber, int enemyNumber)
     {
         return levels[levelNumber].enemyCars[enemyNumber].gunDamage;
     }
@@ -136,6 +149,15 @@ public class LevelsData : ScriptableObject
     public int MissileNumber(int levelNumber, int enemyNumber)
     {
         return levels[levelNumber].enemyCars[enemyNumber].missileNumber;
+    }
+    public string GetEnemyTag(int levelNumber, int enemyNumber)
+    {
+        string tag = "Enemy";
+        if (levels[levelNumber].enemyCars[enemyNumber].fightOtherEnemy)
+            tag = "Enemy";
+        else
+            tag = "Malang";
+        return tag;
     }
 
     #endregion
@@ -216,6 +238,20 @@ public class LevelsData : ScriptableObject
     public int TotalEnemies(int levelNumber)
     {
         return levels[levelNumber].enemyCars.Count;
+    }
+    public int GetLastOpenedLevel()
+    {
+        int lastOpenedeLevel = -1;
+
+        for(int i = 0; i < levels.Count; i++)
+        {
+            if (!levels[i].isLocked)
+                lastOpenedeLevel++;
+            else
+                break;
+        }
+
+        return lastOpenedeLevel;
     }
 
     #endregion

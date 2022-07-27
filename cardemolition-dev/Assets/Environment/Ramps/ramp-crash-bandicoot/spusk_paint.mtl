@@ -1,0 +1,12 @@
+newmtl None
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd spusk_paint_diffuse.png
+map_Ks spusk_paint_roughness.png
+bump spusk_paint_displacement.png
+map_bump spusk_paint_normalmap.png

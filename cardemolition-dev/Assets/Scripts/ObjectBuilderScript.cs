@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEditor;
+using System;
 
 public class ObjectBuilderScript : MonoBehaviour
 {
@@ -65,25 +66,58 @@ public class ObjectBuilderScript : MonoBehaviour
             {
                 //Do Nothing
             }
-        }        
+        }
+#if UNITY_EDITOR
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+#endif
+        //LevelsData levelsData = objectsToPersist[1] as LevelsData;
+        //levelsData.levelSelected = levelNumber;
     }
     public void SetPlayerPosition()
     {
         LevelsData levelsData = objectsToReset[1] as LevelsData;
         levelsData.levels[levelNumber - 1].startPosition = targetPosition.position;
         levelsData.levels[levelNumber - 1].startRotation = targetPosition.eulerAngles;
-        EditorUtility.SetDirty(levelsData);
+        /*EditorUtility.SetDirty(levelsData);
         AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();        
+        AssetDatabase.Refresh();*/        
     }
     public void SetEnemyPosition()
     {        
         LevelsData levelsData = objectsToReset[1] as LevelsData;
         levelsData.levels[levelNumber - 1].enemyCars[enemyNumber - 1].spawnPoint = targetPosition.position;
-        EditorUtility.SetDirty(levelsData);
+        /*EditorUtility.SetDirty(levelsData);
         AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
+        AssetDatabase.Refresh();*/
+    }
+    public void GetPlayerPosition()
+    {
+        try
+        {
+            LevelsData levelsData = objectsToReset[1] as LevelsData;
+            targetPosition.position = levelsData.levels[levelNumber - 1].startPosition;
+            targetPosition.transform.eulerAngles = levelsData.levels[levelNumber - 1].startRotation;
+        }
+        catch(IndexOutOfRangeException ex)
+        {
+            LevelsData levelsData = objectsToReset[1] as LevelsData;
+            Debug.LogError("Level Index is Exceding, Level Length is: "+ levelsData.levels.Count);
+        }
+    }
+    public void GetEnemyPosition()
+    {
+        LevelsData levelsData = objectsToReset[1] as LevelsData;
+        try
+        {            
+            targetPosition.position = levelsData.levels[levelNumber - 1].enemyCars[enemyNumber - 1].spawnPoint;
+        }
+        catch(ArgumentOutOfRangeException ex)
+        {
+            if(levelNumber > levelsData.levels.Count)
+                Debug.LogError("Level Index is Exceding, Level Length is: " + levelsData.levels.Count);
+            else if(enemyNumber > levelsData.levels[levelNumber - 1].enemyCars.Count)
+                Debug.LogError("Enemy Index is Exceding, Enemy Length is: " + levelsData.levels[levelNumber - 1].enemyCars.Count);
+        }
     }
 }

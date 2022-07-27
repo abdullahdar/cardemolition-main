@@ -94,6 +94,7 @@ public class DamageManager : MonoBehaviour
             GetComponent<Enemy_Weapon_Controller>().enabled = false;
             //Destroy(this.gameObject, 1);
             levelManager.Exclude_Enemy();
+            transform.tag = "Untagged";
         }
         else if (character == Character.player)
         {        
