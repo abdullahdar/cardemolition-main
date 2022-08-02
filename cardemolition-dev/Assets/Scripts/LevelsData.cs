@@ -77,7 +77,11 @@ public class LevelsData : ScriptableObject
 
     public int coins;
 
-    public bool openCarSelection = false;    
+    public bool openCarSelection = false;
+
+    [Header("Sound Settings")]
+    public bool soundOn = true;
+    public bool musicOn = true;
 
     #region Enemy Cars
 

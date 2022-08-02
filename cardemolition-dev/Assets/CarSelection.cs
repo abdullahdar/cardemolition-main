@@ -102,15 +102,18 @@ public class CarSelection : MonoBehaviour
     private MenuManager menuManager;
     private Reward_Video_Handler reward_Video_Handler;
 
+    [SerializeField]
+    AudioManager audioManager;
+
     private void Awake()
     {        
         menuManager = GetComponent<MenuManager>();
         reward_Video_Handler = GetComponent<Reward_Video_Handler>();
     }
     void Start()
-    {       
+    {
         OpenSelectedCar(carData.Selected_Car());
-        Open_Car_Menu();        
+        Open_Car_Menu();
     }
 
     #region Car Selection
@@ -170,6 +173,8 @@ public class CarSelection : MonoBehaviour
     }
     public void BeginCar()
     {
+        audioManager.Play("buttonClickSound");
+
         carData.Used(selectedCar);        
 
         if (AllRequirement_Completed())
