@@ -7,6 +7,18 @@ using System;
 
 public class ObjectBuilderScript : MonoBehaviour
 {
+    [Header("Stadium 1 Texture")]
+    public Texture mainTextureStadium1;
+    public Material[] stadium1Materials;
+
+    [Header("Stadium 2 Texture")]
+    public Texture mainTextureStadium2;
+    public Material[] stadium2Materials;
+
+    [Header("Stadium 3 Texture")]
+    public Texture mainTextureStadium3;
+    public Material[] stadium3Materials;
+
     [Header("Meta")]
     public string persisterName;
     [Header("Scriptable Objects")]
@@ -21,6 +33,9 @@ public class ObjectBuilderScript : MonoBehaviour
     [Header("Player/Enemy Positions")]
     public int levelNumber;
     public int enemyNumber;
+
+    [Header("Player/Enemy Damage")]
+    public float damage;
     public void DeleteData()
     {
         for (int i = 0; i < objectsToPersist.Count; i++)
@@ -79,17 +94,44 @@ public class ObjectBuilderScript : MonoBehaviour
         LevelsData levelsData = objectsToReset[1] as LevelsData;
         levelsData.levels[levelNumber - 1].startPosition = targetPosition.position;
         levelsData.levels[levelNumber - 1].startRotation = targetPosition.eulerAngles;
-        /*EditorUtility.SetDirty(levelsData);
+#if UNITY_EDITOR
+        EditorUtility.SetDirty(levelsData);
         AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();*/        
+        AssetDatabase.Refresh();
+#endif    
     }
     public void SetEnemyPosition()
     {        
         LevelsData levelsData = objectsToReset[1] as LevelsData;
         levelsData.levels[levelNumber - 1].enemyCars[enemyNumber - 1].spawnPoint = targetPosition.position;
-        /*EditorUtility.SetDirty(levelsData);
+#if UNITY_EDITOR
+        EditorUtility.SetDirty(levelsData);
         AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();*/
+        AssetDatabase.Refresh();
+#endif
+    }
+    public void SetPlayerDamage()
+    {
+        LevelsData levelsData = objectsToReset[1] as LevelsData;
+        levelsData.levels[levelNumber - 1].playerDamage = damage;
+#if UNITY_EDITOR
+        EditorUtility.SetDirty(levelsData);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+#endif
+    }
+    public void SetEnemyDamage()
+    {
+        LevelsData levelsData = objectsToReset[1] as LevelsData;
+        foreach(LevelsData.Levels.EnemyCars enemy in levelsData.levels[levelNumber - 1].enemyCars)
+        {
+            enemy.gunDamage = damage;
+        }
+#if UNITY_EDITOR
+        EditorUtility.SetDirty(levelsData);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+#endif
     }
     public void GetPlayerPosition()
     {
@@ -120,4 +162,27 @@ public class ObjectBuilderScript : MonoBehaviour
                 Debug.LogError("Enemy Index is Exceding, Enemy Length is: " + levelsData.levels[levelNumber - 1].enemyCars.Count);
         }
     }
+
+    public void ChangeStadium1_Texture()
+    {
+        foreach(Material material in stadium1Materials)
+        {
+            material.mainTexture = mainTextureStadium1;
+        }
+    }
+    public void ChangeStadium2_Texture()
+    {
+        foreach (Material material in stadium2Materials)
+        {
+            material.mainTexture = mainTextureStadium2;
+        }
+    }
+    public void ChangeStadium3_Texture()
+    {
+        foreach (Material material in stadium3Materials)
+        {
+            material.mainTexture = mainTextureStadium3;
+        }
+    } 
+
 }

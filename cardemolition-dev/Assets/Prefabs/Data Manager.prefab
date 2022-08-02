@@ -60,6 +60,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074c2840d5deb564b9e40eec842e8a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainTextureStadium1: {fileID: 2800000, guid: 5efcf1c1f01766a43a3f246bb89f3b43, type: 3}
+  stadium1Materials:
+  - {fileID: 2100000, guid: d520cd0efbdcd634d9c02d9a1b30a5a8, type: 2}
+  - {fileID: 2100000, guid: 7dd1b6f30c9fa09479f3f22949e6c6bf, type: 2}
+  - {fileID: 2100000, guid: a9be370983591584e992a31587b3206c, type: 2}
+  - {fileID: 2100000, guid: 87da7891a3a897a47bfc7626c9ea11dc, type: 2}
+  - {fileID: 2100000, guid: 5aac6cbc2150e144ba230977ac32606f, type: 2}
+  - {fileID: 2100000, guid: b73846caf3e9b0c498ce18cc01d489cf, type: 2}
+  - {fileID: 2100000, guid: 8303c67ecd8c69644b0a309ef4f8b0b7, type: 2}
+  - {fileID: 2100000, guid: c1b26f67bf93fd442b2382b1bd569c1a, type: 2}
+  - {fileID: 2100000, guid: 10a21dbced4dbbb4d8504fb4157dc66a, type: 2}
+  - {fileID: 2100000, guid: eb766513753ca3743b8e586c172dec36, type: 2}
+  - {fileID: 2100000, guid: 9cbfa6559dc9d484fabbb22b2e0c419d, type: 2}
+  - {fileID: 2100000, guid: 0b55369d029451d4db4b6174b7aa9d07, type: 2}
+  - {fileID: 2100000, guid: 627fb2ad0f9317a4fa5e33c738506c18, type: 2}
+  - {fileID: 2100000, guid: 2cd8b4e0a4986f54db3e09b47ef3f9e9, type: 2}
+  mainTextureStadium2: {fileID: 2800000, guid: 659c31bf9567d284288434bda5060b0f, type: 3}
+  stadium2Materials:
+  - {fileID: 2100000, guid: 531eee6850d9f6146b45e273c377d3f5, type: 2}
+  - {fileID: 2100000, guid: d6b2efbcc7e8cc248947fa6cf87e451f, type: 2}
+  - {fileID: 2100000, guid: f5a8b0889f212f143b841eddd4d65cfe, type: 2}
+  - {fileID: 2100000, guid: 58bd1d7aac9f91e4d863d13d30b0fc7f, type: 2}
+  - {fileID: 2100000, guid: 07fac013d619d5a479c0a012b66ecfbc, type: 2}
+  - {fileID: 2100000, guid: 6ca8bcd985e9b784781805b54d83755b, type: 2}
+  - {fileID: 2100000, guid: d5e34347a5cced94aa3702866fee08a7, type: 2}
+  mainTextureStadium3: {fileID: 2800000, guid: 2704eb58ced5d0c40bd6543eb0047a70, type: 3}
+  stadium3Materials:
+  - {fileID: 2100000, guid: 3206c13eda141d64ca3235e519e004ed, type: 2}
+  - {fileID: 2100000, guid: d02e64328b9b5e444bc824e2922582dd, type: 2}
+  - {fileID: 2100000, guid: 51168a782b14f6c48aa5f907bfd586d7, type: 2}
+  - {fileID: 2100000, guid: db45f727d392a184c9aab13a5fc087cd, type: 2}
+  - {fileID: 2100000, guid: e8d553220ec919243b07705f03356ee3, type: 2}
+  - {fileID: 2100000, guid: e1a73a1d6d097df4c8c0b1c90e8f5bf2, type: 2}
+  - {fileID: 2100000, guid: c1bbc460279433e40a1375ef07aef30e, type: 2}
   persisterName: 
   objectsToPersist:
   - {fileID: 11400000, guid: 19a0894b58e190c4b9b5825407a22906, type: 2}
@@ -68,5 +102,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 438d7e2e766106644a249b6c6a483242, type: 2}
   - {fileID: 11400000, guid: 948c831d5e954db4aa51479b710e6fe0, type: 2}
   targetPosition: {fileID: 0}
-  levelNumber: 0
-  enemyNumber: 0
+  levelNumber: 1
+  enemyNumber: 9

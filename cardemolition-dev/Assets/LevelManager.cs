@@ -69,6 +69,7 @@ public class LevelManager : MonoBehaviour
 
                 Shooting_Control shooting_Control = playerCar[i].GetComponent<Shooting_Control>();
                 shooting_Control.SetRange(levelsData.levels[levelSelected].playerRange);
+                shooting_Control.SetDamage(levelsData.PlayerDamage(levelSelected));
 
                 _bl_IndicatorManager.SetPlayer(_playerCar.transform);
 

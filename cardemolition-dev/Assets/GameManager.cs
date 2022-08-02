@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     private Canvas completePanel;
     [SerializeField]
     private Canvas overPanel;
+    [SerializeField]
+    private Canvas rateUsAlert;
 
     [Header("ANIMATORS")]
     [SerializeField]
@@ -31,6 +34,12 @@ public class GameManager : MonoBehaviour
     }
     [Header("GAME STATUS")]
     public GameStatus gameStatus;
+
+    [Header("RATE US THINGS")]
+    public GameObject[] stars;
+    public GameObject rateUsButton;
+    private int rateUsStar;
+    private bool canRate = true;
 
     private LevelsData levelsData;
     private CarData carData;
@@ -55,6 +64,13 @@ public class GameManager : MonoBehaviour
     }
     public void Next()
     {
+        if (levelsData.levels[levelsData.levelSelected].canRateUs && canRate)
+        {
+            canRate = false;
+            Open_Rate_Us();
+            return;
+        } //<= RATE US
+
         if (levelsData.levelSelected < levelsData.levels.Count - 1)
         {            
             levelsData.levelSelected ++;
@@ -170,6 +186,11 @@ public class GameManager : MonoBehaviour
     {
         Invoke("Complete", 2.0f);
     }
+    public void Open_Rate_Us()
+    {
+        rateUsAlert.enabled = true;
+        stars[4].GetComponent<Animation>().enabled = true;
+    }
     void Complete()
     {        
         OpenPanel(GameStatus.gameComplete);
@@ -178,6 +199,54 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         OpenPanel(GameStatus.gameOver);
+    }
+
+    #endregion
+
+    #region Rate Us
+
+    public void RateStar(int starNumber)
+    {
+        rateUsStar = starNumber;
+
+        if (rateUsStar < 5)
+            stars[4].GetComponent<Animation>().enabled = false;
+        else
+            stars[4].GetComponent<Animation>().enabled = true;
+
+        for (int i = 0; i < stars.Length; i++)
+        {
+            if (i < starNumber)
+            {
+                stars[i].transform.GetChild(0).transform.GetComponent<Image>().enabled = true;
+                Debug.Log("Activated Star: " + i);
+            }
+            else
+            {
+                stars[i].transform.GetChild(0).transform.GetComponent<Image>().enabled = false;
+                Debug.Log("DeActivated Star: " + i);
+            }
+        }
+        rateUsButton.SetActive(true);
+    }
+    public void RateUs()
+    {
+        
+        if (rateUsStar > 3)
+        {
+            Application.OpenURL("https://play.google.com/store/apps/details?id=com.MetaphaseGames.PredatorHunting");
+        }
+        else
+        {
+            rateUsButton.SetActive(false);
+        }
+        for (int i = 0; i < stars.Length; i++)
+        {
+            stars[i].transform.GetChild(0).transform.GetComponent<Image>().enabled = true;
+        }
+        rateUsAlert.enabled = false;
+        stars[4].GetComponent<Animation>().enabled = false;
+        
     }
 
     #endregion

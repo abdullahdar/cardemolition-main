@@ -14,6 +14,7 @@ public class Shooting_Control : MonoBehaviour
 
     public float damage = 10f;
     public float range = 100f;
+    private float Second_rayRange = 500f;
     public float fireRate = 15f;
     public float impactForce = 30f;
 
@@ -62,7 +63,7 @@ public class Shooting_Control : MonoBehaviour
     private float nextTimeToMissile;
     public float missileFireRate = 1f;
     public Image missileImage;
-
+    Vector3 velocity=Vector3.zero;
     private void Start()
     {
         currentAmmo = maxAmmo;
@@ -85,10 +86,11 @@ public class Shooting_Control : MonoBehaviour
                     focusOnEnemy = true;
 
                     enemyTransform = m_Hit.transform;
-                }
+                }                
                 else
                 {                    
-                    aimImage.color = Color.black;                    
+                    aimImage.color = Color.black;
+                    focusOnEnemy = false;//new                    
                 }                
             }
             else
@@ -122,10 +124,10 @@ public class Shooting_Control : MonoBehaviour
 
             RaycastHit hit;
             
-            if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, range))
+            if (Physics.Raycast(start_RayPoint.transform.position, start_RayPoint.transform.forward, out hit, /*range*/Second_rayRange))
             {               
-                Vector2 pos = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
-                aim.position = pos;
+                Vector3 pos = RCC_SceneManager.Instance.activeMainCamera.WorldToScreenPoint(hit.point);
+                aim.position = /*Vector3.SmoothDamp(transform.position, pos,ref velocity, 1 * Time.deltaTime)*/pos;
                 //aimImage.color = Color.red;
 
                 if (ControlFreak2.CF2Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
@@ -173,6 +175,8 @@ public class Shooting_Control : MonoBehaviour
     }
     void Shoot(RaycastHit hit)
     {
+        if (hit.transform.tag == "Player")
+            return;
         TrailRenderer trail = Instantiate(BulletTrail, start_RayPoint.position, Quaternion.identity);
         StartCoroutine(SpawnTrail(trail, hit));
 
@@ -242,5 +246,9 @@ public class Shooting_Control : MonoBehaviour
     public void SetRange(float _range)
     {
         range = _range;
+    }
+    public void SetDamage(float _damage)
+    {
+        damage = _damage;
     }
 }

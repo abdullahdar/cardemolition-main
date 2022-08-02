@@ -723,8 +723,7 @@ public class CarSelection : MonoBehaviour
         btnBuy.GetComponent<Button>().onClick.RemoveAllListeners();
         btnUse.GetComponent<Button>().onClick.RemoveAllListeners();
         btnWatchVideo.GetComponent<Button>().onClick.RemoveAllListeners();
-        popUp.enabled = false;
-        menuManager.cars.SetActive(true);
+        popUp.enabled = false;        
     }
     public void WatchVideo_Car()
     {

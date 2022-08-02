@@ -2507,6 +2507,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Health
       objectReference: {fileID: 0}
+    - target: {fileID: 7994935645599024166, guid: 09b9231dd00a1df4cafaffe6aaafb778,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8094175172152336332, guid: 09b9231dd00a1df4cafaffe6aaafb778,
         type: 3}
       propertyPath: m_Sprite

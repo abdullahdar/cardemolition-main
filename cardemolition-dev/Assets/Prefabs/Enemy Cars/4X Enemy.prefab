@@ -1475,7 +1475,7 @@ GameObject:
   - component: {fileID: 4191071096580860455}
   - component: {fileID: 3803064376809994785}
   - component: {fileID: 4794898079471593154}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Attack_buffer_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 6428640337979550871}
   - component: {fileID: 6428640337980682071}
   - component: {fileID: 465703095}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Attack_buffer_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2335,7 +2335,7 @@ PrefabInstance:
     - target: {fileID: 7593114229984918112, guid: 15af2633621166f4ebf9541412f6c986,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7593114229984918112, guid: 15af2633621166f4ebf9541412f6c986,
         type: 3}
@@ -2391,6 +2391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994935645599024166, guid: 09b9231dd00a1df4cafaffe6aaafb778,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9152018494018861629, guid: 09b9231dd00a1df4cafaffe6aaafb778,
         type: 3}
@@ -2532,7 +2537,7 @@ PrefabInstance:
     - target: {fileID: 2368869873334942429, guid: e370c33d44c2fa94982c6132991860df,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2368869873334942429, guid: e370c33d44c2fa94982c6132991860df,
         type: 3}
@@ -2707,7 +2712,7 @@ PrefabInstance:
     - target: {fileID: 1715432055750096634, guid: d3ba0ce6f59c5ee4788ef6ba09f38c83,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1715432055750096634, guid: d3ba0ce6f59c5ee4788ef6ba09f38c83,
         type: 3}

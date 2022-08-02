@@ -26,6 +26,14 @@ public class ObjectBuilderEditor : Editor
         {
             myScript.SetEnemyPosition();
         }
+        if (GUILayout.Button("Set Player Damage"))
+        {
+            myScript.SetPlayerDamage();
+        }
+        if (GUILayout.Button("Set Enemy Damage"))
+        {
+            myScript.SetEnemyDamage();
+        }
         if (GUILayout.Button("Get Player Position"))
         {
             myScript.GetPlayerPosition();
@@ -33,6 +41,18 @@ public class ObjectBuilderEditor : Editor
         if (GUILayout.Button("Get Enemy Position"))
         {
             myScript.GetEnemyPosition();
+        }
+        if (GUILayout.Button("Change Stadium 1 Texture"))
+        {
+            myScript.ChangeStadium1_Texture();
+        }
+        if (GUILayout.Button("Change Stadium 2 Texture"))
+        {
+            myScript.ChangeStadium2_Texture();
+        }
+        if (GUILayout.Button("Change Stadium 3 Texture"))
+        {
+            myScript.ChangeStadium3_Texture();
         }
     }
 }

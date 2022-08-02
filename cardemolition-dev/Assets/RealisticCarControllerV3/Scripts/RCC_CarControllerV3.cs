@@ -962,8 +962,9 @@ public class RCC_CarControllerV3 : RCC_Core {
 
         Audio();
 		ResetCar();
+		ResetStuckCar();
 
-		if(useDamage)
+		if (useDamage)
 			Repair();
 
 		OtherVisuals ();
@@ -2193,6 +2194,26 @@ public class RCC_CarControllerV3 : RCC_Core {
 		}
 		
 	}
+
+	private void ResetStuckCar()
+    {
+		//Debug.Log("Velocity: "+rigid.velocity+"Speed: "+speed);
+		
+		if(speed < 5 && rigid.velocity.z < 1 && rigid.velocity.z > -1 && throttleInput > 0.5f)
+        {
+			//Debug.Log("Stuck Car");
+			//if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 60)
+			//{
+				resetTime += Time.deltaTime;
+				if (resetTime > 3)
+				{
+					transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+					transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+					resetTime = 0f;
+				}
+			//}
+		}
+    }
 
 	/// <summary>
 	/// Raises the collision enter event.

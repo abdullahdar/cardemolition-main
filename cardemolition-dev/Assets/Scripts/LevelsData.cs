@@ -22,6 +22,8 @@ public class LevelsData : ScriptableObject
 
         public bool isLocked = true;
         public bool isCompleted = false;
+        public bool canRateUs = false;
+        public bool hasAds = false;
 
         [Header("LEVEL REQUIREMENTS")]
         public int requiredCar;
@@ -31,6 +33,7 @@ public class LevelsData : ScriptableObject
         public Vector3 startPosition;
         public Vector3 startRotation;
         public float playerRange = 300f;
+        public float playerDamage = 2f;
 
         [System.Serializable]
         public class EnemyCars
@@ -170,6 +173,10 @@ public class LevelsData : ScriptableObject
     public Vector3 PlayerRotation(int levelNumber)
     {
         return levels[levelNumber].startRotation;
+    }
+    public float PlayerDamage(int levelNumber)
+    {
+        return levels[levelNumber].playerDamage;
     }
 
     #endregion

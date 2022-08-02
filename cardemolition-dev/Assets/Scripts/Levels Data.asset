@@ -19,12 +19,15 @@ MonoBehaviour:
     reward: 100
     environment: 0
     isLocked: 0
-    isCompleted: 1
+    isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 1
     requiredGun: 1
     startPosition: {x: 0, y: 2.23, z: -44}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 200
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -65,13 +68,16 @@ MonoBehaviour:
     levelNumber: 2
     reward: 100
     environment: 1
-    isLocked: 0
+    isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 1
     requiredGun: 2
     startPosition: {x: -9, y: 2.23, z: -119}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 200
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 5
@@ -114,11 +120,14 @@ MonoBehaviour:
     environment: 2
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 1
     requiredCar: 1
     requiredGun: 3
     startPosition: {x: 2, y: 2.68, z: -130}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -178,11 +187,14 @@ MonoBehaviour:
     environment: 0
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 2
     requiredGun: 1
     startPosition: {x: 124, y: 2.23, z: -170}
     startRotation: {x: 0.000001293717, y: 323.7342, z: -0.0000094160805}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 0
@@ -242,15 +254,18 @@ MonoBehaviour:
     environment: 1
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 2
     requiredGun: 2
     startPosition: {x: 0, y: 2.23, z: -54}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 5
-      chaseRange: 100
+      chaseRange: 50
       spawnPoint: {x: -165, y: 2.68, z: 140}
       fightOtherEnemy: 1
       followPlayer: 0
@@ -267,7 +282,7 @@ MonoBehaviour:
       missileDamage: 50
     - carNo: 2
       carType: 0
-      chaseRange: 100
+      chaseRange: 50
       spawnPoint: {x: 156, y: 2.68, z: 168}
       fightOtherEnemy: 1
       followPlayer: 0
@@ -284,7 +299,7 @@ MonoBehaviour:
       missileDamage: 50
     - carNo: 3
       carType: 3
-      chaseRange: 100
+      chaseRange: 50
       spawnPoint: {x: -164, y: 2.68, z: 2}
       fightOtherEnemy: 0
       followPlayer: 0
@@ -301,7 +316,7 @@ MonoBehaviour:
       missileDamage: 50
     - carNo: 4
       carType: 4
-      chaseRange: 100
+      chaseRange: 50
       spawnPoint: {x: 155, y: 2.68, z: -116}
       fightOtherEnemy: 0
       followPlayer: 0
@@ -323,11 +338,14 @@ MonoBehaviour:
     environment: 2
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 1
     requiredCar: 2
     requiredGun: 3
     startPosition: {x: 153.3, y: 2.68, z: 0.8}
     startRotation: {x: 0, y: 270.74127, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -404,11 +422,14 @@ MonoBehaviour:
     environment: 0
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 3
     requiredGun: 1
     startPosition: {x: 138, y: 2.68, z: -9}
     startRotation: {x: 0, y: 270.30234, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -502,11 +523,14 @@ MonoBehaviour:
     environment: 1
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 3
     requiredGun: 2
     startPosition: {x: 149, y: 2.23, z: -1}
     startRotation: {x: 0, y: 270, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 1
@@ -600,11 +624,14 @@ MonoBehaviour:
     environment: 2
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 1
     requiredCar: 3
     requiredGun: 3
     startPosition: {x: 146, y: 2.23, z: -128.1}
     startRotation: {x: 0, y: 282.67096, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -715,11 +742,14 @@ MonoBehaviour:
     environment: 0
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 4
     requiredGun: 1
     startPosition: {x: 180, y: 2.23, z: -184}
     startRotation: {x: 0, y: 315, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -830,11 +860,14 @@ MonoBehaviour:
     environment: 1
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 4
     requiredGun: 2
     startPosition: {x: 0, y: 2.23, z: -88}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -962,11 +995,14 @@ MonoBehaviour:
     environment: 2
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 1
     requiredCar: 4
     requiredGun: 3
     startPosition: {x: -1.5, y: 2.23, z: -69}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -1094,11 +1130,14 @@ MonoBehaviour:
     environment: 0
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 5
     requiredGun: 1
     startPosition: {x: 0, y: 2.23, z: 1}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -1243,11 +1282,14 @@ MonoBehaviour:
     environment: 1
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 5
     requiredGun: 2
     startPosition: {x: 0, y: 2.68, z: -1}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -1392,11 +1434,14 @@ MonoBehaviour:
     environment: 2
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 1
     requiredCar: 5
     requiredGun: 3
     startPosition: {x: 0, y: 2.23, z: -95}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -1558,11 +1603,14 @@ MonoBehaviour:
     environment: 0
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 5
     requiredGun: 3
     startPosition: {x: 0, y: 2.23, z: -150}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -1724,11 +1772,14 @@ MonoBehaviour:
     environment: 1
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 0
     requiredCar: 6
     requiredGun: 2
     startPosition: {x: 0, y: 2.68, z: -2}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -1907,11 +1958,14 @@ MonoBehaviour:
     environment: 2
     isLocked: 1
     isCompleted: 0
+    canRateUs: 0
+    hasAds: 1
     requiredCar: 6
     requiredGun: 3
     startPosition: {x: 0, y: 2.68, z: -2}
     startRotation: {x: 0, y: 0, z: 0}
     playerRange: 300
+    playerDamage: 2
     enemyCars:
     - carNo: 1
       carType: 2
@@ -2083,6 +2137,6 @@ MonoBehaviour:
       hasMissile: 1
       missileNumber: 0
       missileDamage: 50
-  levelSelected: 1
+  levelSelected: 0
   coins: 0
   openCarSelection: 0

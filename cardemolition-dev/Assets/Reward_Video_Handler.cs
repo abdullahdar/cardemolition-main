@@ -25,14 +25,17 @@ public class Reward_Video_Handler : MonoBehaviour
    // private CutScene_Manager cutScene_Manager;
     private CarSelection carSelection;
     private LevelsData levelsData;
+    private MenuManager menuManager;
 
     private void Awake()
     {        
         carSelection = GetComponent<CarSelection>();
         levelsData = carSelection.levelsData;
+        menuManager = GetComponent<MenuManager>();
     }
     public void ShowRewardSuccessfully()
     {
+        menuManager.cars.SetActive(false);
         levelsData.AddCoins(50);
         rewardedPanel.enabled = true;
         rewardTitle.color = Color.white;
