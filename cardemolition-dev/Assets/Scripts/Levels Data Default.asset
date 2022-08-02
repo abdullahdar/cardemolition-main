@@ -186,7 +186,7 @@ MonoBehaviour:
   - levelIndex: 4
     sceneName: GamaPlay
     levelNumber: 4
-    reward: 100
+    reward: 150
     levelDisplayName: Mobocracy
     environment: 0
     isLocked: 1
@@ -424,7 +424,7 @@ MonoBehaviour:
   - levelIndex: 7
     sceneName: GamaPlay
     levelNumber: 7
-    reward: 100
+    reward: 150
     levelDisplayName: Bullet Farmer
     environment: 0
     isLocked: 1
@@ -747,7 +747,7 @@ MonoBehaviour:
   - levelIndex: 10
     sceneName: GamaPlay
     levelNumber: 10
-    reward: 100
+    reward: 150
     levelDisplayName: Desert Road
     environment: 0
     isLocked: 1
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   - levelIndex: 13
     sceneName: GamaPlay
     levelNumber: 13
-    reward: 100
+    reward: 150
     levelDisplayName: Mad Boys 2
     environment: 0
     isLocked: 1

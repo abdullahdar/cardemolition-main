@@ -15,6 +15,13 @@ public class LevelsData : ScriptableObject
 
         [SerializeField]
         string levelDisplayName;
+        public string LevelDisplayName
+        {
+            get
+            {
+                return levelDisplayName;
+            }
+        }
 
         public enum Environment
         {

@@ -8,6 +8,7 @@ public class LevelSelection : MonoBehaviour
     public LevelsData levelsData;
     private MenuManager menuManager;
     public GameObject[] btnLevels;
+    public Text[] levelTitle;
 
     [Header("TOP BAR")]
     public Text txtCoins;
@@ -23,6 +24,7 @@ public class LevelSelection : MonoBehaviour
         {
             btnLevels[i].GetComponent<Button>().interactable = !levelsData.IsLevelLocked(i);
             btnLevels[i].transform.GetChild(0).GetComponent<Image>().enabled = levelsData.IsLevelLocked(i);
+            levelTitle[i].text = levelsData.levels[i].LevelDisplayName.ToUpper();
         }
     }
     public void OpenLevel(int levelNumber)

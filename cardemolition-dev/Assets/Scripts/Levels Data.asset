@@ -17,6 +17,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 1
     reward: 100
+    levelDisplayName: Beginning
     environment: 0
     isLocked: 0
     isCompleted: 0
@@ -67,6 +68,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 2
     reward: 100
+    levelDisplayName: Deadly Footy
     environment: 1
     isLocked: 1
     isCompleted: 0
@@ -117,6 +119,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 3
     reward: 150
+    levelDisplayName: The Dag
     environment: 2
     isLocked: 1
     isCompleted: 0
@@ -184,6 +187,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 4
     reward: 150
+    levelDisplayName: Mobocracy
     environment: 0
     isLocked: 1
     isCompleted: 0
@@ -251,6 +255,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 5
     reward: 100
+    levelDisplayName: War Boys 1
     environment: 1
     isLocked: 1
     isCompleted: 0
@@ -335,6 +340,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 6
     reward: 150
+    levelDisplayName: War Boys 2
     environment: 2
     isLocked: 1
     isCompleted: 0
@@ -419,6 +425,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 7
     reward: 150
+    levelDisplayName: Bullet Farmer
     environment: 0
     isLocked: 1
     isCompleted: 0
@@ -520,6 +527,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 8
     reward: 100
+    levelDisplayName: Canyon
     environment: 1
     isLocked: 1
     isCompleted: 0
@@ -621,6 +629,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 9
     reward: 150
+    levelDisplayName: Deadly Attack
     environment: 2
     isLocked: 1
     isCompleted: 0
@@ -739,6 +748,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 10
     reward: 150
+    levelDisplayName: Desert Road
     environment: 0
     isLocked: 1
     isCompleted: 0
@@ -857,6 +867,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 11
     reward: 100
+    levelDisplayName: Broken Ground
     environment: 1
     isLocked: 1
     isCompleted: 0
@@ -992,6 +1003,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 12
     reward: 150
+    levelDisplayName: Mad Boys 1
     environment: 2
     isLocked: 1
     isCompleted: 0
@@ -1127,6 +1139,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 13
     reward: 150
+    levelDisplayName: Mad Boys 2
     environment: 0
     isLocked: 1
     isCompleted: 0
@@ -1279,6 +1292,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 14
     reward: 100
+    levelDisplayName: Contemporary Warrior 1
     environment: 1
     isLocked: 1
     isCompleted: 0
@@ -1431,6 +1445,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 15
     reward: 150
+    levelDisplayName: Contemporary Warrior 2
     environment: 2
     isLocked: 1
     isCompleted: 0
@@ -1600,6 +1615,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 16
     reward: 150
+    levelDisplayName: Anarchy
     environment: 0
     isLocked: 1
     isCompleted: 0
@@ -1769,6 +1785,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 17
     reward: 100
+    levelDisplayName: Chaos 1
     environment: 1
     isLocked: 1
     isCompleted: 0
@@ -1955,6 +1972,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 18
     reward: 150
+    levelDisplayName: Chaos 2
     environment: 2
     isLocked: 1
     isCompleted: 0
@@ -2140,3 +2158,5 @@ MonoBehaviour:
   levelSelected: 0
   coins: 0
   openCarSelection: 0
+  soundOn: 1
+  musicOn: 1
