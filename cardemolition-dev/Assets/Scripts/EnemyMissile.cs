@@ -7,6 +7,7 @@ public class EnemyMissile : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody rigidbody;
     public float speed;
+    public float damage = 5f;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -21,7 +22,7 @@ public class EnemyMissile : MonoBehaviour
     {
         if (collision.transform.tag == "Enemy" || collision.transform.tag == "Player")
         {
-            collision.transform.GetComponent<DamageManager>().Take_Damage(10,this.gameObject);
+            collision.transform.GetComponent<DamageManager>().Take_Damage(damage,this.gameObject);
         }
 
         Destroy(gameObject);

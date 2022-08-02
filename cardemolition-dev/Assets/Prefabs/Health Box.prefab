@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1084630294725568420
 Transform:
@@ -92,12 +92,13 @@ GameObject:
   - component: {fileID: 1084630296195077960}
   - component: {fileID: 1084630296195077962}
   - component: {fileID: 1084630296195077961}
+  - component: {fileID: 351390416339872584}
   m_Layer: 0
   m_Name: Health Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1084630296195077960
 Transform:
@@ -142,3 +143,19 @@ MonoBehaviour:
   filledHealth: {fileID: 0}
   healthSlider: {fileID: 0}
   _bl_HudDamageManager: {fileID: 0}
+--- !u!208 &351390416339872584
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084630296195077967}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.19, y: 0.5, z: 1.22}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.47, z: 0}
+  m_TimeToStationary: 0.5

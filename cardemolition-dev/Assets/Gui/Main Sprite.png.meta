@@ -1234,34 +1234,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Upgrade
-      rect:
-        serializedVersion: 2
-        x: 1420
-        y: 1735
-        width: 352
-        height: 63
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71b63526efc548150800000000000000
-      internalID: 5873922061639052055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Car Select
       rect:
         serializedVersion: 2
-        x: 1781
-        y: 1710
-        width: 92
-        height: 86
+        x: 1442
+        y: 1617
+        width: 411
+        height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1279,10 +1258,10 @@ TextureImporter:
       name: Missile Select
       rect:
         serializedVersion: 2
-        x: 1882
-        y: 1710
-        width: 91
-        height: 86
+        x: 2007
+        y: 1708
+        width: 92
+        height: 91
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1300,10 +1279,10 @@ TextureImporter:
       name: Barrier Select
       rect:
         serializedVersion: 2
-        x: 1982
-        y: 1710
-        width: 92
-        height: 86
+        x: 2101
+        y: 1708
+        width: 91
+        height: 91
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1321,10 +1300,10 @@ TextureImporter:
       name: Gun Select
       rect:
         serializedVersion: 2
-        x: 2083
-        y: 1710
-        width: 92
-        height: 86
+        x: 2195
+        y: 1708
+        width: 91
+        height: 91
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1342,10 +1321,10 @@ TextureImporter:
       name: Car UnSelect
       rect:
         serializedVersion: 2
-        x: 2196
-        y: 1708
-        width: 92
-        height: 88
+        x: 1444
+        y: 1730
+        width: 408
+        height: 107
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1363,10 +1342,10 @@ TextureImporter:
       name: Missile UnSelect
       rect:
         serializedVersion: 2
-        x: 2295
-        y: 1708
-        width: 91
-        height: 88
+        x: 2307
+        y: 1707
+        width: 92
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1384,10 +1363,10 @@ TextureImporter:
       name: Barrier UnSelect
       rect:
         serializedVersion: 2
-        x: 2394
-        y: 1708
-        width: 92
-        height: 88
+        x: 2401
+        y: 1707
+        width: 91
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1405,10 +1384,10 @@ TextureImporter:
       name: Gun UnSelect
       rect:
         serializedVersion: 2
-        x: 2493
-        y: 1708
-        width: 91
-        height: 88
+        x: 2494
+        y: 1707
+        width: 92
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2166,7 +2145,7 @@ TextureImporter:
         width: 172
         height: 172
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2187,7 +2166,7 @@ TextureImporter:
         width: 150
         height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -2198,12 +2198,13 @@ public class RCC_CarControllerV3 : RCC_Core {
 	private void ResetStuckCar()
     {
 		//Debug.Log("Velocity: "+rigid.velocity+"Speed: "+speed);
-		
-		if(speed < 5 && rigid.velocity.z < 1 && rigid.velocity.z > -1 && throttleInput > 0.5f)
-        {
-			//Debug.Log("Stuck Car");
-			//if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 60)
-			//{
+		if (transform.tag == "Player")
+		{
+			if (speed < 5 && rigid.velocity.z < 1 && rigid.velocity.z > -1 && throttleInput > 0.5f)
+			{
+				//Debug.Log("Stuck Car");
+				//if (transform.eulerAngles.z > 300 && transform.eulerAngles.z < 60)
+				//{
 				resetTime += Time.deltaTime;
 				if (resetTime > 3)
 				{
@@ -2211,7 +2212,8 @@ public class RCC_CarControllerV3 : RCC_Core {
 					transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
 					resetTime = 0f;
 				}
-			//}
+				//}
+			}
 		}
     }
 

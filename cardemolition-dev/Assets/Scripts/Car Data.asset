@@ -15,7 +15,7 @@ MonoBehaviour:
   carData:
   - carName: B_car_1
     carDescription: 
-    isUsed: 0
+    isUsed: 1
     isLocked: 0
     price: 0
     carType: 2
@@ -90,8 +90,8 @@ MonoBehaviour:
       price: 200
   - carName: AX_car1
     carDescription: 
-    isUsed: 1
-    isLocked: 0
+    isUsed: 0
+    isLocked: 1
     price: 200
     carType: 1
     cameraHeight: 3

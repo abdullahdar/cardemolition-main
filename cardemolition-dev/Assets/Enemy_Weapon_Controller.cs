@@ -47,7 +47,7 @@ public class Enemy_Weapon_Controller : MonoBehaviour
             time += Time.deltaTime;
             weapon.LookAt(rCC_AICarController.targetChase);
 
-            if(time > 5f)
+            if(time > 10f)
                 Shoot_Missile();
             else
             {
