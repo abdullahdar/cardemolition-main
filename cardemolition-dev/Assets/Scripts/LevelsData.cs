@@ -12,6 +12,10 @@ public class LevelsData : ScriptableObject
         public string sceneName;
         public int levelNumber;
         public int reward = 1500;
+
+        [SerializeField]
+        string levelDisplayName;
+
         public enum Environment
         {
             footBallGround1,

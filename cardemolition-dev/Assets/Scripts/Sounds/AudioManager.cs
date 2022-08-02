@@ -79,6 +79,5 @@ public class AudioManager : MonoBehaviour
             Play(sceneName + "Sound");
         else
             Stop(sceneName + "Sound");
-
     }
 }
