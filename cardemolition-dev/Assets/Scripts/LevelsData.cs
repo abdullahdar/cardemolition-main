@@ -12,6 +12,10 @@ public class LevelsData : ScriptableObject
         public string sceneName;
         public int levelNumber;
         public int reward = 1500;
+
+        [SerializeField]
+        string levelDisplayName;
+
         public enum Environment
         {
             footBallGround1,
@@ -77,7 +81,11 @@ public class LevelsData : ScriptableObject
 
     public int coins;
 
-    public bool openCarSelection = false;    
+    public bool openCarSelection = false;
+
+    [Header("Sound Settings")]
+    public bool soundOn = true;
+    public bool musicOn = true;
 
     #region Enemy Cars
 

@@ -34,6 +34,8 @@ public class LevelManager : MonoBehaviour
     private int totalEnemies;
     private int remainingEnemies;
     
+    [SerializeField]
+    AudioManager audioManager;
 
     private void Awake()
     {
@@ -48,6 +50,8 @@ public class LevelManager : MonoBehaviour
 
         SpawnPlayerCar();
         SpawanEnemyCar();
+
+        audioManager.Play("gameplayMusic");
     }
     void SpawnPlayerCar()
     {

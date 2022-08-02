@@ -37,6 +37,9 @@ public class MenuManager : MonoBehaviour
     private CarSelection carSelectionScript;
     private LevelsData levelsData;
 
+    [SerializeField]
+    AudioManager audioManager;
+
     private void Awake()
     {
         levelLoader = GetComponent<LevelLoader>();
@@ -52,6 +55,12 @@ public class MenuManager : MonoBehaviour
             Show_MainMenu();
                 
     }
+
+    private void Start()
+    {
+        audioManager.Play("menuMusic");        
+    }
+
     void OpenMenu(SelectedMenu _selectedMenu)
     {
         Hide_Selected_Menu();
