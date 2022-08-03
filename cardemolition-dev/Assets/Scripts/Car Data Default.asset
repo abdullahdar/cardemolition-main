@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Car Data Default
   m_EditorClassIdentifier: 
   carData:
-  - carName: B_car_1
+  - carName: Furiosa
     carDescription: 
     isUsed: 1
     isLocked: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-  - carName: AX_car1
+  - carName: Immortal Joe
     carDescription: 
     isUsed: 0
     isLocked: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-  - carName: Tos
+  - carName: Toe Cutter
     carDescription: 
     isUsed: 0
     isLocked: 1
@@ -238,7 +238,7 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-  - carName: 4X
+  - carName: Nux
     carDescription: 
     isUsed: 0
     isLocked: 1
@@ -313,7 +313,7 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-  - carName: Buggy
+  - carName: Humungus
     carDescription: 
     isUsed: 0
     isLocked: 1
@@ -388,7 +388,7 @@ MonoBehaviour:
       missileDamage: 0
       missileRange: 0
       price: 200
-  - carName: Jip
+  - carName: Feral Kidvv
     carDescription: 
     isUsed: 0
     isLocked: 1

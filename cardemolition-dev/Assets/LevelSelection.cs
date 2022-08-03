@@ -21,7 +21,7 @@ public class LevelSelection : MonoBehaviour
         menuManager.SetCoins();
 
         for (int i = 0; i < levelsData.levels.Count; i++)
-        {
+        {           
             btnLevels[i].GetComponent<Button>().interactable = !levelsData.IsLevelLocked(i);
             btnLevels[i].transform.GetChild(0).GetComponent<Image>().enabled = levelsData.IsLevelLocked(i);
             levelTitle[i].text = levelsData.levels[i].LevelDisplayName.ToUpper();

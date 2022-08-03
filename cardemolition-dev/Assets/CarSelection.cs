@@ -17,6 +17,7 @@ public class CarSelection : MonoBehaviour
     public GameObject btnBeginCar;
     public GameObject btnPurchaseCar;
     public GameObject[] carIconList;
+    public Text carName;
     public Text carPrice;
 
     [Header("BARRIER SELECTION")]
@@ -56,14 +57,11 @@ public class CarSelection : MonoBehaviour
     public Button btnBarrierSelection;
     public Button btnGunSelection;
     public Button btnMissileSelection;
-    public Sprite carSelect;
-    public Sprite carUnselect;
-    public Sprite barrierSelect;
-    public Sprite barrierUnselect;
-    public Sprite gunSelect;
-    public Sprite gunUnselect;
-    public Sprite missileSelect;
-    public Sprite missileUnselect;
+    public Image selectedMenuImage;
+    public Sprite carSprite;
+    public Sprite gunSprite;
+    public Sprite barrierSprite;
+    public Sprite missileSprite;
 
     [Header("POP UP THINGS")]
     public Canvas popUp;
@@ -152,6 +150,7 @@ public class CarSelection : MonoBehaviour
         btnPurchaseCar.SetActive(carData.IsLocked(selectedCar));
         carPrice.text = carData.GetPrice(selectedCar).ToString()+" $";
         carPrice.enabled = carData.IsLocked(selectedCar);
+        carName.text = carData.Get_Car_Name(selectedCar).ToUpper();
         CarIconList_Status();
     }
     public void PurchaseCar()
@@ -220,7 +219,12 @@ public class CarSelection : MonoBehaviour
                 carIconList[i].transform.GetComponent<Image>().color = Color.white;
                 carIconList[i].transform.GetChild(1).GetComponent<Image>().enabled = false;
             }
+            CarName(i);
         }
+    }
+    void CarName(int carNumber)
+    {
+        carIconList[carNumber].transform.GetChild(0).GetComponent<Text>().text = carData.carData[carNumber].carName.ToUpper();
     }
 
     #endregion
@@ -531,24 +535,28 @@ public class CarSelection : MonoBehaviour
                 selectedMenu = _selectedMenu;
                 Show_Car_Stats();                
                 btnCarSelection.interactable = false;
+                selectedMenuImage.sprite = carSprite;
                 break;
             case SelectedMenu.barrierSelection:
                 barrierPanel.enabled = true;
                 selectedMenu = _selectedMenu;
                 Show_Barrier_Stats();                
                 btnBarrierSelection.interactable = false;
+                selectedMenuImage.sprite = barrierSprite;
                 break;
             case SelectedMenu.gunSelection:
                 gunPanel.enabled = true;
                 selectedMenu = _selectedMenu;
                 Show_Gun_Stats();                
                 btnGunSelection.interactable = false;
+                selectedMenuImage.sprite = gunSprite;
                 break;
             case SelectedMenu.missileSelection:
                 missilePanel.enabled = true;
                 selectedMenu = _selectedMenu;
                 Show_Missile_Stats();                
                 btnMissileSelection.interactable = false;
+                selectedMenuImage.sprite = missileSprite;
                 break;
             case SelectedMenu.tyreSelection:
                 tyresPanel.enabled = true;

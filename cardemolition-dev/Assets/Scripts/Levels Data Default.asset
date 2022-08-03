@@ -1292,7 +1292,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 14
     reward: 100
-    levelDisplayName: Contemporary Warrior 1
+    levelDisplayName: Coeval Warrior 1
     environment: 1
     isLocked: 1
     isCompleted: 0
@@ -1445,7 +1445,7 @@ MonoBehaviour:
     sceneName: GamaPlay
     levelNumber: 15
     reward: 150
-    levelDisplayName: Contemporary Warrior 2
+    levelDisplayName: Coeval Warrior 2
     environment: 2
     isLocked: 1
     isCompleted: 0
